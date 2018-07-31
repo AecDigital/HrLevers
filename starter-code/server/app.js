@@ -55,7 +55,7 @@ app.use(passport.session());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'HrLevers';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

@@ -3,7 +3,7 @@ const Schema      = mongoose.Schema;
 
 const Position_SkillsSchema = new Schema({
   
-  position: String,
+  position: {type:Schema.Types.ObjectId , ref:"positions_dpt"},
   department: String,
   skills: [
     {

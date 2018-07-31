@@ -12,7 +12,8 @@ const EmployeeSchema = new Schema({
   Department: String,
   Country: String,
   JobCenter: String,
-  Role: String
+  Role: String,
+  Position: {type:Schema.Types.ObjectId , ref:"positions_dpt"},
 
   });
 
