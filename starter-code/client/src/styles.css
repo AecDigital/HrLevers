@@ -3114,6 +3114,7 @@ a.text-light:hover, a.text-light:focus {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center; }
+    
     .header .navbar-toolbar > li > a {
       display: -webkit-box;
       display: -webkit-flex;
@@ -4156,9 +4157,7 @@ body.has-backdrop .backdrop {
       display: block;
       color: #fff; }
 
-@charset "UTF-8";
-.alertify {
-  z-index: 1004; }
+
 
 .alertify-logs {
   z-index: 1005; }

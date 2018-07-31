@@ -18,6 +18,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsService } from 'services/projects.service';
 import { TasksService } from 'services/tasks.service';
 import { TasksComponent } from './tasks/tasks.component'
+import { ExperiencesService } from 'services/experiences.service';
+import { ExperiencesComponent } from './experiences/experiences.component';
 
 
 
@@ -31,7 +33,8 @@ import { TasksComponent } from './tasks/tasks.component'
     SingleThreadComponent,
     EmployeesComponent,
     ProjectsComponent,
-    TasksComponent
+    TasksComponent,
+    ExperiencesComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { TasksComponent } from './tasks/tasks.component'
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ AllemployeesService, ProjectsService, AuthenticationService, TasksService ],
+  providers: [ AllemployeesService, ProjectsService, AuthenticationService, TasksService, ExperiencesService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
