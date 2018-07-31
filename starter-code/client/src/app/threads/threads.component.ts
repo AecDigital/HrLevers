@@ -20,7 +20,4 @@ threads: Observable<Array<object>>;
       this.threads = threads;
     });
   }
-//   logout(){
-//     this.Auth.logout().subscribe();
-//   }
 }

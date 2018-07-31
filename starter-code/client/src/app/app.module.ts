@@ -12,6 +12,12 @@ import { SignupComponent } from './signup/signup.component';
 import { AuthenticationService } from '../services/authentication.service';
 import { NewThreadComponent } from './new-thread/new-thread.component';
 import { SingleThreadComponent } from './single-thread/single-thread.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { AllemployeesService } from 'services/allemployees.service';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectsService } from 'services/projects.service';
+import { TasksService } from 'services/tasks.service';
+import { TasksComponent } from './tasks/tasks.component'
 
 
 
@@ -22,7 +28,10 @@ import { SingleThreadComponent } from './single-thread/single-thread.component';
     LoginComponent,
     SignupComponent,
     NewThreadComponent,
-    SingleThreadComponent
+    SingleThreadComponent,
+    EmployeesComponent,
+    ProjectsComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +39,7 @@ import { SingleThreadComponent } from './single-thread/single-thread.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ AllthreadsService, AuthenticationService ],
+  providers: [ AllemployeesService, ProjectsService, AuthenticationService, TasksService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

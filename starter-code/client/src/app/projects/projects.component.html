@@ -1,0 +1,15 @@
+<div *ngIf='Auth.user'>
+  <div class="card" style="width: 18rem;" *ngFor ='let project of projects'>
+    <div class="card-body">
+      <h5 class="card-title">{{project.Title}}</h5>
+      <p class="card-text">{{project.Client}}</p>
+      <ul>
+        <li *ngFor="let task of project.tasks">{{task}}</li>
+      </ul>
+    </div>
+    <button href='#' [routerLink]="['/projects', project._id]" type="button" class="btn btn-info">Project Details</button>
+  </div>
+
+  <!-- <a [routerLink] = "['/singledish', dish._id]">Ver entrada</a> -->
+  <button href='#' [routerLink]="['/projects/new']" type="button" class="btn btn-warning">Create new project</button>
+  </div>

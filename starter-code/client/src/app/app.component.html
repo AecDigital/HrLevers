@@ -1,6 +1,5 @@
-<h1>IronReddit</h1>
+<h1>HrLevers</h1>
  
-   <!-- <li *ngIf="Auth.user"><a href="#" [routerLink]="['/threads/new']">Create thread</a></li> -->
   
   <h2 *ngIf="!Auth.user" >Welcome to {{ title }}!</h2>
   <h2 *ngIf="Auth.user" >Welcome {{ Auth.user.username }}!</h2>
@@ -11,6 +10,10 @@
   <li *ngIf="Auth.user"><a href="#" (click)="logout()">LogOut</a></li>
 </ul>
   
+
+
+
+
 
 <router-outlet></router-outlet>
 

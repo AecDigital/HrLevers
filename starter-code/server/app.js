@@ -10,10 +10,12 @@ const session      = require('express-session');
 const MongoStore   = require('connect-mongo')(session);
 const passport     = require('passport');
 const configure    = require('./config/passport.js');
-const cors = require('cors')
+const cors = require('cors');
+require('dotenv').config();
 
+DBURL = process.env.DBURL
 
-mongoose.connect('mongodb://localhost/forum-development');
+mongoose.connect(DBURL);
 
 const app = express();
 
