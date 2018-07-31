@@ -35,13 +35,11 @@ router.post('/', loggedIn, (req, res, next) => {
 });
 
 router.put('/', (req, res, next) => {
-  console.log(req.body)
     const taskId = req.body._id;
     const { Description, Project, AssignedTo, Duedate, Done } = req.body;
     let editedTask = { Description, Project, AssignedTo, Duedate, Done }
 
     editedTask = _.pickBy(editedTask, _.identity);
-console.log(editedTask)
 
     Task.findByIdAndUpdate(taskId, editedTask, {new: true})
     .then(task => res.status(200).json(task))
@@ -49,26 +47,15 @@ console.log(editedTask)
 })
 
 
-// router
+router.delete('/', (req, res, next)=> {
 
-// const removeTask = (req, res, next) => {
-//     const taskId = req.params.id;
+  const taskId = req.body._id;
 
-//     Task.findByIdAndRemove(TaskId)
-//     .then(task => {
-//         return project.findById(task.project).lean();
-//     })
-//     .then(project => {
-//         project.tasks.splice(project.tasks.indexOf(taskId), 1);
-//         return Project.findByIdAndUpdate(project._id, {tasks: project.tasks});
-//     })
-//     .then(() => {
-//         res.status(200).json({ message: "Task Removed OK" });
-//     })
-//     .catch(err => next(err))
-// }
-
-// module.exports = { createCard,editCard,transfe
-
+  Task.findByIdAndRemove(taskId)
+  .then(() => {
+    return res.status(200).json();
+  })
+  .catch(err => next(err))
+})
 
 module.exports = router;
