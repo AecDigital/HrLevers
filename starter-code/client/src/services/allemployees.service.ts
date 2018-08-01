@@ -20,7 +20,14 @@ export class AllemployeesService {
       const employees = res.json();
       return employees;
     });
-   }
+  }
+  getEmployee(id) {
+    return this.http.get(`${BASEURL}/api/employees/${id}`).map(res => {
+      const employee = res.json();
+      console.log(employee);
+      return employee;
+   });
+  }
    getEmployeesCount() {
      return this.http.get(`${BASEURL}/api/employees`).map(res => {
       const employees = res.json();

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AllemployeesService } from '../../services/allemployees.service';
 import { Http, Response } from '@angular/http';
 import { AuthenticationService } from 'services/authentication.service';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @Component({
   selector: 'app-employees',

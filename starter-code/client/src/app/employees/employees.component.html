@@ -1,4 +1,5 @@
-<div *ngIf='Auth.user'><
+
+<div *ngIf='Auth.user'>
 
   <div class="page-heading">
 
@@ -16,7 +17,7 @@
                 </div>
             </div>
             <div  class="table-responsive row">
-                <table class="table table-bordered table-hover" id="datatable">
+                <table data-toggle="table" class="table table-bordered table-hover" id="datatable">
                     <thead class="thead-default thead-lg">
                         <tr>
                             <th>Name</th>
@@ -40,7 +41,7 @@
                            <td>{{employee.Country}}</td>
                             <td>{{employee.Email}}</td>
                             <td>{{employee.Phone}}</td>
-                            <td><button type="button" class="btn btn-info">Info</button></td>
+                            <td><button type="button" class="btn btn-info" href='#' [routerLink] = "['/team-member', employee._id]">Profile</button></td>
                            </tr>
                     </tbody>
                 </table>

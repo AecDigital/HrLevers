@@ -26,7 +26,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { InfocounterComponent } from './infocounter/infocounter.component';
 import { LinealChartComponent } from './lineal-chart/lineal-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
-
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { TeamMemberProfileComponent } from './team-member-profile/team-member-profile.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     DashboardComponent,
     InfocounterComponent,
     LinealChartComponent,
-    PieChartComponent
+    PieChartComponent,
+    TeamMemberProfileComponent
   ],
   imports: [
     BrowserModule,

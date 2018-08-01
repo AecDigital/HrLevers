@@ -18,7 +18,7 @@ router.get('/:id', (req, res, next) => {
     .findById(req.params.id)
     .exec( (err, employee) => {
       if (err)     { return res.status(500).json(err); }
-      if (!thread) { return res.status(404).json(err); }
+      if (!employee) { return res.status(404).json(err); }
 
       return res.status(200).json(employee);
     });
