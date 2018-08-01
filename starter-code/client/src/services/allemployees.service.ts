@@ -18,8 +18,40 @@ export class AllemployeesService {
   getEmployees() {
     return this.http.get(`${BASEURL}/api/employees`).map(res => {
       const employees = res.json();
-      console.log(employees);
       return employees;
     });
    }
-}
+   getEmployeesCount() {
+     return this.http.get(`${BASEURL}/api/employees`).map(res => {
+      const employees = res.json();
+      const employeesCount = employees.length;
+      return employeesCount;
+    });
+   }
+
+   getEmployeesGender() {
+    return this.http.get(`${BASEURL}/api/employees`).map(res => {
+      const employees = res.json();
+      let male = 0;
+      let female = 0;
+      for (let i = 0; i < employees.length; i++) {
+      if (employees[i].Gender === 'F') {
+        female ++;
+      } else {
+        male ++;
+      }
+    };
+      const gender = [male, female];
+      return gender;
+      });
+    };
+   }
+
+  //  getAvgAge(){
+  //   return this.http.get(`${BASEURL}/api/experiences`).map(res => {
+  //     return res.json().reduce((acc, e) => {
+  //       return acc + e.Age;
+  //     }, 0) / res.json().length;
+  //   });
+  // }
+

@@ -20,6 +20,12 @@ import { TasksService } from 'services/tasks.service';
 import { TasksComponent } from './tasks/tasks.component'
 import { ExperiencesService } from 'services/experiences.service';
 import { ExperiencesComponent } from './experiences/experiences.component';
+import { EmployeesCountComponent } from './employees-count/employees-count.component';
+import { ProjectsCountComponent } from './projects-count/projects-count.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { InfocounterComponent } from './infocounter/infocounter.component';
+import { LinealChartComponent } from './lineal-chart/lineal-chart.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 
 
@@ -34,7 +40,13 @@ import { ExperiencesComponent } from './experiences/experiences.component';
     EmployeesComponent,
     ProjectsComponent,
     TasksComponent,
-    ExperiencesComponent
+    ExperiencesComponent,
+    EmployeesCountComponent,
+    ProjectsCountComponent,
+    DashboardComponent,
+    InfocounterComponent,
+    LinealChartComponent,
+    PieChartComponent
   ],
   imports: [
     BrowserModule,

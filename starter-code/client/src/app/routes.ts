@@ -7,15 +7,16 @@ import { SingleThreadComponent } from './single-thread/single-thread.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ExperiencesComponent } from './experiences/experiences.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
 export const routes: Routes = [
-  { path: '', component: EmployeesComponent},
+  { path: '', component: DashboardComponent},
   { path: 'projects', component: ProjectsComponent},
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
-  { path: 'threads/new', component: NewThreadComponent},
-  { path: 'threads/:id', component: SingleThreadComponent},
+  // { path: 'threads/new', component: NewThreadComponent},
+  // { path: 'threads/:id', component: SingleThreadComponent},
   { path: 'experiences', component: ExperiencesComponent}
 ];

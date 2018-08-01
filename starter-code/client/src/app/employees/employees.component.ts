@@ -17,7 +17,6 @@ employees: Observable<Array<object>>;
 
   ngOnInit() {
     this.employee.getEmployees().subscribe((employees) => {
-      console.log(employees);
       this.employees = employees;
     });
   }

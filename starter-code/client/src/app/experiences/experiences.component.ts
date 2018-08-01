@@ -15,7 +15,7 @@ import { ExperiencesService } from 'services/experiences.service';
 export class ExperiencesComponent implements OnInit {
 experiences: Observable<Array<object>>;
 
-@Input() count: Number;
+
 
   constructor(public experience: ExperiencesService, private route: ActivatedRoute, private Auth: AuthenticationService) { }
 
