@@ -23,4 +23,10 @@ newTask(Name: String, Description: String, ActionPlan: String, Duedate: Date): O
       return this.newTask;
     }));
   }
+
+removeTask(id) {
+  return this.http.delete('${BASEURL}/api/tasks', this.options).pipe(map( (res: Response) => {
+  }));
+}
+
 }

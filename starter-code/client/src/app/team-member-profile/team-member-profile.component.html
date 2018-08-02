@@ -1,3 +1,5 @@
+
+
 <div class="container" *ngIf="member">
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
@@ -167,8 +169,8 @@
                   <td>{{task.TaskDescription}}</td>
                   <td>{{task.Duedate}}</td>
                   <td>{{task.Done}}</td>
-                  <td><button type="button" class="btn btn-primary btn-sm">Edit Action</button></td>
-                  <td><button type="button" class="btn btn-primary btn-sm">Delete Action</button></td>
+                  <td><button type="button" class="btn btn-primary btn-sm btn-success"><i class="far fa-edit"></i> Edit Action</button></td>
+                  <td><button type="button" class="btn btn-primary btn-sm btn-danger"><i class="far fa-trash-alt"></i> Delete Action</button></td>
                 </span>
               </tr>
             </tbody>
