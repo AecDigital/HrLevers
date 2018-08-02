@@ -1,24 +1,25 @@
 const express  = require('express');
 const router   = express.Router();
 const loggedIn = require('../../utils/isAuthenticated');
-const Project = require('../../models/project');
+const ActionPlan = require('../../models/actionPlans')
 
 
 router.get('/', (req, res, next) => {
-  Project
+  ActionPlan
     .find({})
-    .exec( (err, projects) => {
+    .exec( (err, actionPlans) => {
       if (err) { return res.status(500).json(err); }
 
-      return res.status(200).json(projects);
+      return res.status(200).json(actionPlans);
     });
 });
 
 
 router.post('/', loggedIn, (req, res, next) => {
-  const newProject = new Project({
-    title: req.body.title,
-    client: req.body.client
+  const newActionPlan = new ActionPlan({
+    Employee: req.body._id,
+    Name: req.body.name,
+    Description: req.body.description
   });
 
   newProject.save((err) => {

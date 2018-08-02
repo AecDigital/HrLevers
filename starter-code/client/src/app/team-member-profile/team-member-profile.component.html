@@ -1,22 +1,148 @@
 <div class="container" *ngIf="member">
-  <div class="row">
-    <div class="col">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <h4>Name:</h4>{{member.Name}}</li>
-        <li class="list-group-item">
-          <h4>Role:</h4>{{member.Role}}</li>
-        <li class="list-group-item">
-          <h4>Email:</h4>{{member.Email}}</li>
-      </ul>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <h1 class="display-4">Your Team Member...</h1>
+                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                </div>
+                <div class="col-4">
+                    <img src="http://askuptoo.com/images/members/profile_img2.png" width="150px">
+                </div>
+              </div>
+        </div>
+      </div>      
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <h5><i class="far fa-id-card"></i> Name:</h5>{{member.employee.Name}}</li>
+            <li class="list-group-item">
+              <h5><i class="fas fa-briefcase"></i>  Role:</h5>{{member.employee.Role}}</li>
+            <li class="list-group-item">
+              <h5><i class="far fa-envelope-open"></i>  Email:</h5> {{member.employee.Email}}</li>
+          </ul>
+        </div>
+        <div class="col-sm">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <h5>Surname:</h5>{{member.employee.Surname}}</li>
+                <li class="list-group-item">
+                  <h5><i class="fas fa-table"></i> Department:</h5>{{member.employee.Department}}</li>
+                <li class="list-group-item">
+                    <h5><i class="fas fa-mobile-alt"></i>  Phone:</h5>{{member.employee.Phone}}</li>
+                  
+              </ul>
+        </div>
+        <div class="col-sm">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <h5><i class="far fa-star"></i>  Rising Star:</h5>{{member.exp.Rising_Star}}</li>
+                <li class="list-group-item">
+                  <h5><i class="far fa-heart"></i> Critical:</h5>{{member.exp.Critical}}</li>
+                <li class="list-group-item">
+                    <h5><i class="fas fa-rocket"></i>  Talent Level:</h5></li>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Level 5</div>
+                      </div>
+              </ul>
+        </div>
+      </div>
     </div>
-    <div class="col">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <h4>Surname:</h4>{{member.Surname}}</li>
-        <li class="list-group-item">
-          <h4>Department:</h4>{{member.Department}}</li>
-        <li class="list-group-item">
-          <h4>Phone:</h4>{{member.Phone}}</li>
-</ul>
-    </div>
+
+    <div class="page-content fade-in-up">
+        <div class="row mb-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body flexbox-b">
+                        <div class="easypie mr-4" data-percent="73" data-bar-color="#18C5A9" data-size="80" data-line-width="8">
+                            <span class="easypie-data text-success" style="font-size:32px;"><i class="la la-users"></i></span>
+                        </div>
+                        <div>
+                            <h3 class="font-strong text-success">{{member.exp.average_montly_hours}}</h3>
+                            <div class="text-muted">AVG. MONTHLY HOURS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body flexbox-b">
+                        <div class="easypie mr-4" data-percent="42" data-bar-color="#5c6bc0" data-size="80" data-line-width="8">
+                            <span class="easypie-data font-26 text-primary"><i class="ti-world"></i></span>
+                        </div>
+                        <div>
+                            <h3 class="font-strong text-primary">{{member.exp.number_project}}</h3>
+                            <div class="text-muted">Nº OF PROJECTS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body flexbox-b">
+                        <div class="easypie mr-4" data-percent="70" data-bar-color="#ff4081" data-size="80" data-line-width="8">
+                            <span class="easypie-data text-pink" style="font-size:32px;"><i class="la la-tags"></i></span>
+                        </div>
+                        <div>
+                            <h3 class="font-strong text-pink">210</h3>
+                            <div class="text-muted">SUPPORT TICKETS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h4>{{member.employee.Name}}  Current Skills Profile <i class="far fa-chart-bar"></i>  </h4>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                  </ul>
+            </div>
+            <div class="col">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Spider_Chart.svg/2000px-Spider_Chart.svg.png">
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <h4>{{member.employee.Name}}  Development Plan </h4>
+            </div>
+            <div class="col"></div>
+          </div>
+
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>

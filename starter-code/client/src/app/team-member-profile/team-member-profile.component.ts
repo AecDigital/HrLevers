@@ -5,6 +5,7 @@ import { AllthreadsService } from '../../services/allthreads.service';
 import { Http, Response } from '@angular/http';
 import { AuthenticationService } from 'services/authentication.service';
 import { AllemployeesService } from 'services/allemployees.service';
+import { ExperiencesService } from 'services/experiences.service';
 
 @Component({
   selector: 'app-team-member-profile',
@@ -15,7 +16,7 @@ export class TeamMemberProfileComponent implements OnInit {
   memberId: String;
   member: Observable<any>;
 
-  constructor(public teamMember: AllemployeesService, private route: ActivatedRoute, private Auth: AuthenticationService) {}
+  constructor(public teamMember: AllemployeesService, public Experiences: ExperiencesService, private route: ActivatedRoute, private Auth: AuthenticationService) {}
 
 
   ngOnInit() {

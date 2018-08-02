@@ -23,8 +23,8 @@ export class AllemployeesService {
   }
   getEmployee(id) {
     return this.http.get(`${BASEURL}/api/employees/${id}`).map(res => {
+      console.log(res.json());
       const employee = res.json();
-      console.log(employee);
       return employee;
    });
   }

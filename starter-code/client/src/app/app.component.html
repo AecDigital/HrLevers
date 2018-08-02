@@ -1,7 +1,33 @@
- 
- <h2 *ngIf="Auth.user">Welcome {{ Auth.user.username }}!</h2>
+<!-- <h2 *ngIf="Auth.user">Welcome {{ Auth.user.username }}!</h2> -->
 
- <ul class="nav justify-content-end">
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #43e8d8">
+  <a class="navbar-brand" href="#">HrLevers</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" *ngIf="!Auth.user">
+        <a class="nav-link active" [routerLink]="['/signup']" href="#">SignUp</a>
+      </li>
+      <li class="nav-item" *ngIf="!Auth.user">
+        <a class="nav-link" [routerLink]="['/login']">LogIn</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+      <li class="nav-item" *ngIf="Auth.user">
+        <a class="nav-link disabled" href="#" (click)="logout()">
+          <i class="fas fa-power-off"></i> LogOut</a>
+      </li>
+    </span>
+  </div>
+</nav>
+
+
+
+<!-- <ul class="nav justify-content-end">
         <li class="nav-item" *ngIf="!Auth.user">
           <a class="nav-link active" [routerLink]="['/signup']" href="#">SignUp</a>
         </li>
@@ -12,13 +38,13 @@
           <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item" *ngIf="Auth.user">
-          <a class="nav-link disabled" href="#" (click)="logout()">LogOut</a>
+          <a class="nav-link disabled" href="#" (click)="logout()"><i class="fas fa-power-off"></i> LogOut</a>
         </li>
-      </ul>
+      </ul> -->
 
 
 <!-- START HEADER-->
-<!-- <header class="header" app-header>HrLevers</header> --> 
+<!-- <header class="header" app-header>HrLevers</header> -->
 <!-- END HEADER
 START SIDEBAR-->
 <!-- <nav class="page-sidebar" id="sidebar" app-sidebar></nav> -->
@@ -26,8 +52,7 @@ START SIDEBAR-->
 
 <!START PAGE CONTENT-->
 <div class="content-wrapper">
-    <router-outlet></router-outlet>
-    <footer class="page-footer" app-footer></footer>
+  <router-outlet></router-outlet>
+  <footer class="page-footer" app-footer></footer>
 </div>
 <!-- END PAGE CONTENT-->
-

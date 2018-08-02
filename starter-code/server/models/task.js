@@ -1,16 +1,14 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 const EmployeeSchema = require('./employee').schema;
+const ActionPlanSchema = require('./actionPlans').schema
 
 const TaskSchema = new Schema({
+  Name: String,
   TaskDescription: String,
-  Project: {
+  ActionPlan: {
     type: Schema.Types.ObjectId,
-    ref: 'Project'
-  },
-  AssignedTo: {
-    type: Schema.Types.ObjectId,
-    ref: 'Employee'
+    ref: 'ActionPlan'
   },
   Duedate: Date,
   Done: { type: Boolean, default: false},

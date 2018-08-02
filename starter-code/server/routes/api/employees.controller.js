@@ -2,6 +2,7 @@ const express  = require('express');
 const router   = express.Router();
 const loggedIn = require('../../utils/isAuthenticated');
 const Employee = require('../../models/employee');
+const EmployeeExperience = require('../../models/employee_experience');
 
 router.get('/', (req, res, next) => {
   Employee
@@ -14,14 +15,13 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
-  Employee
-    .findById(req.params.id)
-    .exec( (err, employee) => {
-      if (err)     { return res.status(500).json(err); }
-      if (!employee) { return res.status(404).json(err); }
-
-      return res.status(200).json(employee);
-    });
+  Employee.findById(req.params.id).then(employee=>{
+      EmployeeExperience.findOne({'Employee': employee._id}).then(exp=>{
+        console.log(exp)
+        return res.status(200).json({employee, exp});
+      })
+    })
+    .catch(err => res.status(500).json(err))
 });
 
 module.exports = router;

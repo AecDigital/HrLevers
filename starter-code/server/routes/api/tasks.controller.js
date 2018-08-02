@@ -1,7 +1,7 @@
 const express  = require('express');
 const router   = express.Router();
 const loggedIn = require('../../utils/isAuthenticated');
-const Project = require('../../models/project');
+// const Project = require('../../models/project');
 const Task = require('../../models/task')
 const _ = require('lodash');
 

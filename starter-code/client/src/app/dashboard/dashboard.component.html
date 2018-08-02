@@ -1,27 +1,28 @@
 <div class="page-content fade-in-up">
   <div class="row mb-4">
-      <div class="col-lg-4 col-md-6" data-bar-color="#5c6bc0">
-        <app-infocounter [counter]="count" [counterTitle]="'Nº Employees'"></app-infocounter>
-      </div>
-      <div class="col-lg-4 col-md-6" data-bar-color="#18C5A9">
-        <app-infocounter [counter]="projects" [counterTitle]="'Nº Projects'"></app-infocounter>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <app-infocounter data-bar-color="#5c6bc0" [counter]="avg" [counterTitle]="'Avg Monthly Hours'"></app-infocounter>
-      </div>
+    <div class="col-lg-4 col-md-6" data-bar-color="#5c6bc0">
+      <app-infocounter [counter]="count" [counterTitle]="'Nº Employees'"></app-infocounter>
+    </div>
+    <div class="col-lg-4 col-md-6" data-bar-color="#18C5A9">
+      <app-infocounter [counter]="projects" [counterTitle]="'Nº Projects'"></app-infocounter>
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <app-infocounter data-bar-color="#5c6bc0" [counter]="avg" [counterTitle]="'Avg Monthly Hours'"></app-infocounter>
+    </div>
   </div>
 
-    <div class="row">
-        <div class="col">Lineal Charts</div>
-        <div class="col">
-            <app-pie-chart [values]='gender'></app-pie-chart>
-        </div>
-        <div class="w-100"></div>
-        <div class="col">
-        </div>
-        <div class="col">
-            <app-lineal-chart [keys]="defaultKeys" [values]='eng'></app-lineal-chart>
-        </div>
-      </div>
+  <div class="row">
+    <div class="col">Lineal Charts</div>
+    <div class="col">
+      <app-lineal-chart [keys]="defaultKeys" [values]='eng'></app-lineal-chart>
+    </div>
+    <div class="w-100"></div>
+    <div class="col">
+    </div>
+    <div class="col">
+      <app-pie-chart [values]='gender'></app-pie-chart>
+
+    </div>
+  </div>
 
   <app-employees></app-employees>
