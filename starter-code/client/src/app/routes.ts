@@ -9,8 +9,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ExperiencesComponent } from './experiences/experiences.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TeamMemberProfileComponent } from './team-member-profile/team-member-profile.component';
-
-
+import { NewTaskComponent } from './new-task/new-task.component';
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent},
@@ -20,5 +19,6 @@ export const routes: Routes = [
   { path: 'team-member/:id', component: TeamMemberProfileComponent},
   // { path: 'threads/new', component: NewThreadComponent},
   // { path: 'threads/:id', component: SingleThreadComponent},
-  { path: 'experiences', component: ExperiencesComponent}
+  { path: 'experiences', component: ExperiencesComponent},
+  {path: 'newtask/:id', component: NewTaskComponent}
 ];

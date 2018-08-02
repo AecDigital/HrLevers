@@ -19,18 +19,17 @@ router.get('/', (req, res, next) => {
 
 router.post('/', loggedIn, (req, res, next) => {
   const newTask = new Task({
-    taskDescription: req.body.description,
-    project: req.body.project,
-    assignedTo: req.body.assign,
-    duedate: req.body.duedate,
-    done: req.body.done
+    Name: req.body.Name,
+    TaskDescription: req.body.Description,
+    ActionPlan: req.body.ActionPlan,
+    Duedate: req.body.Duedate
   });
 
   newTask.save((err) => {
     if (err)              { return res.status(500).json(err); }
-    if (newThread.errors) { return res.status(400).json(newProject); }
+    if (newTask.errors) { return res.status(400).json(newTask); }
 
-    return res.status(200).json(newProject);
+    return res.status(200).json(newTask);
   });
 });
 

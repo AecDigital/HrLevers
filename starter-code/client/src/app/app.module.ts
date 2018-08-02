@@ -28,6 +28,8 @@ import { LinealChartComponent } from './lineal-chart/lineal-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { TeamMemberProfileComponent } from './team-member-profile/team-member-profile.component';
+import { NewTaskComponent } from './new-task/new-task.component';
+
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import { TeamMemberProfileComponent } from './team-member-profile/team-member-pr
     InfocounterComponent,
     LinealChartComponent,
     PieChartComponent,
-    TeamMemberProfileComponent
+    TeamMemberProfileComponent,
+    NewTaskComponent
   ],
   imports: [
     BrowserModule,

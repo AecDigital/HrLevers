@@ -1,0 +1,12 @@
+<form>
+    <h2> New thread </h2>
+    <label> Name </label>
+    <input type="text" [(ngModel)]="Name" name="Name"/>
+    <br>
+    <label> Description </label>
+    <input type="text" [(ngModel)]="Description" name="Description"/>
+    <label> Duedate </label>
+    <input type="text" [(ngModel)]="Duedate" name="Duedate"/>
+    <button (click)="newTask(Name, Description, Duedate)" class="btn btn-primary" type="submit">Add Ingredient</button>
+
+  </form>

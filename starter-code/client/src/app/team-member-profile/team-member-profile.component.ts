@@ -25,5 +25,6 @@ export class TeamMemberProfileComponent implements OnInit {
       this.memberId = params['id'],
       this.teamMember.getEmployee(this.memberId).subscribe(res => this.member = res);
   });
+  
 }
 }
