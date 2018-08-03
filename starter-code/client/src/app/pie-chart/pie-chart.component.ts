@@ -27,7 +27,7 @@ chart = [];
     }
   }
     createChart(){
-      this.chart = new Chart("canvas", {
+      this.chart = new Chart("pie-chart", {
         type: 'pie',
         data: [this.values],
         options: []

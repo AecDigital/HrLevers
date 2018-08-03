@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   eng;
   age;
   comp;
-  coll;
+  coll = [];
   defaultKeys:Array<string> = ['Q1', 'Q2', 'Q3', 'Q4']
   gender;
 
@@ -38,7 +38,6 @@ export class DashboardComponent implements OnInit {
     });
     this.Listexperiences.getCompetitive().subscribe(comp => (this.comp = comp));
     this.Listexperiences.getCollaborative().subscribe(coll => {
-      console.log(coll)
       this.coll = coll;
     });
     this.Listemployees.getEmployeesGender().subscribe(gender => (this.gender = gender));
