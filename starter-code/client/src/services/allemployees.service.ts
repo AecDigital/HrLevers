@@ -48,7 +48,7 @@ export class AllemployeesService {
         male ++;
       }
     };
-      const gender = [male, female];
+      const gender = {male, female};
       return gender;
       });
     };

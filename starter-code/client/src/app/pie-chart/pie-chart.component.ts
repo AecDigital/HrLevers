@@ -8,30 +8,57 @@ import {
 import { Chart } from "chart.js";
 
 @Component({
-  selector: 'app-pie-chart',
-  templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.css']
+  selector: "app-pie-chart",
+  templateUrl: "./pie-chart.component.html",
+  styleUrls: ["./pie-chart.component.css"]
 })
 export class PieChartComponent implements OnInit {
-@Input() values: Array<number>;
-chart = [];
+@Input() values: any;
+@Input() values2: any;
+  chart = [];
+  keys = [];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.values);
+  }
+
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
-    if (changes["values"]) {
+    if (changes['values']) {
       console.log(this.values);
       this.createChart();
+
     }
   }
-    createChart(){
-      this.chart = new Chart("pie-chart", {
-        type: 'pie',
-        data: [this.values],
-        options: []
+  createChart() {
+    this.chart = new Chart("chart", {
+      type: "bar",
+      data: {
+        labels: ['Male', 'Female'],
+        datasets: [{
+          label: 'Gender presence',
+          data: [this.values, this.values2],
+          backgroundColor: [
+            'rgb(23%, 90%, 83%)',
+            
+            'rgb(59%, 59%, 59%)',
+          ],
+          borderColor: [
+            'rgb(23%, 90%, 83%)',
+            'rgb(59%, 59%, 59%)',
+          ],
+        borderWidth: 1
+    }]
+},
+options: {
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    }
+}
     });
-  }
-};
-
+  }}

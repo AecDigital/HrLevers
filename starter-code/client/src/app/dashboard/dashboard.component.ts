@@ -19,7 +19,8 @@ export class DashboardComponent implements OnInit {
   comp;
   coll = [];
   defaultKeys:Array<string> = ['Q1', 'Q2', 'Q3', 'Q4']
-  gender;
+  genderm;
+  genderf;
 
   constructor(
     private Listemployees: AllemployeesService,
@@ -40,7 +41,10 @@ export class DashboardComponent implements OnInit {
     this.Listexperiences.getCollaborative().subscribe(coll => {
       this.coll = coll;
     });
-    this.Listemployees.getEmployeesGender().subscribe(gender => (this.gender = gender));
+    this.Listemployees.getEmployeesGender().subscribe(gender => {
+      this.genderm = gender.male;
+    this.genderf = gender.female;
+    });
     // this.Listexperiences.getExperiences().subscribe(experiences => this.experiences = experiences);
 }
 }
