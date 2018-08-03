@@ -29,6 +29,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { TeamMemberProfileComponent } from './team-member-profile/team-member-profile.component';
 import { NewTaskComponent } from './new-task/new-task.component';
+// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -51,12 +52,13 @@ import { NewTaskComponent } from './new-task/new-task.component';
     LinealChartComponent,
     PieChartComponent,
     TeamMemberProfileComponent,
-    NewTaskComponent
+    NewTaskComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    // NgbModule,
     RouterModule.forRoot(routes)
   ],
   providers: [ AllemployeesService, ProjectsService, AuthenticationService, TasksService, ExperiencesService ],
