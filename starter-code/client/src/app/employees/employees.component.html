@@ -32,10 +32,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- <nav class="navbar">
-                                <input class="form-control" type="text" name="search" [(ngModel)]="filter">
-                            </nav> -->
-
+                           
                             <tr *ngFor="let employee of employees | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
                                 <td>{{employee.Name}}</td>
                                 <td>

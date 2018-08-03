@@ -3,6 +3,7 @@ const router = express.Router();
 const loggedIn = require("../../utils/isAuthenticated");
 const Employee = require("../../models/employee");
 const employeeSkill = require("../../models/employeeSkills");
+const positionSkill = require("../../models/positionsSkills");
 const _ = require('lodash');
 
 router.get("/:id", (req, res, next) => {

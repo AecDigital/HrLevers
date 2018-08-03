@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private Listemployees: AllemployeesService,
-    private Listexperiences: ExperiencesService
+    private Listexperiences: ExperiencesService,
   ) {}
 
   ngOnInit() {
