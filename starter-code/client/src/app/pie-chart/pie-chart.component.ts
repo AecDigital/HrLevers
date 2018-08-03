@@ -33,9 +33,9 @@ export class PieChartComponent implements OnInit {
   }
   createChart() {
     this.chart = new Chart("chart", {
-      type: "bar",
+      type: "pie",
       data: {
-        labels: ['Male', 'Female'],
+        labels: [' Male', ' Female'],
         datasets: [{
           label: 'Gender presence',
           data: [this.values, this.values2],
@@ -53,12 +53,16 @@ export class PieChartComponent implements OnInit {
 },
 options: {
     scales: {
-        yAxes: [{
+        yAxes: [
+          {
+            display: false
+          }
+        ],
             ticks: {
                 beginAtZero: true
             }
-        }]
+        }
     }
+});
 }
-    });
-  }}
+}
