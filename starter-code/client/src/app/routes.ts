@@ -16,8 +16,6 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'team-member/:id', component: TeamMemberProfileComponent},
-  // { path: 'threads/new', component: NewThreadComponent},
-  // { path: 'threads/:id', component: SingleThreadComponent},
   { path: 'experiences', component: ExperiencesComponent},
   {path: 'newtask/:id', component: NewTaskComponent}
 ];

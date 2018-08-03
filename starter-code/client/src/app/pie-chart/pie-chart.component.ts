@@ -40,18 +40,21 @@ export class PieChartComponent implements OnInit {
           label: 'Gender presence',
           data: [this.values, this.values2],
           backgroundColor: [
-            'rgb(23%, 90%, 83%)',
+            'rgb(15%, 18%, 40%)',
             
-            'rgb(59%, 59%, 59%)',
+            'rgb(84%, 11%, 45%)',
           ],
           borderColor: [
-            'rgb(23%, 90%, 83%)',
-            'rgb(59%, 59%, 59%)',
+            'rgb(15%, 18%, 40%)',
+            'rgb(84%, 11%, 45%)',
           ],
         borderWidth: 1
     }]
 },
 options: {
+  legend: {
+    display: false
+  },
     scales: {
         yAxes: [
           {

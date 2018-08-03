@@ -60,7 +60,7 @@ export class LinealChartComponent implements OnInit, OnChanges {
       },
       options: {
         legend: {
-          display: true
+          display: false
         },
         scales: {
           xAxes: [

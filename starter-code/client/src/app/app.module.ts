@@ -32,8 +32,7 @@ import { NewTaskComponent } from './new-task/new-task.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { PolarChartComponent } from './polar-chart/polar-chart.component';
 import { SkillsService } from 'services/skills.service';
-// import { PolarChartComponent } from './polar-chart/polar-chart.component';
-// import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 
 
