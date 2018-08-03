@@ -1,7 +1,5 @@
-
-
-<div class="container" *ngIf="member">
-  <div class="jumbotron jumbotron-fluid">
+<div class="container color" *ngIf="member">
+  <div class="jumbotron jumbotron-fluid color">
     <div class="container">
       <div class="row">
         <div class="col-8">
@@ -56,7 +54,8 @@
               <i class="fas fa-rocket"></i> Talent Level:</h5>
           </li>
           <div class="progress">
-              <!-- <p><ngb-progressbar type="success" [value]="25"></ngb-progressbar></p> -->
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+              </div>
             </div>
         </ul>
       </div>
@@ -118,12 +117,12 @@
           <i class="far fa-chart-bar"></i>
         </h4>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Morbi leo risus</li>
-          <li class="list-group-item">Porta ac consectetur ac</li>
-          <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
       </div>
       <div class="col">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Spider_Chart.svg/2000px-Spider_Chart.svg.png">
@@ -159,22 +158,105 @@
                 <th scope="col">Description</th>
                 <th scope="col">Duedate</th>
                 <th scope="col">Status</th>
-                <th><button [routerLink]="['/newtask', train._id]" type="button" class="btn btn-outline-info">Add new action</button></th>
+                <th>
+                  <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal">
+                    Add new action</button>
+                </th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let task of member.tasks; let j=index" >
-               <span *ngIf="task.ActionPlan===train._id">
-                  <td>{{task.Name}}</td>
-                  <td>{{task.TaskDescription}}</td>
-                  <td>{{task.Duedate}}</td>
-                  <td>{{task.Done}}</td>
-                  <td><button type="button" class="btn btn-primary btn-sm btn-success"><i class="far fa-edit"></i> Edit Action</button></td>
-                  <td><button type="button" class="btn btn-primary btn-sm btn-danger"><i class="far fa-trash-alt"></i> Delete Action</button></td>
+              <span *ngFor="let task of member.tasks; let j=index">
+                <span *ngIf="task.ActionPlan===train._id">
+                  <tr>
+                    <td>{{task.Name}}</td>
+                    <td>{{task.TaskDescription}}</td>
+                    <td>{{task.Duedate}}</td>
+                    <td>{{task.Done}}</td>
+                    <td>
+                      <button type="button" class="btn btn-primary btn-sm btn-success" data-toggle="modal" attr.data-target="#editModal{{j}}">
+                        <i class="far fa-edit"></i> Edit Action</button>
+                    </td>
+                    <td>
+
+                      <button (click)="removeTask(task._id)" type="submit" class="btn btn-primary btn-sm btn-danger">
+                        <i class="far fa-trash-alt"></i> Delete</button>
+                    </td>
+                  </tr>
+
+                <div class="modal fade" id="editModal{{j}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">New Development Action</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <label> Name: </label>
+                            <input type="text" [(ngModel)]="Name" name="Name" />
+                            <br>
+                            <label> Description: </label>
+                            <input type="text" [(ngModel)]="Description" name="Description" />
+                            <label> Duedate: </label>
+                            <input type="date" [(ngModel)]="Duedate" name="Duedate" />
+                            <label> Done?: </label>
+                            <select class="form-control" [(ngModel)]="Done" name="Done" id="exampleFormControlSelect1">
+                                <option>True</option>
+                                <option>False</option>
+                              </select>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary btn-sm btn-danger" data-dismiss="modal">Close</button>
+                          <button (click)="editTask(task._id, Name, Description, Duedate, Done)" type="submit" class="btn btn-primary btn-sm btn-success">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </span>
-              </tr>
+              </span>
             </tbody>
           </table>
         </div>
       </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New Development Action</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form #form="ngForm">
+                <label> Name: </label>
+                <input type="text" [(ngModel)]="Name" name="Name" />
+                <br>
+                <label> Description: </label>
+                <input type="text" [(ngModel)]="Description" name="Description" />
+                <label> Duedate: </label>
+                <input type="date" [(ngModel)]="Duedate" name="Duedate" />
+                
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-sm btn-danger" data-dismiss="modal">Cancel</button>
+              <button (click)="newTask(Name, Description, Duedate, train._id, form)" type="submit" class="btn btn-primary btn-sm btn-success" data-dismiss="modal">Add action</button>
+            </div>
+          </div>
+        </div>
       </div>
+      
+    </div>
+
+ <app-polar-chart></app-polar-chart>
+
+    <script>
+      $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+      })
+    </script>

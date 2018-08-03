@@ -54,11 +54,4 @@ export class AllemployeesService {
     };
    }
 
-  //  getAvgAge(){
-  //   return this.http.get(`${BASEURL}/api/experiences`).map(res => {
-  //     return res.json().reduce((acc, e) => {
-  //       return acc + e.Age;
-  //     }, 0) / res.json().length;
-  //   });
-  // }
 

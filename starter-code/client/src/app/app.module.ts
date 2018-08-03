@@ -29,7 +29,15 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { TeamMemberProfileComponent } from './team-member-profile/team-member-profile.component';
 import { NewTaskComponent } from './new-task/new-task.component';
-// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { PolarChartComponent } from './polar-chart/polar-chart.component';
+import { SkillsService } from 'services/skills.service';
+// import { PolarChartComponent } from './polar-chart/polar-chart.component';
+// import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
+
+
 
 
 
@@ -53,15 +61,19 @@ import { NewTaskComponent } from './new-task/new-task.component';
     PieChartComponent,
     TeamMemberProfileComponent,
     NewTaskComponent,
+    PolarChartComponent
+    // PolarChartComponent,
+    // Ng2SearchPipeModule
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     // NgbModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgxPaginationModule
   ],
-  providers: [ AllemployeesService, ProjectsService, AuthenticationService, TasksService, ExperiencesService ],
+  providers: [ AllemployeesService, ProjectsService, AuthenticationService, TasksService, ExperiencesService, SkillsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

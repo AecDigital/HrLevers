@@ -1,51 +1,59 @@
-
 <div *ngIf='Auth.user'>
 
-  <div class="page-heading">
+    <div class="page-heading">
 
-</div>
-<div class="page-content fade-in-up">
-    <div class="ibox">
-        <div class="ibox-body">
-            <h5 class="font-strong mb-4"></h5>
-            <div class="flexbox mb-4">
-                <div class="flexbox">
+    </div>
+    <div class="page-content fade-in-up">
+        <div class="ibox">
+            <div class="ibox-body">
+                <h5 class="font-strong mb-4"></h5>
+                <div class="flexbox mb-4">
+                    <div class="flexbox">
+                    </div>
+                    <div class="input-group-icon input-group-icon-left mr-3">
+                        <span class="input-icon input-icon-right font-16">
+                            <i class="ti-search"></i>
+                        </span>
+                        <input class="form-control form-control-rounded form-control-solid" id="key-search" type="text" placeholder="Search ...">
+                    </div>
                 </div>
-                <div class="input-group-icon input-group-icon-left mr-3">
-                    <span class="input-icon input-icon-right font-16"><i class="ti-search"></i></span>
-                    <input class="form-control form-control-rounded form-control-solid" id="key-search" type="text" placeholder="Search ...">
-                </div>
-            </div>
-            <div  class="table-responsive row">
-                <table data-toggle="table" class="table table-bordered table-hover" id="datatable">
-                    <thead class="thead-default thead-lg">
-                        <tr>
-                            <th>Name</th>
-                            <th>Surname</th>
-                            <th>Role</th>
-                            <th>Department</th>
-                            <th>Country</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th></th>
+                <div class="table-responsive row">
+                    <table data-toggle="table" class="table table-bordered table-hover" id="datatable">
+                        <thead class="thead-default thead-lg">
+                            <tr>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Role</th>
+                                <th>Department</th>
+                                <th>Country</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th></th>
                             </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let employee of employees">
-                            <td>{{employee.Name}}</td>
-                            <td>
-                                {{employee.Surname}}
-                            </td>
-                            <td>{{employee.Role}}</td>
-                            <td>{{employee.Department}}</td>
-                           <td>{{employee.Country}}</td>
-                            <td>{{employee.Email}}</td>
-                            <td>{{employee.Phone}}</td>
-                            <td><button type="button" class="btn btn-info" href='#' [routerLink] = "['/team-member', employee._id]">Profile</button></td>
-                           </tr>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <!-- <nav class="navbar">
+                                <input class="form-control" type="text" name="search" [(ngModel)]="filter">
+                            </nav> -->
+
+                            <tr *ngFor="let employee of employees | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+                                <td>{{employee.Name}}</td>
+                                <td>
+                                    {{employee.Surname}}
+                                </td>
+                                <td>{{employee.Role}}</td>
+                                <td>{{employee.Department}}</td>
+                                <td>{{employee.Country}}</td>
+                                <td>{{employee.Email}}</td>
+                                <td>{{employee.Phone}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-info" href='#' [routerLink]="['/team-member', employee._id]">Profile</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
             </div>
         </div>
     </div>
-</div>

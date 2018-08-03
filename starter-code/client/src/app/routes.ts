@@ -13,7 +13,6 @@ import { NewTaskComponent } from './new-task/new-task.component';
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent},
-  { path: 'projects', component: ProjectsComponent},
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'team-member/:id', component: TeamMemberProfileComponent},

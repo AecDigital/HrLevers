@@ -33,25 +33,26 @@ router.post('/', loggedIn, (req, res, next) => {
   });
 });
 
-router.put('/', (req, res, next) => {
-    const taskId = req.body._id;
-    const { Description, Project, AssignedTo, Duedate, Done } = req.body;
-    let editedTask = { Description, Project, AssignedTo, Duedate, Done }
+router.put('/edit/:id', (req, res, next) => {
+  const taskId = req.params.id;
+    const { id, Name, Description, ActionPlan, Duedate, Done } = req.body;
+    let editedTask = { id, Name, Description, ActionPlan, Duedate, Done }
 
     editedTask = _.pickBy(editedTask, _.identity);
 
-    Task.findByIdAndUpdate(taskId, editedTask, {new: true})
+    Task.findByIdAndUpdate(taskId, {new: true})
     .then(task => res.status(200).json(task))
     .catch(err => next(err))
 })
 
 
-router.delete('/', (req, res, next)=> {
+router.delete('/delete/:id', (req, res, next)=> {
 
-  const taskId = req.body._id;
+  const taskId = req.params.id;
 
   Task.findByIdAndRemove(taskId)
   .then(() => {
+    console.log('delete!')
     return res.status(200).json();
   })
   .catch(err => next(err))
