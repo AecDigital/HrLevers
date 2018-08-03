@@ -24,14 +24,13 @@ export class LinealChartComponent implements OnInit, OnChanges {
   ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
     if (changes["values"]) {
-      console.log(this.values)
       this.createChart();
     }
   }
 
   createChart() {
+    console.log(this.values2);
     this.chart = new Chart("canvas", {
       type: 'line',
       data: {
@@ -39,13 +38,13 @@ export class LinealChartComponent implements OnInit, OnChanges {
         datasets: [
           {
             label: "Avg. Engagement",
-            data: this.values,
+            data: this.values2,
             borderColor: "#3cba9f",
             fill: false
           },
           {
             label: "Avg. Collaborative Culture Percept.",
-            data: this.values2,
+            data: this.values,
             borderColor: "#4cca3f",
             fill: false
           },

@@ -37,7 +37,10 @@ export class DashboardComponent implements OnInit {
       this.eng = eng;
     });
     this.Listexperiences.getCompetitive().subscribe(comp => (this.comp = comp));
-    this.Listexperiences.getCollaborative().subscribe(coll => (this.coll = coll));
+    this.Listexperiences.getCollaborative().subscribe(coll => {
+      console.log(coll)
+      this.coll = coll;
+    });
     this.Listemployees.getEmployeesGender().subscribe(gender => (this.gender = gender));
     // this.Listexperiences.getExperiences().subscribe(experiences => this.experiences = experiences);
 }
