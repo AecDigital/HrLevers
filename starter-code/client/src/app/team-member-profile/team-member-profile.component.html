@@ -103,25 +103,31 @@
               </span>
             </div>
             <div>
-              <h3 class="font-strong text-pink">210</h3>
-              <div class="text-muted">SUPPORT TICKETS</div>
+              <h3 class="font-strong text-pink">{{member.exp.Percent_Remote}}%</h3>
+              <div class="text-muted">PERCENT REMOTE WORK</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+
+    
+    <h2 class="center">Talent Profile
+      </h2>
+      <hr class="style13">
+<br>
+
+    
     <div class="margin2">
     <div class="row">
       <div class="col">
-        <h4>{{member.employee.Name}} Current Skills Profile
-        </h4>
+        
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item"><h5><i class="far fa-clock"></i> Time Spent Company:</h5>{{member.exp.time_spend_company}} years.</li>
+            <li class="list-group-item"><h5><i class="fas fa-sort-amount-up"></i> Promotioned Last 5 years?</h5>{{member.exp.promotion_last_5years}}</li>
+            <li class="list-group-item"><h5><i class="far fa-chart-bar"></i> Last Performance Eval. Score:</h5>{{member.exp.last_evaluation}} of 1</li>
+            <li class="list-group-item"><h5><i class="fas fa-dollar-sign"></i> Salary Rate:</h5>{{member.exp.salary}}</li>
           </ul>
       </div>
       <div class="col">
@@ -134,8 +140,11 @@
     </div>
     </div>
 
-<div class="margin">
-    <h4>{{member.employee.Name}} Development Plan </h4>
+    <div class="margin">
+        <h2 class="center">Development Plan </h2>
+    <hr class="style13">
+    <br>
+
 
     <div *ngFor="let train of member.trains; let i = index" class="accordion" id="accordion{{i}}">
       <div class="card-header" id="heading{{i}}">
@@ -166,7 +175,7 @@
               </tr>
             </thead>
             <tbody>
-              <span *ngFor="let task of member.tasks; let j=index">
+              <span *ngFor="let task of member.tasks">
                 <span *ngIf="task.ActionPlan===train._id">
                   <tr>
                     <td>{{task.Name}}</td>
