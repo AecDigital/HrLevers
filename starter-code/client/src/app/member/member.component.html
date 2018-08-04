@@ -1,0 +1,241 @@
+<div class="container color" *ngIf="member">
+    <div class="jumbotron jumbotron-fluid color">
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <h1 class="display-4"> Your Profile...</h1>
+            <p class="lead"> This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          </div>
+          <div class="col-4">
+            <img src="http://askuptoo.com/images/members/profile_img2.png" width="150px">
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="page-content fade-in-up">
+      <div class="row mb-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="card mb-4">
+            <div class="card-body flexbox-b">
+              <div class="easypie mr-4" data-percent="73" data-bar-color="#18C5A9" data-size="80" data-line-width="8">
+                <span class="easypie-data text-success" style="font-size:32px;">
+                  <i class="la la-users"></i>
+                </span>
+              </div>
+              <div>
+                <h3 class="font-strong text-success">{{member.exp.average_montly_hours}}</h3>
+                <div class="text-muted">AVG. MONTHLY HOURS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card mb-4">
+            <div class="card-body flexbox-b">
+              <div class="easypie mr-4" data-percent="42" data-bar-color="#5c6bc0" data-size="80" data-line-width="8">
+                <span class="easypie-data font-26 text-primary">
+                  <i class="ti-world"></i>
+                </span>
+              </div>
+              <div>
+                <h3 class="font-strong text-primary">{{member.exp.number_project}}</h3>
+                <div class="text-muted">Nº OF PROJECTS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card mb-4">
+            <div class="card-body flexbox-b">
+              <div class="easypie mr-4" data-percent="70" data-bar-color="#ff4081" data-size="80" data-line-width="8">
+                <span class="easypie-data text-pink" style="font-size:32px;">
+                  <i class="la la-tags"></i>
+                </span>
+              </div>
+              <div>
+                <h3 class="font-strong text-pink">{{member.exp.Percent_Remote}}%</h3>
+                <div class="text-muted">PERCENT REMOTE WORK</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="center">Meet your Role
+        </h2>
+        <hr class="style13">
+  <br>
+
+  <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Role within Organization
+            </button>
+          </h5>
+        </div>
+    
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+              <div class="container">
+                  <div class="row">
+                    <div class="col-sm">
+                      <h4>Role Name: </h4><p>{{position.id}}</p>
+                    </div>
+                    <div class="col-sm">
+                      One of three columns
+                    </div>
+                    <div class="col-sm">
+                      One of three columns
+                    </div>
+                  </div>
+                </div>          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+Role Mission
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+              <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      1 of 2
+                    </div>
+                    <div class="col">
+                      2 of 2
+                    </div>
+                  </div>
+                     </div>
+               
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+Role Functions            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+      
+    <div class="margin">
+      <h2 class="center">Your Current Performance Status
+        </h2>
+        <hr class="style13">
+  <br>
+  </div>
+  
+      
+      
+
+          <div class="container">
+              <div class="row">
+                <div class="col">
+                  1 of 2
+                </div>
+                <div class="col">
+                    <div class="margin2">
+                    <app-polar-chart [values]='EmployeeSkills' [values2]='PositionSkills'></app-polar-chart>
+                                  </div>
+              </div>
+                 </div>
+      <div class="row">
+        <div class="col">
+          
+      
+        <div class="col">
+          </div>
+        <div class="w-100"></div>
+        <div class="col">
+        </div>
+        <div class="col"></div>
+      </div>
+      </div>
+
+      <div class="margin">
+      <h2 class="center">Your Development RoadMap
+        </h2>
+        <hr class="style13">
+  <br>
+  </div>
+
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="margin">
+      <h2 class="center">Learning Hub
+        </h2>
+        <hr class="style13">
+  <br>
+  </div>
+
+  <div class="card-group">
+      <div class="card">
+        <img class="card-img-top" src="https://i0.wp.com/www.aipbarcelona.com/wp-content/uploads/2016/08/Curso-de-Javascript.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>

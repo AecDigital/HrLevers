@@ -44,6 +44,13 @@ export class AllemployeesService {
     });
   }
 
+  getEmployeePosition(id) {
+    return this.http.get(`${BASEURL}/api/position/${id}`).map(res => {
+      const position = res.json();
+      return position;
+    });
+  }
+
    getEmployeesGender() {
     return this.http.get(`${BASEURL}/api/employees`).map(res => {
       const employees = res.json();

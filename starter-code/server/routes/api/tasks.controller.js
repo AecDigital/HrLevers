@@ -1,7 +1,7 @@
 const express  = require('express');
 const router   = express.Router();
 const loggedIn = require('../../utils/isAuthenticated');
-// const Project = require('../../models/project');
+const Employee = require("../../models/employee");
 const Task = require('../../models/task')
 const _ = require('lodash');
 
@@ -15,6 +15,7 @@ router.get('/', (req, res, next) => {
       return res.status(200).json(tasks);
     });
 });
+
 
 
 router.post('/', loggedIn, (req, res, next) => {

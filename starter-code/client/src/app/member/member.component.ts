@@ -11,18 +11,18 @@ import "rxjs/add/operator/map";
 import { SkillsService } from "services/skills.service";
 
 @Component({
-  selector: "app-team-member-profile",
-  templateUrl: "./team-member-profile.component.html",
-  styleUrls: ["./team-member-profile.component.css"]
+  selector: 'app-member',
+  templateUrl: './member.component.html',
+  styleUrls: ['./member.component.css']
 })
-export class TeamMemberProfileComponent implements OnInit {
+export class MemberComponent implements OnInit {
   memberId: String;
   member: Observable<any>;
   task: any;
   editedTask: any;
   EmployeeSkills: any;
   PositionSkills: any;
-  position: any;
+  position: Observable<any>;
 
   constructor(
     private skill: SkillsService,
@@ -33,7 +33,10 @@ export class TeamMemberProfileComponent implements OnInit {
     private Auth: AuthenticationService
   ) {}
 
+
+
   ngOnInit() {
+    
     this.route.params.subscribe(params => {
       (this.memberId = params["id"]),
         this.teamMember
@@ -46,9 +49,11 @@ export class TeamMemberProfileComponent implements OnInit {
           this.EmployeeSkills = skills.employeeLevel;
           this.PositionSkills = skills.positionLevel;
         });
-      this.teamMember.getEmployeePosition(this.memberId).subscribe(position => {
+      this.teamMember
+      .getEmployeePosition(this.memberId)
+      .subscribe(position => {
         this.position = position;
-        console.log(position);
+        console.log(this.position);
       });
     });
   }
@@ -86,5 +91,4 @@ export class TeamMemberProfileComponent implements OnInit {
           .subscribe(res => (this.member = res));
       });
   }
-
 }

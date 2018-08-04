@@ -105,5 +105,14 @@ getCollaborative() {
     return collab;
   });
 }
+getPerformanceAvg(): any {
+  return this.http.get(`${BASEURL}/api/experiences`).map(res => {
+    return (
+      res.json().reduce((acc, e) => {
+        return acc + parseFloat(e.last_evaluation);
+      }, 0) / res.json().length
+    );
+  });
+}
 }
 

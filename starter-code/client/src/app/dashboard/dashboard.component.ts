@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
   defaultKeys:Array<string> = ['Q1', 'Q2', 'Q3', 'Q4']
   genderm;
   genderf;
+  performance: number;
 
   constructor(
     private Listemployees: AllemployeesService,
@@ -44,6 +45,10 @@ export class DashboardComponent implements OnInit {
     this.Listemployees.getEmployeesGender().subscribe(gender => {
       this.genderm = gender.male;
     this.genderf = gender.female;
+    });
+    this.Listexperiences.getPerformanceAvg().subscribe(performanceavg => {
+      console.log(performanceavg);
+      return this.performance = performanceavg.toFixed(2);
     });
     // this.Listexperiences.getExperiences().subscribe(experiences => this.experiences = experiences);
 }

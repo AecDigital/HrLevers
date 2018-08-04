@@ -1,7 +1,5 @@
 <div *ngIf='Auth.user'>
-
     <div class="page-heading">
-
     </div>
     <div class="page-content fade-in-up">
         <div class="ibox">
@@ -28,7 +26,7 @@
                                 <th>Country</th>
                                 <th>Email</th>
                                 <th>Phone</th>
-                                <th></th>
+                                <th scope="col">Profile</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,7 +42,8 @@
                                 <td>{{employee.Email}}</td>
                                 <td>{{employee.Phone}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-info" href='#' [routerLink]="['/team-member', employee._id]">Profile</button>
+                                    <button type="button" class="btn btn-info" href='#' [routerLink]="['/team-member', employee._id]"><i class="far fa-eye"></i></button>
+                                    <button type="button" class="btn btn-info" href='#' [routerLink]="['/member', employee._id]"><i class="far fa-eye"></i>Member</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -52,7 +51,7 @@
                     <pagination-controls (pageChange)="p = $event"></pagination-controls>
                 </div>
             </div>
-            <table class="table table-hover">
+            <!-- <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -84,7 +83,7 @@
                 </tbody>
             </table>
             <div class="margin2">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
             </div>
         </div>
 </div>

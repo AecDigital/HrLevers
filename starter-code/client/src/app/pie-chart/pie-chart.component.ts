@@ -26,7 +26,6 @@ export class PieChartComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['values']) {
-      console.log(this.values);
       this.createChart();
 
     }

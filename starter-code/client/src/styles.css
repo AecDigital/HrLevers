@@ -954,11 +954,19 @@ pre {
 .ibox {
   position: relative;
   margin-bottom: 25px;
-  background-color: #fff;
+  background-color: #f7f8fa;
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); }
+  .ibox {
+    position: relative;
+    margin-bottom: 25px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); }
   .ibox .ibox-head {
     padding: 0 20px;
     border-bottom: 1px solid #eee;

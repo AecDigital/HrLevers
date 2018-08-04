@@ -11,13 +11,12 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthenticationService } from '../services/authentication.service';
 import { NewThreadComponent } from './new-thread/new-thread.component';
-import { SingleThreadComponent } from './single-thread/single-thread.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { AllemployeesService } from 'services/allemployees.service';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsService } from 'services/projects.service';
 import { TasksService } from 'services/tasks.service';
-import { TasksComponent } from './tasks/tasks.component'
+import { TasksComponent } from './tasks/tasks.component';
 import { ExperiencesService } from 'services/experiences.service';
 import { ExperiencesComponent } from './experiences/experiences.component';
 import { EmployeesCountComponent } from './employees-count/employees-count.component';
@@ -32,6 +31,8 @@ import { NewTaskComponent } from './new-task/new-task.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { PolarChartComponent } from './polar-chart/polar-chart.component';
 import { SkillsService } from 'services/skills.service';
+import { MemberComponent } from './member/member.component';
+import { BarCharComponent } from './bar-char/bar-char.component';
 
 
 
@@ -47,7 +48,6 @@ import { SkillsService } from 'services/skills.service';
     LoginComponent,
     SignupComponent,
     NewThreadComponent,
-    SingleThreadComponent,
     EmployeesComponent,
     ProjectsComponent,
     TasksComponent,
@@ -60,7 +60,9 @@ import { SkillsService } from 'services/skills.service';
     PieChartComponent,
     TeamMemberProfileComponent,
     NewTaskComponent,
-    PolarChartComponent
+    PolarChartComponent,
+    MemberComponent,
+    BarCharComponent
     // Ng2SearchPipeModule
   ],
   imports: [
@@ -71,7 +73,7 @@ import { SkillsService } from 'services/skills.service';
     RouterModule.forRoot(routes),
     NgxPaginationModule
   ],
-  providers: [ AllemployeesService, ProjectsService, AuthenticationService, TasksService, ExperiencesService, SkillsService ],
+  providers: [ AllemployeesService, ProjectsService, AuthenticationService, TasksService, ExperiencesService, SkillsService,  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
