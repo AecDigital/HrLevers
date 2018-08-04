@@ -12,65 +12,145 @@
     </div>
   </div>
 
-
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="margin">
-          <app-lineal-chart [keys]="defaultKeys" [values]='coll' [values2]='eng' [values3]='comp'></app-lineal-chart>
-
-          <app-pie-chart [values]='genderm' [values2]='genderf'></app-pie-chart>
-
+<div class="margin3"></div>
+  <div class="row">
+    <div class="col-xl-6">
+      <div class="ibox ibox-fullheight">
+        <div class="ibox-body">
+          <div class="d-flex justify-content-between m-b-20">
+            <div>
+              <h3 class="m-0">Employee Sentiment Tracking</h3>
+            </div>
+            <ul class="nav nav-pills nav-pills-rounded nav-pills-air" id="sales_tabs">
+              <li class="nav-item ml-1">
+                <a class="nav-link active" data-toggle="tab" data-id="1" href="javascript:;"></a>
+              </li>
+              <li class="nav-item ml-1">
+                <a class="nav-link" data-toggle="tab" data-id="2" href="javascript:;"></a>
+              </li>
+              <li class="nav-item ml-1">
+                <a class="nav-link" data-toggle="tab" data-id="3" href="javascript:;"></a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="margin2">
+              <app-lineal-chart [keys]="defaultKeys" [values]='coll' [values2]='eng' [values3]='comp'></app-lineal-chart>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col">
+    </div>
+    <div class="col">
         <div class="margin">
-            <div class="col-lg-12">
+          <div class="col-lg-10">
+            <div class="ibox ibox-fullheight">
+              <div class="ibox-head">
+                <div class="ibox-title">Performance Highlights</div>
+                <div class="ibox-tools">
+                  <a class="font-18" href="javascript:;">
+                    <i class="ti-control-record"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="ibox-body">
+                <ul class="media-list media-list-divider">
+                  <li class="media flexbox">
+                    <div>
+                      <div class="media-heading font-16">Avg Performance</div>
+                      <div class="font-13 text-light"></div>
+                    </div>
+                    <h4 class="font-strong mb-0 ml-3 text-primary">{{performance}}</h4>
+                  </li>
+                  <li class="media flexbox">
+                    <div>
+                      <div class="media-heading font-16">AvgTalent Level</div>
+                      <div class="font-13 text-light"></div>
+                    </div>
+                    <h4 class="font-strong mb-0 ml-3 text-success">{{talent}}</h4>
+                  </li>
+                  <li class="media flexbox">
+                    <div>
+                      <div class="media-heading font-16">Avg Time Spent in Company</div>
+                      <div class="font-13 text-light"></div>
+                    </div>
+                    <h4 class="font-strong mb-0 ml-3 text-warning">{{time}}</h4>
+                  </li>
+                  <li class="media flexbox">
+                      <div>
+                        <div class="media-heading font-16">Avg Time Spent in Company</div>
+                        <div class="font-13 text-light"></div>
+                      </div>
+                      <h4 class="font-strong mb-0 ml-3 text-warning">{{time}}</h4>
+                    </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="margin3"></div>
+
+    <div class="row">
+        <div class="col-lg-11">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="ibox ibox-fullheight">
+                        <div class="ibox-body bg-success">
+                            <h5 class="text-center text-white mb-3">Workforce Age Distribution</h5>
+                            <div>
+                                <canvas id="chart_a" style="height:180px;"></canvas>
+                            </div>
+                        </div>
+                        <div class="ibox-body">
+                            <div class="text-lighter mb-2">Lorem Ipsum is simply dummy text</div>
+                            <div>
+                                <span class="h1 mr-3 text-success font-40">72.5%</span>
+                                <span class="text-lighter">34.5% Higher then last month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+            <div class="col-lg-5">
                 <div class="ibox ibox-fullheight">
                     <div class="ibox-head">
-                        <div class="ibox-title">Performance Highlights</div>
+                        <div class="ibox-title">GENDER PARITY</div>
                         <div class="ibox-tools">
-                            <a class="font-18" href="javascript:;"><i class="ti-control-record"></i></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item"><i class="la la-upload"></i>Export</a>
+                                <a class="dropdown-item"><i class="la la-file-excel-o"></i>Download</a>
+                                <a class="dropdown-item"><i class="la la-print"></i>Print</a>
+                            </div>
                         </div>
                     </div>
                     <div class="ibox-body">
-                        <ul class="media-list media-list-divider">
-                            <li class="media flexbox">
-                                <div>
-                                    <div class="media-heading font-16">Average Performance</div>
-                                    <div class="font-13 text-light">Lorem ipsum dolar set...</div>
-                                </div>
-                                <h4 class="font-strong mb-0 ml-3 text-primary">{{performance}}</h4>
-                            </li>
-                            <li class="media flexbox">
-                                <div>
-                                    <div class="media-heading font-16">Average Talent Level</div>
-                                    <div class="font-13 text-light">Lorem ipsum dolar set...</div>
-                                </div>
-                                <h4 class="font-strong mb-0 ml-3 text-success">{{talent}}</h4>
-                            </li>
-                            <li class="media flexbox">
-                                <div>
-                                    <div class="media-heading font-16">Visits</div>
-                                    <div class="font-13 text-light">Lorem ipsum dolar set...</div>
-                                </div>
-                                <h4 class="font-strong mb-0 ml-3 text-warning">+24%</h4>
-                            </li>
+                        <div class="mb-5">
                             
-                        </ul>
+                            <div class="flexbox-b mb-2">
+                                <span class="badge-point badge-primary mr-2"></span>Male
+                                <span class="h4 mb-0 ml-4">148</span>
+                            </div>
+                            <div class="flexbox-b mb-2">
+                                <span class="badge-point badge-pink mr-2"></span>Female
+                                <span class="h4 mb-0 ml-4">153</span>
+                            </div>
+                        </div>
+                        <div class="ibox-fullwidth-block">
+                            <app-pie-chart [values]='genderm' [values2]='genderf'></app-pie-chart>
+                          </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-    </div>
-  </div>
+   
+<div class="margin3"></div>
+   
 
-
-
-</div>
-
-<div class="margin">
-  <app-employees></app-employees>
+    <app-employees></app-employees>

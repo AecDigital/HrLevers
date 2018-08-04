@@ -123,5 +123,14 @@ getTalentAvg(): any {
     );
   });
 }
+getTimeAvg(): any {
+  return this.http.get(`${BASEURL}/api/experiences`).map(res => {
+    return (
+      res.json().reduce((acc, e) => {
+        return acc + e.time_spend_company;
+      }, 0) / res.json().length
+    );
+  });
+}
 }
 
