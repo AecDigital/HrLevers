@@ -114,5 +114,14 @@ getPerformanceAvg(): any {
     );
   });
 }
+getTalentAvg(): any {
+  return this.http.get(`${BASEURL}/api/experiences`).map(res => {
+    return (
+      res.json().reduce((acc, e) => {
+        return acc + e.Talent_Level;
+      }, 0) / res.json().length
+    );
+  });
+}
 }
 

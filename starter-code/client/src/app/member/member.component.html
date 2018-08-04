@@ -12,6 +12,14 @@
         </div>
       </div>
     </div>
+
+    
+<div class="margin">
+    <h2 class="center">Your Current WorkBalance
+      </h2>
+      <hr class="style13">
+<br>
+</div>
   
     <div class="page-content fade-in-up">
       <div class="row mb-4">
@@ -62,10 +70,44 @@
         </div>
       </div>
 
-      <h2 class="center">Meet your Role
+      <div class="container">
+          <div class="row">
+            <div class="col">
+              1 of 2
+            </div>
+            <div class="col">
+              2 of 2
+            </div>
+          </div>
+  
+      <div class="col-lg-5">
+          <div class="ibox ibox-fullheight">
+              <div class="ibox-body bg-pink">
+                  <h5 class="text-center text-white mb-3">Sensor HeartBeat</h5>
+                  <div class="center">
+                    <img src="https://png.icons8.com/metro/1600/like.png" height= "175px">
+                    </div>
+              </div>
+              <div class="ibox-body">
+                  <div class="text-lighter mb-2">Average heart rate this week...</div>
+                  <div>
+                      <span class="h1 mr-3 text-pink font-40">{{member.exp.Sensor_Heartbeat}} Ppm</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  
+
+  
+
+      <div class="margin">
+      <h2 class="center">Your Current Role
         </h2>
         <hr class="style13">
   <br>
+  </div>
 
   <div class="accordion" id="accordionExample">
       <div class="card">
@@ -82,7 +124,7 @@
               <div class="container">
                   <div class="row">
                     <div class="col-sm">
-                      <h4>Role Name: </h4><p>{{position.id}}</p>
+                      <h5>Role Name: </h5><p></p>
                     </div>
                     <div class="col-sm">
                       One of three columns
@@ -175,36 +217,143 @@ Role Functions            </button>
   <br>
   </div>
 
-  <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="row">
+      <div class="col-lg-6">
+          <div class="ibox ibox-fullheight">
+              <div class="ibox-head">
+                  <div class="ibox-title">Tasks</div>
+                  <div class="ibox-tools">
+                      <a class="font-18"><i class="ti-plus"></i></a>
+                  </div>
+              </div>
+              <div class="ibox-body">
+                  <ul class="list-group list-group-divider list-group-full tasks-list">
+                      <li class="list-group-item task-item">
+                          <div>
+                              <label class="checkbox checkbox-grey checkbox-success">
+                                  <input type="checkbox" checked="">
+                                  <span class="input-span"></span>
+                                  <span class="task-title">Make Adminca the best and the most easy admin template</span>
+                              </label>
+                          </div>
+                          <div class="task-data"><small class="text-muted">29 May 2018</small></div>
+                          <div class="task-actions">
+                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="list-group-item task-item">
+                          <div>
+                              <label class="checkbox checkbox-grey checkbox-success">
+                                  <input type="checkbox">
+                                  <span class="input-span"></span>
+                                  <span class="task-title">Create Financial Report</span>
+                              </label>
+                          </div>
+                          <div class="task-data"><small class="text-muted">No due date</small></div>
+                          <div class="task-actions">
+                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="list-group-item task-item">
+                          <div>
+                              <label class="checkbox checkbox-grey checkbox-success">
+                                  <input type="checkbox" checked="">
+                                  <span class="input-span"></span>
+                                  <span class="task-title">Meeting with Ann</span>
+                              </label>
+                              <span class="badge badge-warning ml-1"><i class="ti-alarm-clock"></i> 1 hrs</span>
+                          </div>
+                          <div class="task-data"><small class="text-muted">29 May 2018</small></div>
+                          <div class="task-actions">
+                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="list-group-item task-item">
+                          <div>
+                              <label class="checkbox checkbox-grey checkbox-success">
+                                  <input type="checkbox">
+                                  <span class="input-span"></span>
+                                  <span class="task-title">Edit the blog post</span>
+                              </label>
+                          </div>
+                          <div class="task-data"><small class="text-muted">29 May 2018</small></div>
+                          <div class="task-actions">
+                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="list-group-item task-item">
+                          <div>
+                              <label class="checkbox checkbox-grey checkbox-success">
+                                  <input type="checkbox">
+                                  <span class="input-span"></span>
+                                  <span class="task-title">Send photos to Jack</span>
+                              </label>
+                              <span class="badge badge-success ml-1">Today</span>
+                          </div>
+                          <div class="task-data"><small class="text-muted">29 May 2018</small></div>
+                          <div class="task-actions">
+                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="list-group-item task-item">
+                          <div>
+                              <label class="checkbox checkbox-grey checkbox-success">
+                                  <input type="checkbox">
+                                  <span class="input-span"></span>
+                                  <span class="task-title">Send Financial Reports</span>
+                              </label>
+                              <span class="badge badge-danger ml-1">Important</span>
+                          </div>
+                          <div class="task-data"><small class="text-muted">29 May 2018</small></div>
+                          <div class="task-actions">
+                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="list-group-item task-item">
+                          <div>
+                              <label class="checkbox checkbox-grey checkbox-success">
+                                  <input type="checkbox">
+                                  <span class="input-span"></span>
+                                  <span class="task-title">Send message to Bob</span>
+                              </label>
+                          </div>
+                          <div class="task-data"><small class="text-muted">29 May 2018</small></div>
+                          <div class="task-actions">
+                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
   
     <div class="margin">
       <h2 class="center">Learning Hub
@@ -213,29 +362,114 @@ Role Functions            </button>
   <br>
   </div>
 
-  <div class="card-group">
-      <div class="card">
-        <img class="card-img-top" src="https://i0.wp.com/www.aipbarcelona.com/wp-content/uploads/2016/08/Curso-de-Javascript.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
+  <div class="margin">
+      <h2 class="center"> Your Team Mates </h2>
+  <hr class="style13">
+  <br>
+
+  <div class="row">
+      <div class="col-lg-4">
+          <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
+              <div class="card-cup bg-gradient-purple"></div>
+              <div class="card-body">
+                  <div class="card-avatar mb-4">
+                      <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
+                  </div>
+                  <h4 class="card-title text-pink mb-1">Lynn Weaver</h4>
+                  <div class="text-muted">Director</div>
+                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="d-flex justify-content-around align-items-center font-18">
+                    
+                  </div>
+              </div>
+          </div>
       </div>
-      <div class="card">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
+      <div class="col-lg-4">
+          <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
+              <div class="card-cup bg-gradient-blue"></div>
+              <div class="card-body">
+                  <div class="card-avatar mb-4">
+                      <img class="img-circle" src="https://static1.squarespace.com/static/582056f33e00be92418a18fb/t/59df794812abd9a897878aa0/1507817816329/circle+profile.PNG?format=300w" alt="image" />
+                  </div>
+                  <h4 class="card-title text-primary mb-1">Tyrone Carroll</h4>
+                  <div class="text-muted">Web Designer</div>
+                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="d-flex justify-content-around align-items-center font-18">
+                     
+                  </div>
+              </div>
+          </div>
       </div>
-      <div class="card">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
+      <div class="col-lg-4">
+          <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
+              <div class="card-cup bg-gradient-peach"></div>
+              <div class="card-body">
+                  <div class="card-avatar mb-4">
+                      <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
+                  </div>
+                  <h4 class="card-title text-warning mb-1">Becky Brooks</h4>
+                  <div class="text-muted">Manager</div>
+                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="d-flex justify-content-around align-items-center font-18">
+                      
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
+  </div>
+  
+  <div class="margin"></div>
+
+  <div class="row">
+      <div class="col-lg-4">
+          <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
+              <div class="card-cup bg-gradient-purple"></div>
+              <div class="card-body">
+                  <div class="card-avatar mb-4">
+                      <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
+                  </div>
+                  <h4 class="card-title text-pink mb-1">Lynn Weaver</h4>
+                  <div class="text-muted">Director</div>
+                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="d-flex justify-content-around align-items-center font-18">
+                    
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-4">
+          <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
+              <div class="card-cup bg-gradient-blue"></div>
+              <div class="card-body">
+                  <div class="card-avatar mb-4">
+                      <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
+                  </div>
+                  <h4 class="card-title text-primary mb-1">Tyrone Carroll</h4>
+                  <div class="text-muted">Web Designer</div>
+                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="d-flex justify-content-around align-items-center font-18">
+                     
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-4">
+          <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
+              <div class="card-cup bg-gradient-peach"></div>
+              <div class="card-body">
+                  <div class="card-avatar mb-4">
+                      <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
+                  </div>
+                  <h4 class="card-title text-warning mb-1">Becky Brooks</h4>
+                  <div class="text-muted">Manager</div>
+                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="d-flex justify-content-around align-items-center font-18">
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+ 

@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
   genderm;
   genderf;
   performance: number;
+  talent: number;
 
   constructor(
     private Listemployees: AllemployeesService,
@@ -49,6 +50,10 @@ export class DashboardComponent implements OnInit {
     this.Listexperiences.getPerformanceAvg().subscribe(performanceavg => {
       console.log(performanceavg);
       return this.performance = performanceavg.toFixed(2);
+    });
+    this.Listexperiences.getTalentAvg().subscribe(talentavg => {
+      console.log(talentavg);
+      return this.talent = talentavg.toFixed(2);
     });
     // this.Listexperiences.getExperiences().subscribe(experiences => this.experiences = experiences);
 }
