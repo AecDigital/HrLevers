@@ -9,7 +9,9 @@ const _ = require('lodash');
 router.get("/:id", (req, res, next) => {
   Employee.findById(req.params.id).then(employee => {
     employeeSkill.findOne( {employee: employee._id} ).then(employeeskills => {
-      return res.status(200).json({employeeskills});
+      positionSkill.findOne( {position: employee.Role}).then(positionskills => {
+        return res.status(200).json({employeeskills, positionskills});
+      })
     });
 })
 });

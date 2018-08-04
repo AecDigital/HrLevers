@@ -8,7 +8,7 @@ import { AllemployeesService } from "services/allemployees.service";
 import { ExperiencesService } from "services/experiences.service";
 import { TasksService } from "services/tasks.service";
 import "rxjs/add/operator/map";
-import { SkillsService } from 'services/skills.service';
+import { SkillsService } from "services/skills.service";
 
 @Component({
   selector: "app-team-member-profile",
@@ -20,6 +20,8 @@ export class TeamMemberProfileComponent implements OnInit {
   member: Observable<any>;
   task: any;
   editedTask: any;
+  EmployeeSkills: any;
+  PositionSkills: any;
 
   constructor(
     private skill: SkillsService,
@@ -27,7 +29,7 @@ export class TeamMemberProfileComponent implements OnInit {
     public teamMember: AllemployeesService,
     public Experiences: ExperiencesService,
     private route: ActivatedRoute,
-    private Auth: AuthenticationService,
+    private Auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -37,14 +39,16 @@ export class TeamMemberProfileComponent implements OnInit {
           .getEmployee(this.memberId)
           .subscribe(res => (this.member = res));
     });
+    this.route.params.subscribe(params => {
+      (this.memberId = params["id"]),
+        this.skill.getEmployeeSkills(this.memberId).subscribe(skills => {
+          this.EmployeeSkills = skills.employeeLevel;
+          this.PositionSkills = skills.positionLevel;
+          console.log(skills);
+        });
+    });
   }
- 
-getSkills(){
-  this.skill.getSkills().subscribe((skills) => {
-    console.log(skills);
-    this.skill = skills;
-  });
-}
+
   newTask(Name, Description, Duedate, ActionPlan, form) {
     form.reset();
     this.route.params.subscribe(params => {
@@ -62,8 +66,10 @@ getSkills(){
     });
   }
   editTask(id, Name, Description, ActionPlan, Duedate, Done) {
-      console.log(id, Name, Description, ActionPlan, Duedate, Done);
-      this.ntask.editTask(id, Name, Description, ActionPlan, Duedate, Done).subscribe(data => {
+    console.log(id, Name, Description, ActionPlan, Duedate, Done);
+    this.ntask
+      .editTask(id, Name, Description, ActionPlan, Duedate, Done)
+      .subscribe(data => {
         this.editedTask = data;
       });
   }

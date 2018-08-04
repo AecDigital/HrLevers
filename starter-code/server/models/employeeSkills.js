@@ -1,10 +1,11 @@
 const mongoose    = require('mongoose');
 const Schema      = mongoose.Schema;
+const Position = require('./positions').schema;
 
 const Employee_SkillsSchema = new Schema({
   
   employee: {type:Schema.Types.ObjectId, ref: 'employee'},
-  position: {type:Schema.Types.ObjectId , ref:"positions_dpt"},
+  position: {type:Schema.Types.ObjectId , ref:"positions"},
   department: String,
   skills: [
     {

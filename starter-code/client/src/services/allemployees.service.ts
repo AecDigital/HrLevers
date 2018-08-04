@@ -36,6 +36,14 @@ export class AllemployeesService {
     });
    }
 
+   getEmployeeSkills(id) {
+    return this.http.get(`${BASEURL}/api/skills/${id}`).map(res => {
+      const skills = res.json();
+      console.log(skills);
+      return skills;
+    });
+  }
+
    getEmployeesGender() {
     return this.http.get(`${BASEURL}/api/employees`).map(res => {
       const employees = res.json();

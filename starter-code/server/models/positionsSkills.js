@@ -1,9 +1,11 @@
 const mongoose    = require('mongoose');
 const Schema      = mongoose.Schema;
+const PositionSchema = require('./positions').schema;
+
 
 const Position_SkillsSchema = new Schema({
   
-  position: {type:Schema.Types.ObjectId , ref:"positions_dpt"},
+  position: {type:Schema.Types.ObjectId , ref:"positions"},
   department: String,
   skills: [
     {

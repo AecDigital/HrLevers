@@ -1,17 +1,18 @@
-const Position_Skills = require('../models/positions_skills');
+const Position_Skills = require('../models/positionsSkills');
+const Position = require('../models/positions');
 const mongoose     = require('mongoose');
 require('dotenv').config();
 mongoose.connect(process.env.DBURL);
 
 const positions_skills = [{
 
-  "position": "Senior Manager",
+  "position": "5b65564bd420e946ec092989",
   "department": "IT",
   "skills": [
     {
      "Title": "Javascript Frameworks",
      "Description": "Knowledge of main javascript frameworks",
-     RequiredLevel: 5
+     "RequiredLevel": 5
     },
     {
       "Title": "Big Data environments",
@@ -25,7 +26,7 @@ const positions_skills = [{
      }]
   },
   {
-  "position": "Senior Manager",
+  "position": "5b65564bd420e946ec092988",
   "department": "Human Resources",
   "skills": [
     {

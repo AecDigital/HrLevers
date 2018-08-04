@@ -61,7 +61,6 @@ import { SkillsService } from 'services/skills.service';
     TeamMemberProfileComponent,
     NewTaskComponent,
     PolarChartComponent
-    // PolarChartComponent,
     // Ng2SearchPipeModule
   ],
   imports: [

@@ -21,13 +21,7 @@ export class ExperiencesService {
       return experiences;
     });
   }
-    // getExpEmployee(employee) {
-    //   return this.http.get(`${BASEURL}/api/experiences/${employee}`).map(res => {
-    //     const experiences = res.json();
-    //     console.log(employee);
-    //     return employee;
-    //  });
-  
+   
   getExperiencesProject() {
     return this.http.get(`${BASEURL}/api/experiences`).map(res => {
       const experiences = res.json();
