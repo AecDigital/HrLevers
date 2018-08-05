@@ -16,8 +16,6 @@ router.get('/', (req, res, next) => {
     });
 });
 
-
-
 router.post('/', loggedIn, (req, res, next) => {
   const newTask = new Task({
     Name: req.body.Name,

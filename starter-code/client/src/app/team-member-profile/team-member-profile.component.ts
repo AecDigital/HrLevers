@@ -23,6 +23,8 @@ export class TeamMemberProfileComponent implements OnInit {
   EmployeeSkills: any;
   PositionSkills: any;
   position: any;
+  tasksprogress: any;
+  skillsgap: any;
 
   constructor(
     private skill: SkillsService,
@@ -49,6 +51,14 @@ export class TeamMemberProfileComponent implements OnInit {
       this.teamMember.getEmployeePosition(this.memberId).subscribe(position => {
         this.position = position;
         console.log(position);
+      });
+      this.teamMember.getTasksProgress(this.memberId).subscribe(tasksprogress => {
+        this.tasksprogress = tasksprogress;
+        console.log(this.tasksprogress);
+      });
+      this.skill.getSkillsGap(this.memberId).subscribe(skillsgap => {
+        this.skillsgap = skillsgap;
+        console.log(skillsgap);
       });
     });
   }

@@ -92,7 +92,20 @@ export class AllemployeesService {
       return Agedist;
 });
   }
+  getTasksProgress(id): any {
+    return this.http.get(`${BASEURL}/api/employees/${id}`).map(res => {
+      const employee = res.json();
+      let tasksDone = 0;
+      console.log(employee.tasks)
+      for (let i = 0; i < employee.tasks.length; i++){
+        if (employee.tasks[i].Status === "Done") {
+          tasksDone ++;
+        }
+      }
+      let tasksProgress = tasksDone * 100 / employee.tasks.length;
+      console.log(tasksProgress);
+        return tasksProgress;
+    });
+    };
 }
-
-
 

@@ -31,4 +31,46 @@ export class SkillsService {
       return skillsLevel;
     });
   }
+
+  // getSkillsGap(id) {
+  //   return this.http.get(`${BASEURL}/api/employeeskills/${id}`).map(res => {
+  //     const skills = res.json();
+  //     const employeeskills=skills.employeeskills.skills;
+  //     const positionskills=skills.positionskills.skills;
+  //     const gap = [];
+  //     for (let i = 0; i <= employeeskills.length; i++) {
+  //       for (let j = 0; j <= positionskills.length; j++) {
+  //         if ((positionskills[j].RequiredLevel - employeeskills[i].Level) > 2) {
+  //           gap.push(positionskills[j]);
+  //         }
+  //       }
+  //     }   let gaptitle = gap.map(a => a.Title);
+  //         return positionskills;
+  //   });
+  // }
+
+  getSkillsGap(id) {
+    return this.http.get(`${BASEURL}/api/employeeskills/${id}`).map(res => {
+      const skills = res.json();
+      const positionskills = skills.positionskills.skills;
+      const employeeskills = skills.employeeskills.skills;
+      const gap = [];
+      const gap2 = [];
+      positionskills.forEach(e1 =>
+        employeeskills.forEach(e2 => {
+          if (e1.RequiredLevel - e2.Level > 2) {
+            gap.push(e2);
+          }
+        })
+      );
+      for (let i = 0; i < gap.length; i++) {
+        if (i % 2 === 0) {
+          gap2.push(gap[i], gap[i + 1]);
+        }
+      }
+      let gaptitle = gap2.map(a => a.Title);
+      console.log(gap);
+      return gaptitle;
+    });
+  }
 }

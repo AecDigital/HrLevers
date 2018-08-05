@@ -169,6 +169,7 @@
                 <th>Description</th>
                 <th>Duedate</th>
                 <th>Status</th>
+                <th>{{tasksprogress}}</th>
                 <th>
                   <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal">
                     Add new action</button>
@@ -182,8 +183,9 @@
                     <td>{{task.Name}}</td>
                     <td>{{task.TaskDescription}}</td>
                     <td>{{task.Duedate}}</td>
-                    <td>{{task.Done}}</td>
+                    <td>{{task.Status}}</td>
                     <td>{{task._id}}</td>
+                    <td>{{train._id}}</td>
                     <td>
                       <button type="button" class="btn btn-primary btn-sm btn-success" data-toggle="modal" attr.data-target="#editModal{{j}}">
                         <i class="far fa-edit"></i> Edit Action</button>

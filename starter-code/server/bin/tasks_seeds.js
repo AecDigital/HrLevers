@@ -9,35 +9,35 @@ const tasks = [
   "TaskDescription": "Task1",
   "ActionPlan":"5b62b70ff80544043ce1e98c",
   "Duedate":"",
-  "Done":""
+  "Status":"Pending"
   },
   {
     "Name": "Task1",
     "TaskDescription": "Task2",
     "ActionPlan":"5b62b70ff80544043ce1e98c",
     "Duedate":"",
-    "Done":""
+    "Status":"Pending"
   },
   {
     "Name": "Task2",
     "TaskDescription": "Task3",
     "ActionPlan":"5b62b70ff80544043ce1e98d",
     "Duedate":"",
-    "Done":""
+    "Status":"Pending"
   },
   {
     "Name": "Task3",
     "TaskDescription": "Task4",
     "ActionPlan":"5b62b70ff80544043ce1e98d",
     "Duedate":"",
-    "Done":""
+    "Status":"Done"
   },
   {
     "Name": "Task4",
     "TaskDescription": "Task5",
     "ActionPlan":"5b62b70ff80544043ce1e98f",
     "Duedate":"",
-    "Done":""
+    "Status":"Done"
   },
   {
     "Name": "Task5",
@@ -51,28 +51,28 @@ const tasks = [
     "TaskDescription": "Task7",
     "ActionPlan":"5b62b70ff80544043ce1e990",
     "Duedate":"",
-    "Done":""
+    "Status":"Pending"
   },
   {
     "Name": "Task7",
     "TaskDescription": "Task8",
     "ActionPlan":"5b62b70ff80544043ce1e98e",
     "Duedate":"",
-    "Done":""
+    "Status":"Done"
   },
   {
     "Name": "Task8",
     "TaskDescription": "Task9",
     "ActionPlan":"5b62b70ff80544043ce1e98e",
     "Duedate":"",
-    "Done":""
+    "Status":"Done"
   },
   {
     "Name": "Task9",
     "TaskDescription": "Lorem ipsum...",
     "ActionPlan":"5b62b70ff80544043ce1e994",
     "Duedate":"",
-    "Done":""
+    "Status":"Pending"
   }
 ]
 

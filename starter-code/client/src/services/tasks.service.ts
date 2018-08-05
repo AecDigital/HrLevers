@@ -41,7 +41,7 @@ editedtask: any;
       .pipe(map((res: Response) => {}));
   }
 
-  editTask(id, Name, Description, Duedate, Done) {
+  editTask(id, Name, Description, Duedate, Status) {
     return this.http
       .put(`${BASEURL}/api/tasks/edit/${id}`, this.options)
       .pipe(map((res: Response) => {
