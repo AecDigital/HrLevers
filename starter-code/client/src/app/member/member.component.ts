@@ -80,10 +80,10 @@ export class MemberComponent implements OnInit {
         .subscribe(res => (this.member = res));
     });
   }
-  editTask(id, Name, Description, ActionPlan, Duedate, Done) {
-    console.log(id, Name, Description, ActionPlan, Duedate, Done);
+  editTask(id, Name, Description, Duedate, Done) {
+    console.log(id, Name, Description, Duedate, Done);
     this.ntask
-      .editTask(id, Name, Description, ActionPlan, Duedate, Done)
+      .editTask(id, Name, Description, Duedate, Done)
       .subscribe(data => {
         this.editedTask = data;
         this.teamMember

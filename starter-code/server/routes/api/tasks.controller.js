@@ -36,8 +36,8 @@ router.post('/', loggedIn, (req, res, next) => {
 
 router.put('/edit/:id', (req, res, next) => {
   const taskId = req.params.id;
-    const { id, Name, Description, ActionPlan, Duedate, Done } = req.body;
-    let editedTask = { id, Name, Description, ActionPlan, Duedate, Done }
+    const { id, Name, Description, Duedate, Done } = req.body;
+    let editedTask = { id, Name, Description, Duedate, Done }
 
     editedTask = _.pickBy(editedTask, _.identity);
 

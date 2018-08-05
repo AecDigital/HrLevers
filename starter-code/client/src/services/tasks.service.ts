@@ -10,7 +10,7 @@ const BASEURL = environment.BASEURL;
 @Injectable()
 export class TasksService {
   options: object = { withCredentials: true };
-
+editedtask: any;
   constructor(private http: Http) {}
 
   newTask(
@@ -41,9 +41,13 @@ export class TasksService {
       .pipe(map((res: Response) => {}));
   }
 
-  editTask(id, Name, Description, ActionPlan, Duedate, Done) {
+  editTask(id, Name, Description, Duedate, Done) {
     return this.http
       .put(`${BASEURL}/api/tasks/edit/${id}`, this.options)
-      .pipe(map((res: Response) => {}));
+      .pipe(map((res: Response) => {
+        let editedtask = res.json();
+        console.log(editedtask);
+        return this.editedtask;
+      }));
   }
 }

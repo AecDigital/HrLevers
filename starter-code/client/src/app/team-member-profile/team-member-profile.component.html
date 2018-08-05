@@ -183,6 +183,7 @@
                     <td>{{task.TaskDescription}}</td>
                     <td>{{task.Duedate}}</td>
                     <td>{{task.Done}}</td>
+                    <td>{{task._id}}</td>
                     <td>
                       <button type="button" class="btn btn-primary btn-sm btn-success" data-toggle="modal" attr.data-target="#editModal{{j}}">
                         <i class="far fa-edit"></i> Edit Action</button>
@@ -194,6 +195,8 @@
                     </td>
                   </tr>
 
+                  
+
                 <div class="modal fade" id="editModal{{j}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -204,7 +207,7 @@
                           </button>
                         </div>
                         <div class="modal-body">
-                          <form>
+                          <form #form2="ngForm">
                               <div class="form-row">
                                   <div class="form-group col-md-6">
                             <label> Name: </label>
@@ -226,7 +229,7 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-primary btn-sm btn-danger" data-dismiss="modal">Close</button>
-                          <button (click)="editTask(task._id, Name, Description, Duedate, Done)" type="submit" class="btn btn-primary btn-sm btn-success">Save changes</button>
+                          <button (click)="editTask(task._id, Name, Description, Duedate, Done, form)" type="submit" class="btn btn-primary btn-sm btn-success" >Save changes</button>
                         </div>
                       </div>
                     </div>
@@ -260,19 +263,7 @@
                     <div class="form-group">
                       <label for="inputAddress">Description</label>
                       <textarea class="form-control" rows="5" [(ngModel)]="Description" name="Description" placeholder="What is this about..."></textarea>
-                      <!-- <input type="text" class="form-control" [(ngModel)]="Description" name="Description" placeholder="What is this about..."> -->
-                    </div>
-                    
-                  
-              <!-- <form #form="ngForm">
-                <label> Name: </label>
-                <input type="text" [(ngModel)]="Name" name="Name" />
-                <br>
-                <label> Description: </label>
-                <input type="text" [(ngModel)]="Description" name="Description" />
-                <label> Duedate: </label>
-                <input type="date" [(ngModel)]="Duedate" name="Duedate" /> -->
-                
+                    </div>                
               </form>
             </div>
             <div class="modal-footer">

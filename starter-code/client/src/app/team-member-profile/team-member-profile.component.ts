@@ -75,16 +75,16 @@ export class TeamMemberProfileComponent implements OnInit {
         .subscribe(res => (this.member = res));
     });
   }
-  editTask(id, Name, Description, ActionPlan, Duedate, Done) {
-    console.log(id, Name, Description, ActionPlan, Duedate, Done);
+  editTask(id, Name, Description, Duedate, Done) {
+    console.log(id, Name, Description, Duedate, Done);
     this.ntask
-      .editTask(id, Name, Description, ActionPlan, Duedate, Done)
+      .editTask(id, Name, Description, Duedate, Done)
       .subscribe(data => {
         this.editedTask = data;
-        this.teamMember
-          .getEmployee(this.memberId)
-          .subscribe(res => (this.member = res));
-      });
-  }
-
+        console.log(this.editedTask);
+  });
 }
+}
+
+
+
