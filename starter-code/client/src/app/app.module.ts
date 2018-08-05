@@ -33,6 +33,7 @@ import { PolarChartComponent } from './polar-chart/polar-chart.component';
 import { SkillsService } from 'services/skills.service';
 import { MemberComponent } from './member/member.component';
 import { BarCharComponent } from './bar-char/bar-char.component';
+import { HorizontalbarComponent } from './horizontalbar/horizontalbar.component';
 
 
 
@@ -62,7 +63,8 @@ import { BarCharComponent } from './bar-char/bar-char.component';
     NewTaskComponent,
     PolarChartComponent,
     MemberComponent,
-    BarCharComponent
+    BarCharComponent,
+    HorizontalbarComponent
     // Ng2SearchPipeModule
   ],
   imports: [

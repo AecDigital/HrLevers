@@ -100,9 +100,11 @@
                 <div class="col-lg-7">
                     <div class="ibox ibox-fullheight">
                         <div class="ibox-body bg-success">
-                            <h5 class="text-center text-white mb-3">Workforce Age Distribution</h5>
+                            <h5 class="text-center text-black mb-3">Workforce Age Distribution</h5>
                             <div>
-                                <canvas id="chart_a" style="height:180px;"></canvas>
+                                <div class="margin2">
+                                    <app-horizontalbar [keys]="keys2" [values]='aged'></app-horizontalbar>
+                                  </div>
                             </div>
                         </div>
                         <div class="ibox-body">

@@ -67,6 +67,32 @@ export class AllemployeesService {
       return gender;
       });
     };
-   }
+   
+
+   getAgedist(): any {
+    return this.http.get(`${BASEURL}/api/employees`).map(res => {
+      const employees = res.json();
+      let age1 = 0;
+      let age2 = 0;
+      let age3 = 0;
+      let age4 = 0;
+      for (let i = 0; i < employees.length; i++){
+        if (employees[i].Age >= 18 && employees[i].Age < 25) {
+          age1 ++;
+        } else if (employees[i].Age > 25 && employees[i].Age <= 40){
+          age2 ++;
+        } else if (employees[i].Age > 40 && employees[i].Age <= 60){
+          age3 ++;
+        } else {
+          age4 ++;
+        }
+      };
+      const Agedist = [ age1, age2, age3, age4 ];
+      console.log(Agedist);
+      return Agedist;
+});
+  }
+}
+
 
 

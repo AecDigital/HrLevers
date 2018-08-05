@@ -19,11 +19,13 @@ export class DashboardComponent implements OnInit {
   comp;
   coll = [];
   defaultKeys:Array<string> = ['Q1', 'Q2', 'Q3', 'Q4']
+  keys2:Array<string> = ['18 - 25', '25 - 40', '40 - 60', '60+']
   genderm;
   genderf;
   performance: number;
   talent: number;
   time: number;
+  aged: any;
 
   constructor(
     private Listemployees: AllemployeesService,
@@ -60,6 +62,9 @@ export class DashboardComponent implements OnInit {
       console.log(timeavg);
       return this.time = timeavg.toFixed(2);
     });
-    // this.Listexperiences.getExperiences().subscribe(experiences => this.experiences = experiences);
+    this.Listemployees.getAgedist().subscribe(agedist => {
+      console.log(agedist);
+      return this.aged = agedist;
+    });
 }
 }
