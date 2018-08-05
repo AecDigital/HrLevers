@@ -3,6 +3,12 @@ const Schema      = mongoose.Schema;
 
 const EmployeeSchema = new Schema({
   
+  
+  profilePic: {
+    pname: String,
+    path: {type: String, default: "assets/img/users/admin-image.png"},
+    originalName: String
+  },
   Name: String,
   Surname: String,
   Email: String,

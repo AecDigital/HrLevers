@@ -3,8 +3,14 @@ const mongoose     = require('mongoose');
 require('dotenv').config();
 mongoose.connect(process.env.DBURL);
 
+
 const employees = [
   {
+    "profilePic": {
+      pname: "person-icon",
+      path: "assets/img/users/admin-image.png",
+      originalName: "person-icon"
+    },
     "Name": "Brown",
     "Surname": "BRADDY",
     "Email": "mai1@mail.com",

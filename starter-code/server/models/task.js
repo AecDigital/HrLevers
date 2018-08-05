@@ -11,7 +11,7 @@ const TaskSchema = new Schema({
     ref: 'ActionPlan'
   },
   Duedate: Date,
-  Done: { type: Boolean, default: false},
+  Done: { type: String, enum: ['Pending', 'Done', ''], default: 'Pending'},
 });
 
 const Task = mongoose.model('Task', TaskSchema);
