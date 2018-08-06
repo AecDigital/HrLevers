@@ -505,9 +505,9 @@ Role Functions            </button>
                   </div>
               </div>
           </div>
-          <div ngFor="let course of courses">
-                <h2>{{course}}</h2>
-            </div>
+          <span *ngFor = "let course of courses">
+                <h2>{{course.snippet.description}}</h2>
+            </span>
     </div>
       </div>
   </div>
