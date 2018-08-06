@@ -4,6 +4,7 @@ import { Observable } from "../../node_modules/rxjs";
 import { environment } from "../environments/environment";
 import "rxjs/add/operator/map";
 import { map } from "rxjs/operators";
+const cors = require('cors');
 
 const BASEURL = environment.BASEURL;
 
@@ -75,9 +76,14 @@ export class SkillsService {
   }
   gettopics(gaptitle) {
     return this.http.post(`${BASEURL}/api/employees/user-topics/`, {gaptitle}, this.options).map(res => {
-    console.log(res.json());
     const feeds = res.json();
     return feeds;
+    });
+  }
+  getcourses(gaptitle) {
+    return this.http.post(`${BASEURL}/api/employees/user-courses/`, {gaptitle}, this.options).map(res => {
+      const courses = res.json();
+      return courses;
     });
   }
 }

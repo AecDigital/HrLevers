@@ -25,6 +25,7 @@ export class MemberComponent implements OnInit {
   position: Observable<any>;
   topics: any;
   skillsgap: any;
+  courses: any;
 
   constructor(
     private skill: SkillsService,
@@ -63,6 +64,10 @@ export class MemberComponent implements OnInit {
         this.skill.gettopics(this.skillsgap).subscribe(topics => {
           this.topics = topics;
           console.log(topics);
+        });
+        this.skill.getcourses(this.skillsgap).subscribe(courses => {
+          this.courses = courses;
+          console.log(courses);
         });
       });
     });
