@@ -6,6 +6,11 @@ const EmployeeExperience = require("../../models/employee_experience");
 const ActionPlan = require("../../models/actionPlans");
 const Tasks = require("../../models/task");
 const _ = require('lodash');
+const axios = require ('axios');
+require('dotenv').config();
+
+API1 = process.env.API1
+
 
 router.get("/", (req, res, next) => {
   Employee.find({}).exec((err, employees) => {
@@ -27,19 +32,26 @@ router.get("/:id", (req, res, next) => {
               tasks = _.flattenDeep(tasks)
               return res.status(200).json({ employee, exp, trains, tasks });
           })
-
-          /* trains.forEach(doc => {
-            Tasks.find({ActionPlan: doc._id}).then(tasks => {
-              console.log(trains)
-            })
-          }) */
-
-
-
         });
       });
     })
     .catch(err => res.status(500).json(err));
+});
+
+router.post("/user-topics", (req, res, next) => {
+
+  const topics = _.uniq(req.body.gaptitle);
+
+  Promise.all(topics.map(tag=>axios.get(`https://newsapi.org/v2/everything?language=en&pagesize=15&q=${tag}&apiKey=${API1}`)))
+  .then(array=>{
+    let data = array.map(el=>el.data.articles)
+    
+    return res.status(200).json(_.flattenDeep(data));
+     
+    })
+    .catch(err => console.log(err));
+
+  
 });
 
 module.exports = router;

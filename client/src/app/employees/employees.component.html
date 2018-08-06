@@ -1,9 +1,11 @@
 <div *ngIf='Auth.user'>
     <div class="page-heading">
+       
     </div>
     <div class="page-content fade-in-up">
         <div class="ibox">
             <div class="ibox-body">
+                    <h3>Workforce Members</h3>
                 <h5 class="font-strong mb-4"></h5>
                 <div class="flexbox mb-4">
                     <div class="flexbox">
@@ -31,7 +33,7 @@
                         </thead>
                         <tbody>
 
-                            <tr *ngFor="let employee of employees | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+                            <tr *ngFor="let employee of employees | paginate: { itemsPerPage: 7, currentPage: p }; let i = index">
                                 <td>{{employee.Name}}</td>
                                 <td>
                                     {{employee.Surname}}

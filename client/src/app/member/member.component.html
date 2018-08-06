@@ -359,6 +359,38 @@ Role Functions            </button>
               </div>
           </div>
       </div>
+
+      <div class="col-lg-6">
+            <div class="ibox ibox-fullheight">
+                <div class="ibox-head">
+                    <div class="ibox-title">Feeds</div>
+                    <div class="ibox-tools">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-notepad"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item"><i class="ti-pencil mr-2"></i>Create</a>
+                            <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
+                            <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
+                        </div>
+                    </div>
+                </div>
+                <div *ngFor="let topic of topics | paginate: { itemsPerPage: 5, currentPage: p }" class="ibox-body">
+                    <ul class="media-list media-list-divider scroller" data-height="470px">
+                        <li class="media py-3">
+                            <div class="media-img">
+                                <span class="btn-icon-only btn-circle bg-primary-50 text-primary"><i class="ti-check"></i><img src="{{topic.urlToImage}}" width="50px"></span>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-heading text-warning"><a target="_blank" href="{{topic.url}}">{{topic.title}}</a><small class="float-right text-muted ml-2">5 mins</small></div>
+                                <div class="font-13 text-light">{{topic.source.name}}</div>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
   
     <div class="margin">
       <h2 class="center">Learning Hub

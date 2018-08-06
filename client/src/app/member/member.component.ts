@@ -23,6 +23,8 @@ export class MemberComponent implements OnInit {
   EmployeeSkills: any;
   PositionSkills: any;
   position: Observable<any>;
+  topics: any;
+  skillsgap: any;
 
   constructor(
     private skill: SkillsService,
@@ -54,6 +56,14 @@ export class MemberComponent implements OnInit {
       .subscribe(position => {
         this.position = position;
         console.log(this.position);
+      });
+      this.skill.getSkillsGap(this.memberId).subscribe(skillsgap => {
+        this.skillsgap = skillsgap;
+        console.log(skillsgap);
+        this.skill.gettopics(this.skillsgap).subscribe(topics => {
+          this.topics = topics;
+          console.log(topics);
+        });
       });
     });
   }

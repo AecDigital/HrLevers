@@ -73,4 +73,11 @@ export class SkillsService {
       return gaptitle;
     });
   }
+  gettopics(gaptitle) {
+    return this.http.post(`${BASEURL}/api/employees/user-topics/`, {gaptitle}, this.options).map(res => {
+    console.log(res.json());
+    const feeds = res.json();
+    return feeds;
+    });
+  }
 }
