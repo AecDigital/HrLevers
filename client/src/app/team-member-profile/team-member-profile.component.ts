@@ -61,7 +61,6 @@ export class TeamMemberProfileComponent implements OnInit {
   }
 
   newTask(Name, Description, Duedate, ActionPlan, form) {
-    form.reset();
     this.route.params.subscribe(params => {
       this.ntask
         .newTask(Name, Description, Duedate, ActionPlan)
@@ -76,16 +75,17 @@ export class TeamMemberProfileComponent implements OnInit {
   }
   removeTask(id) {
     this.route.params.subscribe(params => {
-      this.ntask.removeTask(id).subscribe();
-      this.teamMember
+      this.ntask.removeTask(id).subscribe(() => {
+        this.teamMember
         .getEmployee(this.memberId)
         .subscribe(res => (this.member = res));
+      });
     });
   }
-  editTask(id, Name, Description, Duedate, Done) {
-    console.log(id, Name, Description, Duedate, Done);
+  editTask(id, Name, Description, Duedate, Status) {
+    console.log(id, Name, Description, Duedate, Status);
     this.ntask
-      .editTask(id, Name, Description, Duedate, Done)
+      .editTask(id, Name, Description, Duedate, Status)
       .subscribe(data => {
         this.editedTask = data;
         console.log(this.editedTask);

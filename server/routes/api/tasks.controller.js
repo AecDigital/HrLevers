@@ -33,15 +33,15 @@ router.post('/', loggedIn, (req, res, next) => {
 });
 
 router.put('/edit/:id', (req, res, next) => {
-  const taskId = req.params.id;
-    const { id, Name, Description, Duedate, Done } = req.body;
-    let editedTask = { id, Name, Description, Duedate, Done }
+  console.log(req.body)
+    const {Name, Description, Duedate, Status } = req.body;
+    let editedTask = { Name, TaskDescription:Description, Duedate, Status }
+    editedTask = _.pickBy(editedTask);
+    console.log(editedTask);
 
-    editedTask = _.pickBy(editedTask, _.identity);
-
-    Task.findByIdAndUpdate(taskId, {new: true})
+    Task.findByIdAndUpdate(req.params.id, editedTask,{new: true})
     .then(task => res.status(200).json(task))
-    .catch(err => next(err))
+    .catch(err => console.log(err))
 })
 
 

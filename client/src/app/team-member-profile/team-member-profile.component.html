@@ -184,7 +184,7 @@
               </tr>
             </thead>
             <tbody>
-              <span *ngFor="let task of member.tasks">
+              <span *ngFor="let task of member.tasks, let j = index">
                 <span *ngIf="task.ActionPlan===train._id">
                   <tr>
                     <td>{{task.Name}}</td>
@@ -220,17 +220,17 @@
                               <div class="form-row">
                                   <div class="form-group col-md-6">
                             <label> Name: </label>
-                            <input type="text" [(ngModel)]="Name" name="Name" value="{{task.Name}}"/>
+                            <input type="text" [(ngModel)]="task.Name" name="task.Name" value="{{task.Name}}"/>
                             </div>
                             <label> Duedate: </label>
-                            <input type="date" [(ngModel)]="Duedate" name="Duedate" />
+                            <input type="date" [(ngModel)]="task.Duedate" name="task.Duedate" value="{{task.Duedate}}"/>
                             </div>
                             <div class="form-group">
                             <label> Description: </label>
-                            <textarea class="form-control" rows="5" [(ngModel)]="Description" name="Description"></textarea>
+                            <textarea class="form-control" rows="5" [(ngModel)]="task.Description" name="task.Description" value="{{task.Description}}"></textarea>
                             </div>
                             <label> Done?: </label>
-                            <select class="form-control" [(ngModel)]="Done" name="Done" id="exampleFormControlSelect1">
+                            <select class="form-control" [(ngModel)]="task.Status" name="task.Status" id="exampleFormControlSelect1" value="{{task.Status}}">
                                 <option>Pending</option>
                                 <option>Done</option>
                               </select>
@@ -238,7 +238,7 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-primary btn-sm btn-danger" data-dismiss="modal">Close</button>
-                          <button (click)="editTask(task._id, Name, Description, Duedate, Done, form)" type="submit" class="btn btn-primary btn-sm btn-success" >Save changes</button>
+                          <button (click)="editTask(task._id, task.Name, task.Description, task.Duedate, task.Status)" type="submit" class="btn btn-primary btn-sm btn-success" >Save changes</button>
                         </div>
                       </div>
                     </div>
