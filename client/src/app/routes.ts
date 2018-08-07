@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TeamMemberProfileComponent } from './team-member-profile/team-member-profile.component';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { MemberComponent } from './member/member.component';
+import { DevelopPlanComponent } from './develop-plan/develop-plan.component';
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent},
@@ -17,5 +18,6 @@ export const routes: Routes = [
   { path: 'signup', component: SignupComponent},
   { path: 'team-member/:id', component: TeamMemberProfileComponent},
   { path: 'experiences', component: ExperiencesComponent},
-  { path: 'member/:id', component: MemberComponent}
+  { path: 'member/:id', component: MemberComponent},
+  { path: 'develop-plan/:id', component: DevelopPlanComponent}
 ];

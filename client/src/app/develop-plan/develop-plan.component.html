@@ -1,0 +1,340 @@
+<div class="container color" *ngIf="member">
+    <div class="jumbotron jumbotron-fluid color">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <h1 class="display-4"> Welcome to Learning Hub..</h1>
+                    <div class="margin3">
+                    <h3 class="lead"> </h3>
+                    </div>
+                    <div class="margin3">
+                        <h4>Your Talent Level right now...</h4>
+                        <div class="text-muted font-13 mb-3">
+                            <span class="mr-3"><i class="ti-location-pin mr-2"></i>New York, USA</span>
+                            <span><i class="ti-calendar mr-2"></i>12.04.2018</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar"  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" [style.width]="member.exp.Talent_Level * 16.66 + '%'">
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="http://askuptoo.com/images/members/profile_img2.png" width="150px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="margin">
+        <h2 class="center">Current Performance Status
+        </h2>
+        <hr class="style13">
+        <br>
+    </div>
+
+
+    <div class="margin2">
+            <div class="row">
+              <div class="col">
+                
+                
+              </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                    <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><h5><i class="far fa-clock"></i> Time Spent Company:</h5>{{member.exp.time_spend_company}} years.</li>
+                            <li class="list-group-item"><h5><i class="fas fa-sort-amount-up"></i> Promotioned Last 5 years?</h5>{{member.exp.promotion_last_5years}}</li>
+                            <li class="list-group-item"><h5><i class="far fa-chart-bar"></i> Last Performance Eval. Score:</h5>{{member.exp.last_evaluation}} of 1</li>
+                          </ul>                    </div>
+            <div class="col">
+                    <app-polar-chart [values]='EmployeeSkills' [values2]='PositionSkills'></app-polar-chart>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+
+                <div class="col">
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+
+        <div class="margin">
+            <h2 class="center">Your Development RoadMap
+            </h2>
+            <hr class="style13">
+            <br>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="ibox ibox-fullheight">
+                    <div class="ibox-head">
+                        <div class="ibox-title">Your Development Tasks</div>
+                        <div class="ibox-tools">
+                            <a class="font-18">
+                                <i class="ti-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-body">
+                        <ul class="list-group list-group-divider list-group-full tasks-list">
+                            <li class="list-group-item task-item">
+                                <div>
+                                    <label class="checkbox checkbox-grey checkbox-success">
+                                        <input type="checkbox" checked="">
+                                        <span class="input-span"></span>
+                                        <span class="task-title">Make Adminca the best and the most easy admin template</span>
+                                    </label>
+                                </div>
+                                <div class="task-data">
+                                    <small class="text-muted">29 May 2018</small>
+                                </div>
+                                <div class="task-actions">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="ti-more-alt"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item">
+                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                        <a class="dropdown-item">
+                                            <i class="ti-close mr-2"></i>Remove</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item task-item">
+                                <div>
+                                    <label class="checkbox checkbox-grey checkbox-success">
+                                        <input type="checkbox">
+                                        <span class="input-span"></span>
+                                        <span class="task-title">Create Financial Report</span>
+                                    </label>
+                                </div>
+                                <div class="task-data">
+                                    <small class="text-muted">No due date</small>
+                                </div>
+                                <div class="task-actions">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="ti-more-alt"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item">
+                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                        <a class="dropdown-item">
+                                            <i class="ti-close mr-2"></i>Remove</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item task-item">
+                                <div>
+                                    <label class="checkbox checkbox-grey checkbox-success">
+                                        <input type="checkbox" checked="">
+                                        <span class="input-span"></span>
+                                        <span class="task-title">Meeting with Ann</span>
+                                    </label>
+                                    <span class="badge badge-warning ml-1">
+                                        <i class="ti-alarm-clock"></i> 1 hrs</span>
+                                </div>
+                                <div class="task-data">
+                                    <small class="text-muted">29 May 2018</small>
+                                </div>
+                                <div class="task-actions">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="ti-more-alt"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item">
+                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                        <a class="dropdown-item">
+                                            <i class="ti-close mr-2"></i>Remove</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item task-item">
+                                <div>
+                                    <label class="checkbox checkbox-grey checkbox-success">
+                                        <input type="checkbox">
+                                        <span class="input-span"></span>
+                                        <span class="task-title">Edit the blog post</span>
+                                    </label>
+                                </div>
+                                <div class="task-data">
+                                    <small class="text-muted">29 May 2018</small>
+                                </div>
+                                <div class="task-actions">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="ti-more-alt"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item">
+                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                        <a class="dropdown-item">
+                                            <i class="ti-close mr-2"></i>Remove</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item task-item">
+                                <div>
+                                    <label class="checkbox checkbox-grey checkbox-success">
+                                        <input type="checkbox">
+                                        <span class="input-span"></span>
+                                        <span class="task-title">Send photos to Jack</span>
+                                    </label>
+                                    <span class="badge badge-success ml-1">Today</span>
+                                </div>
+                                <div class="task-data">
+                                    <small class="text-muted">29 May 2018</small>
+                                </div>
+                                <div class="task-actions">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="ti-more-alt"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item">
+                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                        <a class="dropdown-item">
+                                            <i class="ti-close mr-2"></i>Remove</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item task-item">
+                                <div>
+                                    <label class="checkbox checkbox-grey checkbox-success">
+                                        <input type="checkbox">
+                                        <span class="input-span"></span>
+                                        <span class="task-title">Send Financial Reports</span>
+                                    </label>
+                                    <span class="badge badge-danger ml-1">Important</span>
+                                </div>
+                                <div class="task-data">
+                                    <small class="text-muted">29 May 2018</small>
+                                </div>
+                                <div class="task-actions">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="ti-more-alt"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item">
+                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                        <a class="dropdown-item">
+                                            <i class="ti-close mr-2"></i>Remove</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item task-item">
+                                <div>
+                                    <label class="checkbox checkbox-grey checkbox-success">
+                                        <input type="checkbox">
+                                        <span class="input-span"></span>
+                                        <span class="task-title">Send message to Bob</span>
+                                    </label>
+                                </div>
+                                <div class="task-data">
+                                    <small class="text-muted">29 May 2018</small>
+                                </div>
+                                <div class="task-actions">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="ti-more-alt"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item">
+                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                        <a class="dropdown-item">
+                                            <i class="ti-close mr-2"></i>Remove</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="ibox ibox-fullheight">
+                    <div class="ibox-head">
+                        <div class="ibox-title">Recomended Feeds for your development</div>
+                        <div class="ibox-tools">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="ti-notepad"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item">
+                                    <i class="ti-pencil mr-2"></i>Create</a>
+                                <a class="dropdown-item">
+                                    <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                <a class="dropdown-item">
+                                    <i class="ti-close mr-2"></i>Remove</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngFor="let topic of topics | paginate: { itemsPerPage: 5, currentPage: p }" class="ibox-body">
+                        <ul class="media-list media-list-divider scroller" data-height="470px">
+                            <li class="media py-3">
+                                <div class="media-img">
+                                    <span class="btn-icon-only btn-circle bg-primary-50 text-primary">
+                                        <i class="ti-check"></i>
+                                        <img src="{{topic.urlToImage}}" width="50px">
+                                    </span>
+                                </div>
+                                <div class="media-body">
+                                    <div class="media-heading text-warning">
+                                        <a target="_blank" href="{{topic.url}}">{{topic.title}}</a>
+                                        <small class="float-right text-muted ml-2">5 mins</small>
+                                    </div>
+                                    <div class="font-13 text-light">{{topic.source.name}}</div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+
+        <div class="margin">
+            <h2 class="center">Learning Media
+            </h2>
+            <hr class="style13">
+            <br>
+        </div>
+
+        <div class="row">
+            <div class="margin2">
+                </div>
+            <div class="col col-md-6" *ngFor="let course of courses | paginate: { itemsPerPage: 4, currentPage: p }">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{course.id.videoId}}"
+                        allowfullscreen></iframe> -->
+                        <iframe width="560" height="315" [src]="baseurl + course.id.videoId | safeVideos"  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title mb-2">
+                            <a class="text-info">{{course.snippet.title}}</a>
+                        </h4>
+                        <div class="text-muted mb-3">{{course.snippet.publishedAt}}</div>
+                        <p class="text-light">{{course.snippet.description}}</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="text-info">
+                                <h5 class= "normal">Channel: </h5>{{course.snippet.channelTitle}}</div>
+                            <div>
+                                <span class="text-muted mr-4">
+                                    <i class="fa fa-heart-o mr-2"></i>124</span>
+                                <span class="text-muted">
+                                    <i class="fa fa-comment-o mr-2"></i>56</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="center">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>

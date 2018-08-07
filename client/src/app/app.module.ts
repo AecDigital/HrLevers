@@ -34,6 +34,7 @@ import { MemberComponent } from './member/member.component';
 import { BarCharComponent } from './bar-char/bar-char.component';
 import { HorizontalbarComponent } from './horizontalbar/horizontalbar.component';
 import { SafeVideosPipe } from './safe-videos.pipe';
+import { DevelopPlanComponent } from './develop-plan/develop-plan.component';
 
 
 
@@ -65,7 +66,8 @@ import { SafeVideosPipe } from './safe-videos.pipe';
     MemberComponent,
     BarCharComponent,
     HorizontalbarComponent,
-    SafeVideosPipe
+    SafeVideosPipe,
+    DevelopPlanComponent
     // Ng2SearchPipeModule
   ],
   imports: [
