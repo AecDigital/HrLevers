@@ -9,6 +9,7 @@ import { ExperiencesService } from "services/experiences.service";
 import { TasksService } from "services/tasks.service";
 import "rxjs/add/operator/map";
 import { SkillsService } from "services/skills.service";
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-member',

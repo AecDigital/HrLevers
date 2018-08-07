@@ -1,550 +1,581 @@
 <div class="container color" *ngIf="member">
     <div class="jumbotron jumbotron-fluid color">
-      <div class="container">
-        <div class="row">
-          <div class="col-8">
-            <h1 class="display-4"> Your Profile...</h1>
-            <p class="lead"> This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-          </div>
-          <div class="col-4">
-            <img src="http://askuptoo.com/images/members/profile_img2.png" width="150px">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
-<div class="margin">
-    <h2 class="center">Your Current WorkBalance
-      </h2>
-      <hr class="style13">
-<br>
-</div>
-  
-    <div class="page-content fade-in-up">
-      <div class="row mb-4">
-        <div class="col-lg-4 col-md-6">
-          <div class="card mb-4">
-            <div class="card-body flexbox-b">
-              <div class="easypie mr-4" data-percent="73" data-bar-color="#18C5A9" data-size="80" data-line-width="8">
-                <span class="easypie-data text-success" style="font-size:32px;">
-                  <i class="la la-users"></i>
-                </span>
-              </div>
-              <div>
-                <h3 class="font-strong text-success">{{member.exp.average_montly_hours}}</h3>
-                <div class="text-muted">AVG. MONTHLY HOURS</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card mb-4">
-            <div class="card-body flexbox-b">
-              <div class="easypie mr-4" data-percent="42" data-bar-color="#5c6bc0" data-size="80" data-line-width="8">
-                <span class="easypie-data font-26 text-primary">
-                  <i class="ti-world"></i>
-                </span>
-              </div>
-              <div>
-                <h3 class="font-strong text-primary">{{member.exp.number_project}}</h3>
-                <div class="text-muted">Nº OF PROJECTS</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card mb-4">
-            <div class="card-body flexbox-b">
-              <div class="easypie mr-4" data-percent="70" data-bar-color="#ff4081" data-size="80" data-line-width="8">
-                <span class="easypie-data text-pink" style="font-size:32px;">
-                  <i class="la la-tags"></i>
-                </span>
-              </div>
-              <div>
-                <h3 class="font-strong text-pink">{{member.exp.Percent_Remote}}%</h3>
-                <div class="text-muted">PERCENT REMOTE WORK</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-      
-      <div class="container">
-          <div class="row">
-            <div class="col">
-              1 of 2
-            </div>
-            <div class="col">
-              2 of 2
-            </div>
-          </div>
-  
-      <div class="col-lg-5">
-          <div class="ibox ibox-fullheight">
-              <div class="ibox-body bg-pink">
-                  <h5 class="text-center text-white mb-3">Sensor HeartBeat</h5>
-                  <div class="center">
-                    <img src="https://png.icons8.com/metro/1600/like.png" height= "175px">
-                    </div>
-              </div>
-              <div class="ibox-body">
-                  <div class="text-lighter mb-2">Average heart rate this week...</div>
-                  <div>
-                      <span class="h1 mr-3 text-pink font-40">{{member.exp.Sensor_Heartbeat}} Ppm</span>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-
-  
-
-  
-
-      <div class="margin">
-      <h2 class="center">Your Current Role
-        </h2>
-        <hr class="style13">
-  <br>
-  </div>
-
-  <div class="accordion" id="accordionExample">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Role within Organization
-            </button>
-          </h5>
-        </div>
-    
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-          <div class="card-body">
-              <div class="container">
-                  <div class="row">
-                    <div class="col-sm">
-                      <h5>Role Name: </h5><p>{{position}}</p>
-                    </div>
-                    <div class="col-sm">
-                      One of three columns
-                    </div>
-                    <div class="col-sm">
-                      One of three columns
-                    </div>
-                  </div>
-                </div>          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-Role Mission
-            </button>
-          </h5>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-          <div class="card-body">
-              <div class="container">
-                  <div class="row">
-                    <div class="col">
-                      1 of 2
-                    </div>
-                    <div class="col">
-                      2 of 2
-                    </div>
-                  </div>
-                     </div>
-               
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingThree">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-Role Functions            </button>
-          </h5>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-          <div class="card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-          </div>
-        </div>
-      </div>
-    </div>
-  
-  
-      
-    <div class="margin">
-      <h2 class="center">Your Current Performance Status
-        </h2>
-        <hr class="style13">
-  <br>
-  </div>
-  
-      
-      
-
-          <div class="container">
-              <div class="row">
-                <div class="col">
-                  1 of 2
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <h1 class="display-4"> Your Profile...</h1>
+                    <p class="lead"> This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
                 </div>
-                <div class="col">
-                    <div class="margin2">
-                    <app-polar-chart [values]='EmployeeSkills' [values2]='PositionSkills'></app-polar-chart>
-                                  </div>
-              </div>
-                 </div>
-      <div class="row">
-        <div class="col">
-          
-      
-        <div class="col">
-          </div>
-        <div class="w-100"></div>
-        <div class="col">
+                <div class="col-4">
+                    <img src="http://askuptoo.com/images/members/profile_img2.png" width="150px">
+                </div>
+            </div>
         </div>
-        <div class="col"></div>
-      </div>
-      </div>
+    </div>
 
-      <div class="margin">
-      <h2 class="center">Your Development RoadMap
+
+    <div class="margin">
+        <h2 class="center">Your Current WorkBalance
         </h2>
         <hr class="style13">
-  <br>
-  </div>
+        <br>
+    </div>
 
-  <div class="row">
-      <div class="col-lg-6">
-          <div class="ibox ibox-fullheight">
-              <div class="ibox-head">
-                  <div class="ibox-title">Tasks</div>
-                  <div class="ibox-tools">
-                      <a class="font-18"><i class="ti-plus"></i></a>
-                  </div>
-              </div>
-              <div class="ibox-body">
-                  <ul class="list-group list-group-divider list-group-full tasks-list">
-                      <li class="list-group-item task-item">
-                          <div>
-                              <label class="checkbox checkbox-grey checkbox-success">
-                                  <input type="checkbox" checked="">
-                                  <span class="input-span"></span>
-                                  <span class="task-title">Make Adminca the best and the most easy admin template</span>
-                              </label>
-                          </div>
-                          <div class="task-data"><small class="text-muted">29 May 2018</small></div>
-                          <div class="task-actions">
-                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
-                              </div>
-                          </div>
-                      </li>
-                      <li class="list-group-item task-item">
-                          <div>
-                              <label class="checkbox checkbox-grey checkbox-success">
-                                  <input type="checkbox">
-                                  <span class="input-span"></span>
-                                  <span class="task-title">Create Financial Report</span>
-                              </label>
-                          </div>
-                          <div class="task-data"><small class="text-muted">No due date</small></div>
-                          <div class="task-actions">
-                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
-                              </div>
-                          </div>
-                      </li>
-                      <li class="list-group-item task-item">
-                          <div>
-                              <label class="checkbox checkbox-grey checkbox-success">
-                                  <input type="checkbox" checked="">
-                                  <span class="input-span"></span>
-                                  <span class="task-title">Meeting with Ann</span>
-                              </label>
-                              <span class="badge badge-warning ml-1"><i class="ti-alarm-clock"></i> 1 hrs</span>
-                          </div>
-                          <div class="task-data"><small class="text-muted">29 May 2018</small></div>
-                          <div class="task-actions">
-                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
-                              </div>
-                          </div>
-                      </li>
-                      <li class="list-group-item task-item">
-                          <div>
-                              <label class="checkbox checkbox-grey checkbox-success">
-                                  <input type="checkbox">
-                                  <span class="input-span"></span>
-                                  <span class="task-title">Edit the blog post</span>
-                              </label>
-                          </div>
-                          <div class="task-data"><small class="text-muted">29 May 2018</small></div>
-                          <div class="task-actions">
-                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
-                              </div>
-                          </div>
-                      </li>
-                      <li class="list-group-item task-item">
-                          <div>
-                              <label class="checkbox checkbox-grey checkbox-success">
-                                  <input type="checkbox">
-                                  <span class="input-span"></span>
-                                  <span class="task-title">Send photos to Jack</span>
-                              </label>
-                              <span class="badge badge-success ml-1">Today</span>
-                          </div>
-                          <div class="task-data"><small class="text-muted">29 May 2018</small></div>
-                          <div class="task-actions">
-                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
-                              </div>
-                          </div>
-                      </li>
-                      <li class="list-group-item task-item">
-                          <div>
-                              <label class="checkbox checkbox-grey checkbox-success">
-                                  <input type="checkbox">
-                                  <span class="input-span"></span>
-                                  <span class="task-title">Send Financial Reports</span>
-                              </label>
-                              <span class="badge badge-danger ml-1">Important</span>
-                          </div>
-                          <div class="task-data"><small class="text-muted">29 May 2018</small></div>
-                          <div class="task-actions">
-                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
-                              </div>
-                          </div>
-                      </li>
-                      <li class="list-group-item task-item">
-                          <div>
-                              <label class="checkbox checkbox-grey checkbox-success">
-                                  <input type="checkbox">
-                                  <span class="input-span"></span>
-                                  <span class="task-title">Send message to Bob</span>
-                              </label>
-                          </div>
-                          <div class="task-data"><small class="text-muted">29 May 2018</small></div>
-                          <div class="task-actions">
-                              <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                  <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
-                              </div>
-                          </div>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-
-      <div class="col-lg-6">
-            <div class="ibox ibox-fullheight">
-                <div class="ibox-head">
-                    <div class="ibox-title">Feeds</div>
-                    <div class="ibox-tools">
-                        <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-notepad"></i></a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item"><i class="ti-pencil mr-2"></i>Create</a>
-                            <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
-                            <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
+    <div class="page-content fade-in-up">
+        <div class="row mb-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body flexbox-b">
+                        <div class="easypie mr-4" data-percent="73" data-bar-color="#18C5A9" data-size="80" data-line-width="8">
+                            <span class="easypie-data text-success" style="font-size:32px;">
+                                <i class="la la-users"></i>
+                            </span>
+                        </div>
+                        <div>
+                            <h3 class="font-strong text-success">{{member.exp.average_montly_hours}}</h3>
+                            <div class="text-muted">AVG. MONTHLY HOURS</div>
                         </div>
                     </div>
                 </div>
-                <div *ngFor="let topic of topics | paginate: { itemsPerPage: 5, currentPage: p }" class="ibox-body">
-                    <ul class="media-list media-list-divider scroller" data-height="470px">
-                        <li class="media py-3">
-                            <div class="media-img">
-                                <span class="btn-icon-only btn-circle bg-primary-50 text-primary"><i class="ti-check"></i><img src="{{topic.urlToImage}}" width="50px"></span>
-                            </div>
-                            <div class="media-body">
-                                <div class="media-heading text-warning"><a target="_blank" href="{{topic.url}}">{{topic.title}}</a><small class="float-right text-muted ml-2">5 mins</small></div>
-                                <div class="font-13 text-light">{{topic.source.name}}</div>
-                            </div>
-                        </li>
-                    </ul>
-                    
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body flexbox-b">
+                        <div class="easypie mr-4" data-percent="42" data-bar-color="#5c6bc0" data-size="80" data-line-width="8">
+                            <span class="easypie-data font-26 text-primary">
+                                <i class="ti-world"></i>
+                            </span>
+                        </div>
+                        <div>
+                            <h3 class="font-strong text-primary">{{member.exp.number_project}}</h3>
+                            <div class="text-muted">Nº OF PROJECTS</div>
+                        </div>
+                    </div>
                 </div>
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body flexbox-b">
+                        <div class="easypie mr-4" data-percent="70" data-bar-color="#ff4081" data-size="80" data-line-width="8">
+                            <span class="easypie-data text-pink" style="font-size:32px;">
+                                <i class="la la-tags"></i>
+                            </span>
+                        </div>
+                        <div>
+                            <h3 class="font-strong text-pink">{{member.exp.Percent_Remote}}%</h3>
+                            <div class="text-muted">PERCENT REMOTE WORK</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-  
-    <div class="margin">
-      <h2 class="center">Learning Hub
-        </h2>
-        <hr class="style13">
-  <br>
-  </div>
 
-  <div class="margin">
-      <h2 class="center"> Your Team Mates </h2>
-  <hr class="style13">
-  <br>
 
-  <div class="row">
-      <div class="col-lg-4">
-          <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
-              <div class="card-cup bg-gradient-purple"></div>
-              <div class="card-body">
-                  <div class="card-avatar mb-4">
-                      <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
-                  </div>
-                  <h4 class="card-title text-pink mb-1">Lynn Weaver</h4>
-                  <div class="text-muted">Director</div>
-                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <div class="d-flex justify-content-around align-items-center font-18">
-                    
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-4">
-          <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
-              <div class="card-cup bg-gradient-blue"></div>
-              <div class="card-body">
-                  <div class="card-avatar mb-4">
-                      <img class="img-circle" src="https://static1.squarespace.com/static/582056f33e00be92418a18fb/t/59df794812abd9a897878aa0/1507817816329/circle+profile.PNG?format=300w" alt="image" />
-                  </div>
-                  <h4 class="card-title text-primary mb-1">Tyrone Carroll</h4>
-                  <div class="text-muted">Web Designer</div>
-                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <div class="d-flex justify-content-around align-items-center font-18">
-                     
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-4">
-          <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
-              <div class="card-cup bg-gradient-peach"></div>
-              <div class="card-body">
-                  <div class="card-avatar mb-4">
-                      <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
-                  </div>
-                  <h4 class="card-title text-warning mb-1">Becky Brooks</h4>
-                  <div class="text-muted">Manager</div>
-                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <div class="d-flex justify-content-around align-items-center font-18">
-                      
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  
-  <div class="margin"></div>
 
-  <div class="row">
-      <div class="col-lg-4">
-          <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
-              <div class="card-cup bg-gradient-purple"></div>
-              <div class="card-body">
-                  <div class="card-avatar mb-4">
-                      <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
-                  </div>
-                  <h4 class="card-title text-pink mb-1">Lynn Weaver</h4>
-                  <div class="text-muted">Director</div>
-                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <div class="d-flex justify-content-around align-items-center font-18">
-                    
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-4">
-          <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
-              <div class="card-cup bg-gradient-blue"></div>
-              <div class="card-body">
-                  <div class="card-avatar mb-4">
-                      <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
-                  </div>
-                  <h4 class="card-title text-primary mb-1">Tyrone Carroll</h4>
-                  <div class="text-muted">Web Designer</div>
-                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <div class="d-flex justify-content-around align-items-center font-18">
-                     
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-4">
-          <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
-              <div class="card-cup bg-gradient-peach"></div>
-              <div class="card-body">
-                  <div class="card-avatar mb-4">
-                      <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
-                  </div>
-                  <h4 class="card-title text-warning mb-1">Becky Brooks</h4>
-                  <div class="text-muted">Manager</div>
-                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <div class="d-flex justify-content-around align-items-center font-18">
-                      
-                  </div>
-              </div>
-          </div>
-
+        <div class="row">
+                <div class="col-lg-11">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="ibox ibox-fullheight">
+                                <div class="ibox-body bg-pink">
+                                        <h5 class="text-center text-white mb-3">Sensor HeartBeat</h5>
+                                    <div>
+                                            <div class="center">
+                                            <img src="https://png.icons8.com/metro/1600/like.png" height="175px">
+                                          </div>
+                                    </div>
+                                </div>
+                                <div class="ibox-body bg">
+                                    <div class="text-lighter mb-2">Average Rate this week...</div>
+                                    <div>
+                                            <span class="h1 mr-3 text-pink font-40">{{member.exp.Sensor_Heartbeat}} Ppm</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
         
-          
-    </div>
-      </div>
-  </div>
+                    <div class="col-lg-5">
+                        <div class="ibox ibox-fullheight">
+                            <div class="ibox-head">
+                                <div class="ibox-title">Sensor Stepcount</div>
+                                <div class="ibox-tools">
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item"><i class="la la-upload"></i>Export</a>
+                                        <a class="dropdown-item"><i class="la la-file-excel-o"></i>Download</a>
+                                        <a class="dropdown-item"><i class="la la-print"></i>Print</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ibox-body">
+                                <div class="mb-5">
+                                    
+                                    <div class="flexbox-b mb-2">
+                                        <span class="badge-point badge-pink mr-2"></span>Steps today...
+                                        <span class="h4 mb-0 ml-4">{{member.exp.Sensor_StepCount}}!</span>
+                                    </div>
+                                </div>
+                                <div class="ibox-fullwidth-block">
+                                        <div class="center">
+                                        <img src="http://icons.iconarchive.com/icons/graphicloads/transport/256/steps-icon.png" height="250px">
+                                              </div>                              
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-  <h5 class="font-strong mb-5 mt-5 text-center">Video Widgets</h5>
-  <div class="row">
-      <div class="col-md-6">
-            <span *ngFor = "let course of courses">
-          <div class="card mb-4">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src={{course.snippet.thumbnails.medium.url}} allowfullscreen></iframe>
-              </div>
-              <div class="card-body">
-                 
-                  <h4 class="card-title mb-2">
-                      <a class="text-info">{{course.snippet.title}}</a>
-                  </h4>
-                  <div class="text-muted mb-3">{{course.snippet.publishedAt}}</div>
-                  <p class="text-light">{{course.snippet.description}}</p>
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="text-info">
-                          <h5>Channel: </h5>{{course.snippet.channelTitle}}</div>
-                      <div>
-                          <span class="text-muted mr-4"><i class="fa fa-heart-o mr-2"></i>124</span>
-                          <span class="text-muted"><i class="fa fa-comment-o mr-2"></i>56</span>
-                      </div>
-                  </div>
+        <div class="margin">
+            <h2 class="center">Your Current Role
+            </h2>
+            <hr class="style13">
+            <br>
+        </div>
 
-              </div>
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Role within Organization
+                        </button>
+                    </h5>
+                </div>
 
-          </div>
-        </span>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <h5>Role Name: </h5>
+                                    <p>{{position}}</p>
+                                </div>
+                                <div class="col-sm">
+                                    One of three columns
+                                </div>
+                                <div class="col-sm">
+                                    One of three columns
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                            aria-controls="collapseTwo">
+                            Role Mission
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    1 of 2
+                                </div>
+                                <div class="col">
+                                    2 of 2
+                                </div>
+                            </div>
+                        </div>
 
-      </div>
-  </div>
-</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                aria-controls="collapseThree">
+                                Role Functions </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                            non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                            moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
+                            et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                            synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
 
- 
+            <div class="margin">
+                <h2 class="center">Your Current Performance Status
+                </h2>
+                <hr class="style13">
+                <br>
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        1 of 2
+                    </div>
+                    <div class="col">
+                        <div class="margin2">
+                            <app-polar-chart [values]='EmployeeSkills' [values2]='PositionSkills'></app-polar-chart>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+
+
+                        <div class="col">
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col">
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+
+                <div class="margin">
+                    <h2 class="center">Your Development RoadMap
+                    </h2>
+                    <hr class="style13">
+                    <br>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="ibox ibox-fullheight">
+                            <div class="ibox-head">
+                                <div class="ibox-title">Your Development Tasks</div>
+                                <div class="ibox-tools">
+                                    <a class="font-18">
+                                        <i class="ti-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-body">
+                                <ul class="list-group list-group-divider list-group-full tasks-list">
+                                    <li class="list-group-item task-item">
+                                        <div>
+                                            <label class="checkbox checkbox-grey checkbox-success">
+                                                <input type="checkbox" checked="">
+                                                <span class="input-span"></span>
+                                                <span class="task-title">Make Adminca the best and the most easy admin template</span>
+                                            </label>
+                                        </div>
+                                        <div class="task-data">
+                                            <small class="text-muted">29 May 2018</small>
+                                        </div>
+                                        <div class="task-actions">
+                                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                                <i class="ti-more-alt"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item">
+                                                    <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                                <a class="dropdown-item">
+                                                    <i class="ti-close mr-2"></i>Remove</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item task-item">
+                                        <div>
+                                            <label class="checkbox checkbox-grey checkbox-success">
+                                                <input type="checkbox">
+                                                <span class="input-span"></span>
+                                                <span class="task-title">Create Financial Report</span>
+                                            </label>
+                                        </div>
+                                        <div class="task-data">
+                                            <small class="text-muted">No due date</small>
+                                        </div>
+                                        <div class="task-actions">
+                                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                                <i class="ti-more-alt"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item">
+                                                    <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                                <a class="dropdown-item">
+                                                    <i class="ti-close mr-2"></i>Remove</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item task-item">
+                                        <div>
+                                            <label class="checkbox checkbox-grey checkbox-success">
+                                                <input type="checkbox" checked="">
+                                                <span class="input-span"></span>
+                                                <span class="task-title">Meeting with Ann</span>
+                                            </label>
+                                            <span class="badge badge-warning ml-1">
+                                                <i class="ti-alarm-clock"></i> 1 hrs</span>
+                                        </div>
+                                        <div class="task-data">
+                                            <small class="text-muted">29 May 2018</small>
+                                        </div>
+                                        <div class="task-actions">
+                                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                                <i class="ti-more-alt"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item">
+                                                    <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                                <a class="dropdown-item">
+                                                    <i class="ti-close mr-2"></i>Remove</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item task-item">
+                                        <div>
+                                            <label class="checkbox checkbox-grey checkbox-success">
+                                                <input type="checkbox">
+                                                <span class="input-span"></span>
+                                                <span class="task-title">Edit the blog post</span>
+                                            </label>
+                                        </div>
+                                        <div class="task-data">
+                                            <small class="text-muted">29 May 2018</small>
+                                        </div>
+                                        <div class="task-actions">
+                                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                                <i class="ti-more-alt"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item">
+                                                    <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                                <a class="dropdown-item">
+                                                    <i class="ti-close mr-2"></i>Remove</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item task-item">
+                                        <div>
+                                            <label class="checkbox checkbox-grey checkbox-success">
+                                                <input type="checkbox">
+                                                <span class="input-span"></span>
+                                                <span class="task-title">Send photos to Jack</span>
+                                            </label>
+                                            <span class="badge badge-success ml-1">Today</span>
+                                        </div>
+                                        <div class="task-data">
+                                            <small class="text-muted">29 May 2018</small>
+                                        </div>
+                                        <div class="task-actions">
+                                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                                <i class="ti-more-alt"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item">
+                                                    <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                                <a class="dropdown-item">
+                                                    <i class="ti-close mr-2"></i>Remove</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item task-item">
+                                        <div>
+                                            <label class="checkbox checkbox-grey checkbox-success">
+                                                <input type="checkbox">
+                                                <span class="input-span"></span>
+                                                <span class="task-title">Send Financial Reports</span>
+                                            </label>
+                                            <span class="badge badge-danger ml-1">Important</span>
+                                        </div>
+                                        <div class="task-data">
+                                            <small class="text-muted">29 May 2018</small>
+                                        </div>
+                                        <div class="task-actions">
+                                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                                <i class="ti-more-alt"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item">
+                                                    <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                                <a class="dropdown-item">
+                                                    <i class="ti-close mr-2"></i>Remove</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item task-item">
+                                        <div>
+                                            <label class="checkbox checkbox-grey checkbox-success">
+                                                <input type="checkbox">
+                                                <span class="input-span"></span>
+                                                <span class="task-title">Send message to Bob</span>
+                                            </label>
+                                        </div>
+                                        <div class="task-data">
+                                            <small class="text-muted">29 May 2018</small>
+                                        </div>
+                                        <div class="task-actions">
+                                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                                <i class="ti-more-alt"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item">
+                                                    <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                                <a class="dropdown-item">
+                                                    <i class="ti-close mr-2"></i>Remove</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="ibox ibox-fullheight">
+                            <div class="ibox-head">
+                                <div class="ibox-title">Recomended Feeds for your development</div>
+                                <div class="ibox-tools">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="ti-notepad"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item">
+                                            <i class="ti-pencil mr-2"></i>Create</a>
+                                        <a class="dropdown-item">
+                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                        <a class="dropdown-item">
+                                            <i class="ti-close mr-2"></i>Remove</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngFor="let topic of topics | paginate: { itemsPerPage: 5, currentPage: p }" class="ibox-body">
+                                <ul class="media-list media-list-divider scroller" data-height="470px">
+                                    <li class="media py-3">
+                                        <div class="media-img">
+                                            <span class="btn-icon-only btn-circle bg-primary-50 text-primary">
+                                                <i class="ti-check"></i>
+                                                <img src="{{topic.urlToImage}}" width="50px">
+                                            </span>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="media-heading text-warning">
+                                                <a target="_blank" href="{{topic.url}}">{{topic.title}}</a>
+                                                <small class="float-right text-muted ml-2">5 mins</small>
+                                            </div>
+                                            <div class="font-13 text-light">{{topic.source.name}}</div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="margin">
+                    <h2 class="center">Learning Hub
+                    </h2>
+                    <hr class="style13">
+                    <br>
+                </div>
+
+                <div class="row">
+                        <div class="col col-md-6">
+                        <div class="flex">
+                            <span *ngFor="let course of courses">
+                                <div class="card mb-4">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{course.id.videoId}}"
+                                        allowfullscreen></iframe> -->
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{course.id.videoId}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                    </div>
+
+
+                                    <div class="card-body">
+                                            https://www.youtube.com/embed/{{course.id.videoId}}
+                                        <h4 class="card-title mb-2">
+                                            <a class="text-info">{{course.snippet.title}}</a>
+                                        </h4>
+                                        <div class="text-muted mb-3">{{course.snippet.publishedAt}}</div>
+                                        <p class="text-light">{{course.snippet.description}}</p>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="text-info">
+                                                <h5>Channel: </h5>{{course.snippet.channelTitle}}</div>
+                                            <div>
+                                                <span class="text-muted mr-4">
+                                                    <i class="fa fa-heart-o mr-2"></i>124</span>
+                                                <span class="text-muted">
+                                                    <i class="fa fa-comment-o mr-2"></i>56</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="margin">
+                    <h2 class="center"> Your Team Mates </h2>
+                    <hr class="style13">
+                    <br>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
+                                <div class="card-cup bg-gradient-purple"></div>
+                                <div class="card-body">
+                                    <div class="card-avatar mb-4">
+                                        <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
+                                    </div>
+                                    <h4 class="card-title text-pink mb-1">Lynn Weaver</h4>
+                                    <div class="text-muted">Director</div>
+                                    <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's
+                                        content.</p>
+                                    <div class="d-flex justify-content-around align-items-center font-18">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
+                                <div class="card-cup bg-gradient-blue"></div>
+                                <div class="card-body">
+                                    <div class="card-avatar mb-4">
+                                        <img class="img-circle" src="https://static1.squarespace.com/static/582056f33e00be92418a18fb/t/59df794812abd9a897878aa0/1507817816329/circle+profile.PNG?format=300w"
+                                            alt="image" />
+                                    </div>
+                                    <h4 class="card-title text-primary mb-1">Tyrone Carroll</h4>
+                                    <div class="text-muted">Web Designer</div>
+                                    <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's
+                                        content.</p>
+                                    <div class="d-flex justify-content-around align-items-center font-18">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
+                                <div class="card-cup bg-gradient-peach"></div>
+                                <div class="card-body">
+                                    <div class="card-avatar mb-4">
+                                        <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
+                                    </div>
+                                    <h4 class="card-title text-warning mb-1">Becky Brooks</h4>
+                                    <div class="text-muted">Manager</div>
+                                    <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's
+                                        content.</p>
+                                    <div class="d-flex justify-content-around align-items-center font-18">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                
+        </div>
