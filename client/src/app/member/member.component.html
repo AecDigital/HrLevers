@@ -137,8 +137,8 @@
                 <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Role within Organization
-                        </button>
+{{position.position.DenominacionDelPuesto}}          
+              </button>
                     </h5>
                 </div>
 
@@ -148,7 +148,7 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <h5>Role Name: </h5>
-                                    <p>{{position}}</p>
+                                    <p>{{position.position.Unidad}}</p>
                                 </div>
                                 <div class="col-sm">
                                     One of three columns
@@ -481,40 +481,37 @@
                 </div>
 
                 <div class="row">
-                        <div class="col col-md-6">
-                        <div class="flex">
-                            <span *ngFor="let course of courses">
-                                <div class="card mb-4">
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{course.id.videoId}}"
-                                        allowfullscreen></iframe> -->
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{course.id.videoId}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                    </div>
-
-
-                                    <div class="card-body">
-                                            https://www.youtube.com/embed/{{course.id.videoId}}
-                                        <h4 class="card-title mb-2">
-                                            <a class="text-info">{{course.snippet.title}}</a>
-                                        </h4>
-                                        <div class="text-muted mb-3">{{course.snippet.publishedAt}}</div>
-                                        <p class="text-light">{{course.snippet.description}}</p>
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="text-info">
-                                                <h5>Channel: </h5>{{course.snippet.channelTitle}}</div>
-                                            <div>
-                                                <span class="text-muted mr-4">
-                                                    <i class="fa fa-heart-o mr-2"></i>124</span>
-                                                <span class="text-muted">
-                                                    <i class="fa fa-comment-o mr-2"></i>56</span>
-                                            </div>
-                                        </div>
+                    <div class="col col-md-6" *ngFor="let course of courses | paginate: { itemsPerPage: 4, currentPage: p }">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{course.id.videoId}}"
+                                allowfullscreen></iframe> -->
+                                <iframe width="560" height="315" [src]="baseurl + course.id.videoId | safeVideos"  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body">
+                                    https://www.youtube.com/embed/{{course.id.videoId}}
+                                <h4 class="card-title mb-2">
+                                    <a class="text-info">{{course.snippet.title}}</a>
+                                </h4>
+                                <div class="text-muted mb-3">{{course.snippet.publishedAt}}</div>
+                                <p class="text-light">{{course.snippet.description}}</p>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="text-info">
+                                        <h5>Channel: </h5>{{course.snippet.channelTitle}}</div>
+                                    <div>
+                                        <span class="text-muted mr-4">
+                                            <i class="fa fa-heart-o mr-2"></i>124</span>
+                                        <span class="text-muted">
+                                            <i class="fa fa-comment-o mr-2"></i>56</span>
                                     </div>
                                 </div>
-                            </span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+
 
                 <div class="margin">
                     <h2 class="center"> Your Team Mates </h2>

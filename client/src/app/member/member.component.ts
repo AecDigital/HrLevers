@@ -27,6 +27,7 @@ export class MemberComponent implements OnInit {
   topics: any;
   skillsgap: any;
   courses: any;
+  baseurl: String = "https://www.youtube.com/embed/";
 
   constructor(
     private skill: SkillsService,

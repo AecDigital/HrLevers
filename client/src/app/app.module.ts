@@ -33,6 +33,7 @@ import { SkillsService } from 'services/skills.service';
 import { MemberComponent } from './member/member.component';
 import { BarCharComponent } from './bar-char/bar-char.component';
 import { HorizontalbarComponent } from './horizontalbar/horizontalbar.component';
+import { SafeVideosPipe } from './safe-videos.pipe';
 
 
 
@@ -63,7 +64,8 @@ import { HorizontalbarComponent } from './horizontalbar/horizontalbar.component'
     PolarChartComponent,
     MemberComponent,
     BarCharComponent,
-    HorizontalbarComponent
+    HorizontalbarComponent,
+    SafeVideosPipe
     // Ng2SearchPipeModule
   ],
   imports: [
