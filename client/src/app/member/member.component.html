@@ -137,7 +137,7 @@
                 <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-{{position.position.DenominacionDelPuesto}}          
+         Role within Organization
               </button>
                     </h5>
                 </div>
@@ -148,14 +148,14 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <h5>Role Name: </h5>
-                                    <p>{{position.position.Unidad}}</p>
+                                    <p>{{position.position.DenominacionDelPuesto}} </p>
                                 </div>
                                 <div class="col-sm">
-                                    One of three columns
-                                </div>
+                                        <h5>Category: </h5>
+                                        <p>{{position.position.Categoria}} </p>                                </div>
                                 <div class="col-sm">
-                                    One of three columns
-                                </div>
+                                        <h5>Colectivo: </h5>
+                                        <p>{{position.position.Colectivo}} </p>                                </div>
                             </div>
                         </div>
                     </div>
@@ -175,12 +175,14 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    1 of 2
-                                </div>
+                                        <h5>Mission: </h5>
+                                        <p>{{position.position.Mision}} </p>                                </div>
                                 <div class="col">
-                                    2 of 2
-                                </div>
+                                    <div class="center">
+                                        <img src="https://www.thepharmaletter.com/media/image/merger-large.jpg">         
+                                                            </div>
                             </div>
+                                    </div>
                         </div>
 
                     </div>
@@ -190,17 +192,26 @@
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
                                 aria-controls="collapseThree">
-                                Role Functions </button>
+                                Responsability Level </button>
                         </h5>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                            non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                            moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
-                            et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                            Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
-                            synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <h5>Supervisor: </h5>
+                                                <p>{{position.position.ResponsabilidadYAutonomia_DependenciaFuncionalDelPuesto}} </p>
+                                            </div>
+                                            <div class="col-sm">
+                                                    <h5>Taking Decisions: </h5>
+                                                    <p>{{position.position.ResponsabilidadYAutonomia_MagnitudEnLaTomaDeDecisiones}} </p>                                </div>
+                                            <div class="col-sm">
+                                                    <h5>Leadership required?: </h5>
+                                                    <p>{{position.position.ResponsabilidadYAutonomia_ResponsabilidadYoMando}} </p>                                </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -216,15 +227,23 @@
             </div>
 
 
+            <div class="margin2">
+                    <div class="row">
+                      <div class="col">
+                        
+                        
+                      </div>
+
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        1 of 2
-                    </div>
+                            <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><h5><i class="far fa-clock"></i> Time Spent Company:</h5>{{member.exp.time_spend_company}} years.</li>
+                                    <li class="list-group-item"><h5><i class="fas fa-sort-amount-up"></i> Promotioned Last 5 years?</h5>{{member.exp.promotion_last_5years}}</li>
+                                    <li class="list-group-item"><h5><i class="far fa-chart-bar"></i> Last Performance Eval. Score:</h5>{{member.exp.last_evaluation}} of 1</li>
+                                  </ul>                    </div>
                     <div class="col">
-                        <div class="margin2">
                             <app-polar-chart [values]='EmployeeSkills' [values2]='PositionSkills'></app-polar-chart>
-                        </div>
                     </div>
                 </div>
                 <div class="row">

@@ -16,6 +16,7 @@ import { SkillsService } from 'services/skills.service';
 export class PolarChartComponent implements OnInit {
   @Input() values: any;
 @Input() values2: any;
+@Input() labels: any;
 
   chart = [];
   constructor() { }
