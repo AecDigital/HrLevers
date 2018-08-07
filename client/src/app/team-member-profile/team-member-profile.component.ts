@@ -49,6 +49,10 @@ export class TeamMemberProfileComponent implements OnInit {
           this.EmployeeSkills = skills.employeeLevel;
           this.PositionSkills = skills.positionLevel;
         });
+        this.skill.getSkillsGap(this.memberId).subscribe(skillsgap => {
+          this.skillsgap = skillsgap;
+          console.log(skillsgap);
+          });
       this.teamMember.getEmployeePosition(this.memberId).subscribe(position => {
         this.position = position;
         console.log(position);
@@ -61,17 +65,13 @@ export class TeamMemberProfileComponent implements OnInit {
   }
 
   newTask(Name, Description, Duedate, ActionPlan, form) {
+    
     form.reset();
     // this.route.params.subscribe(params => {
-      this.ntask
-        .newTask(Name, Description, Duedate, ActionPlan)
-        .subscribe(data => {
+      this.ntask.newTask(Name, Description, Duedate, ActionPlan).subscribe(data => {
           this.task = data;
-          console.log(this.task);
-          this.teamMember
-            .getEmployee(this.memberId)
-            .subscribe(res => {
-              (this.member = res);
+          this.teamMember.getEmployee(this.memberId).subscribe(employee => {
+              this.member = employee;
               this.teamMember.getTasksProgress(this.memberId).subscribe(tasksprogress => {
                 this.tasksprogress = (tasksprogress.toFixed(2));
                 console.log(this.tasksprogress);

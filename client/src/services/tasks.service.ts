@@ -28,9 +28,9 @@ editedtask: any;
       .pipe(
         map((res: Response) => {
           let task = res.json();
-          this.newTask = task;
-          console.log(this.newTask);
-          return this.newTask;
+/*           this.newTask = task; */
+/*           console.log(this.newTask); */
+          return task;
         })
       );
   }
