@@ -72,38 +72,4 @@ export class MemberComponent implements OnInit {
       });
     });
   }
-
-  newTask(Name, Description, Duedate, ActionPlan, form) {
-    form.reset();
-    this.route.params.subscribe(params => {
-      this.ntask
-        .newTask(Name, Description, Duedate, ActionPlan)
-        .subscribe(data => {
-          this.task = data;
-          console.log(this.task);
-          this.teamMember
-            .getEmployee(this.memberId)
-            .subscribe(res => (this.member = res));
-        });
-    });
-  }
-  removeTask(id) {
-    this.route.params.subscribe(params => {
-      this.ntask.removeTask(id).subscribe();
-      this.teamMember
-        .getEmployee(this.memberId)
-        .subscribe(res => (this.member = res));
-    });
-  }
-  editTask(id, Name, Description, Duedate, Done) {
-    console.log(id, Name, Description, Duedate, Done);
-    this.ntask
-      .editTask(id, Name, Description, Duedate, Done)
-      .subscribe(data => {
-        this.editedTask = data;
-        this.teamMember
-          .getEmployee(this.memberId)
-          .subscribe(res => (this.member = res));
-      });
-  }
 }

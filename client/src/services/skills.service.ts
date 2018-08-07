@@ -63,13 +63,11 @@ export class SkillsService {
             gap.push(e2);
           }
         })
+      // for (let i = 0; i < gap.length; i++) {
+      //   if (i % 2 === 0) {
+      //     gap2.push(gap[i], gap[i + 1]);
       );
-      for (let i = 0; i < gap.length; i++) {
-        if (i % 2 === 0) {
-          gap2.push(gap[i], gap[i + 1]);
-        }
-      }
-      let gaptitle = gap2.map(a => a.Title);
+      let gaptitle = gap.map(a => a.Title);
       console.log(gap);
       return gaptitle;
     });
