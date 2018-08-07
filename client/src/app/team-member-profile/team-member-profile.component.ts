@@ -54,14 +54,15 @@ export class TeamMemberProfileComponent implements OnInit {
         console.log(position);
       });
       this.teamMember.getTasksProgress(this.memberId).subscribe(tasksprogress => {
-        this.tasksprogress = tasksprogress;
+        this.tasksprogress = parseFloat(tasksprogress.toFixed(2));
         console.log(this.tasksprogress);
       });
     });
   }
 
   newTask(Name, Description, Duedate, ActionPlan, form) {
-    this.route.params.subscribe(params => {
+    form.reset();
+    // this.route.params.subscribe(params => {
       this.ntask
         .newTask(Name, Description, Duedate, ActionPlan)
         .subscribe(data => {
@@ -69,19 +70,34 @@ export class TeamMemberProfileComponent implements OnInit {
           console.log(this.task);
           this.teamMember
             .getEmployee(this.memberId)
-            .subscribe(res => (this.member = res));
-        });
+            .subscribe(res => {
+              (this.member = res);
+              this.teamMember.getTasksProgress(this.memberId).subscribe(tasksprogress => {
+                this.tasksprogress = (tasksprogress.toFixed(2));
+                console.log(this.tasksprogress);
+              });  
+        });   
     });
-  }
+  // })
+}
+
+  
   removeTask(id) {
     this.route.params.subscribe(params => {
       this.ntask.removeTask(id).subscribe(() => {
         this.teamMember
         .getEmployee(this.memberId)
-        .subscribe(res => (this.member = res));
+        .subscribe(res => {
+        (this.member = res);
+        this.teamMember.getTasksProgress(this.memberId).subscribe(tasksprogress => {
+          this.tasksprogress = (tasksprogress.toFixed(2));
+          console.log(this.tasksprogress);
+        });
       });
     });
-  }
+  })
+}
+
   editTask(id, Name, Description, Duedate, Status) {
     console.log(id, Name, Description, Duedate, Status);
     this.ntask

@@ -189,10 +189,8 @@
                   <tr>
                     <td>{{task.Name}}</td>
                     <td>{{task.TaskDescription}}</td>
-                    <td>{{task.Duedate}}</td>
+                    <td>{{task.Duedate | date}}</td>
                     <td>{{task.Status}}</td>
-                    <td>{{task._id}}</td>
-                    <td>{{train._id}}</td>
                     <td>
                       <button type="button" class="btn btn-primary btn-sm btn-success" data-toggle="modal" attr.data-target="#editModal{{j}}">
                         <i class="far fa-edit"></i> Edit Action</button>
@@ -238,7 +236,7 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-primary btn-sm btn-danger" data-dismiss="modal">Close</button>
-                          <button (click)="editTask(task._id, task.Name, task.Description, task.Duedate, task.Status)" type="submit" class="btn btn-primary btn-sm btn-success" >Save changes</button>
+                          <button (click)="editTask(task._id, task.Name, task.Description, task.Duedate, task.Status)" type="submit" class="btn btn-primary btn-sm btn-success" data-dismiss="modal">Save changes</button>
                         </div>
                       </div>
                     </div>

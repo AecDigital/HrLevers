@@ -102,7 +102,7 @@ export class AllemployeesService {
           tasksDone ++;
         }
       }
-      let tasksProgress = tasksDone * 100 / employee.tasks.length;
+      let tasksProgress = Number(tasksDone * 100 / employee.tasks.length);
       console.log(tasksProgress);
         return tasksProgress;
     });

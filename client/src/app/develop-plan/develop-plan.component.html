@@ -88,169 +88,21 @@
                         </div>
                     </div>
                     <div class="ibox-body">
-                        <ul class="list-group list-group-divider list-group-full tasks-list">
-                            <li class="list-group-item task-item">
-                                <div>
-                                    <label class="checkbox checkbox-grey checkbox-success">
-                                        <input type="checkbox" checked="">
-                                        <span class="input-span"></span>
-                                        <span class="task-title">Make Adminca the best and the most easy admin template</span>
-                                    </label>
-                                </div>
-                                <div class="task-data">
-                                    <small class="text-muted">29 May 2018</small>
-                                </div>
-                                <div class="task-actions">
-                                    <a class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="ti-more-alt"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item">
-                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                        <a class="dropdown-item">
-                                            <i class="ti-close mr-2"></i>Remove</a>
-                                    </div>
-                                </div>
-                            </li>
+                        <ul *ngFor="let task of member.tasks" class="list-group list-group-divider list-group-full tasks-list">
                             <li class="list-group-item task-item">
                                 <div>
                                     <label class="checkbox checkbox-grey checkbox-success">
                                         <input type="checkbox">
                                         <span class="input-span"></span>
-                                        <span class="task-title">Create Financial Report</span>
+                                        <span class="task-title"><i class="fas fa-thumbtack"></i> {{task.Name}}</span>
                                     </label>
                                 </div>
-                                <div class="task-data">
-                                    <small class="text-muted">No due date</small>
-                                </div>
+                                <div class="task-data"><small class="text-muted">{{task.Duedate | date}}</small></div>
                                 <div class="task-actions">
-                                    <a class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="ti-more-alt"></i>
-                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><i class="ti-more-alt"></i></a>
                                     <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item">
-                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                        <a class="dropdown-item">
-                                            <i class="ti-close mr-2"></i>Remove</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item task-item">
-                                <div>
-                                    <label class="checkbox checkbox-grey checkbox-success">
-                                        <input type="checkbox" checked="">
-                                        <span class="input-span"></span>
-                                        <span class="task-title">Meeting with Ann</span>
-                                    </label>
-                                    <span class="badge badge-warning ml-1">
-                                        <i class="ti-alarm-clock"></i> 1 hrs</span>
-                                </div>
-                                <div class="task-data">
-                                    <small class="text-muted">29 May 2018</small>
-                                </div>
-                                <div class="task-actions">
-                                    <a class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="ti-more-alt"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item">
-                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                        <a class="dropdown-item">
-                                            <i class="ti-close mr-2"></i>Remove</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item task-item">
-                                <div>
-                                    <label class="checkbox checkbox-grey checkbox-success">
-                                        <input type="checkbox">
-                                        <span class="input-span"></span>
-                                        <span class="task-title">Edit the blog post</span>
-                                    </label>
-                                </div>
-                                <div class="task-data">
-                                    <small class="text-muted">29 May 2018</small>
-                                </div>
-                                <div class="task-actions">
-                                    <a class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="ti-more-alt"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item">
-                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                        <a class="dropdown-item">
-                                            <i class="ti-close mr-2"></i>Remove</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item task-item">
-                                <div>
-                                    <label class="checkbox checkbox-grey checkbox-success">
-                                        <input type="checkbox">
-                                        <span class="input-span"></span>
-                                        <span class="task-title">Send photos to Jack</span>
-                                    </label>
-                                    <span class="badge badge-success ml-1">Today</span>
-                                </div>
-                                <div class="task-data">
-                                    <small class="text-muted">29 May 2018</small>
-                                </div>
-                                <div class="task-actions">
-                                    <a class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="ti-more-alt"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item">
-                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                        <a class="dropdown-item">
-                                            <i class="ti-close mr-2"></i>Remove</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item task-item">
-                                <div>
-                                    <label class="checkbox checkbox-grey checkbox-success">
-                                        <input type="checkbox">
-                                        <span class="input-span"></span>
-                                        <span class="task-title">Send Financial Reports</span>
-                                    </label>
-                                    <span class="badge badge-danger ml-1">Important</span>
-                                </div>
-                                <div class="task-data">
-                                    <small class="text-muted">29 May 2018</small>
-                                </div>
-                                <div class="task-actions">
-                                    <a class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="ti-more-alt"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item">
-                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                        <a class="dropdown-item">
-                                            <i class="ti-close mr-2"></i>Remove</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item task-item">
-                                <div>
-                                    <label class="checkbox checkbox-grey checkbox-success">
-                                        <input type="checkbox">
-                                        <span class="input-span"></span>
-                                        <span class="task-title">Send message to Bob</span>
-                                    </label>
-                                </div>
-                                <div class="task-data">
-                                    <small class="text-muted">29 May 2018</small>
-                                </div>
-                                <div class="task-actions">
-                                    <a class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="ti-more-alt"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item">
-                                            <i class="ti-pencil-alt mr-2"></i>Edit</a>
-                                        <a class="dropdown-item">
-                                            <i class="ti-close mr-2"></i>Remove</a>
+                                        <a class="dropdown-item"><i class="ti-pencil-alt mr-2"></i>Edit</a>
+                                        <a class="dropdown-item"><i class="ti-close mr-2"></i>Remove</a>
                                     </div>
                                 </div>
                             </li>
@@ -262,7 +114,7 @@
             <div class="col-lg-6">
                 <div class="ibox ibox-fullheight">
                     <div class="ibox-head">
-                        <div class="ibox-title">Recomended Feeds</div>
+                        <div class="ibox-title">Recomended Feeds for You</div>
                         <div class="ibox-tools">
                             <a class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="ti-notepad"></i>
