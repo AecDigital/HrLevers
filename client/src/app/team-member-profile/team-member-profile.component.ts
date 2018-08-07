@@ -75,13 +75,12 @@ export class TeamMemberProfileComponent implements OnInit {
               this.teamMember.getTasksProgress(this.memberId).subscribe(tasksprogress => {
                 this.tasksprogress = (tasksprogress.toFixed(2));
                 console.log(this.tasksprogress);
-              });  
-        });   
+              });
+        });
     });
-  // })
+
 }
 
-  
   removeTask(id) {
     this.route.params.subscribe(params => {
       this.ntask.removeTask(id).subscribe(() => {
@@ -95,7 +94,7 @@ export class TeamMemberProfileComponent implements OnInit {
         });
       });
     });
-  })
+  });
 }
 
   editTask(id, Name, Description, Duedate, Status) {
@@ -104,10 +103,16 @@ export class TeamMemberProfileComponent implements OnInit {
       .editTask(id, Name, Description, Duedate, Status)
       .subscribe(data => {
         this.editedTask = data;
-        console.log(this.editedTask);
-  });
-}
-}
+        this.teamMember.getEmployee(this.memberId).subscribe(employee => {
+          this.member = employee;
+          this.teamMember.getTasksProgress(this.memberId).subscribe(tasksprogress => {
+            this.tasksprogress = (tasksprogress.toFixed(2));
+            console.log(this.tasksprogress);
+          });
+        });
+      });
+  };
+};
 
 
 

@@ -36,6 +36,16 @@ export class AllemployeesService {
     });
    }
 
+   getAvgAge(): any {
+    return this.http.get(`${BASEURL}/api/employees`).map(res => {
+      return (
+        res.json().reduce((acc, e) => {
+          return acc + e.Age;
+        }, 0) / res.json().length
+      );
+    });
+  }
+
    getEmployeeSkills(id) {
     return this.http.get(`${BASEURL}/api/skills/${id}`).map(res => {
       const skills = res.json();

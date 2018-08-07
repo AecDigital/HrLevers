@@ -1,5 +1,5 @@
 <div class="container color" *ngIf="member">
-  <div class="jumbotron jumbotron-fluid color">
+  <div id="name" class="jumbotron jumbotron-fluid color">
     <div class="container">
       <div class="row">
         <div class="col-8">
@@ -180,7 +180,7 @@
                 <th>Duedate</th>
                 <th>Status</th>
                 <th>
-                  <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal">
+                  <button type="button" class="btn btn-outline-info" data-toggle="modal" attr.data-target="#exampleModal{{i}}">
                     Add new action</button>
                 </th>
               </tr>
@@ -250,7 +250,7 @@
         </div>
       </div>
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="exampleModal{{i}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
