@@ -10,6 +10,7 @@ import { TasksService } from "services/tasks.service";
 import "rxjs/add/operator/map";
 import { SkillsService } from "services/skills.service";
 
+
 @Component({
   selector: "app-team-member-profile",
   templateUrl: "./team-member-profile.component.html",

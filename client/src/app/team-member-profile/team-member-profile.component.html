@@ -7,7 +7,8 @@
           <p class="lead"> This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
         </div>
         <div class="col-4">
-          <img src="http://askuptoo.com/images/members/profile_img2.png" width="150px">
+          <!-- <img src="../../assets/icon.png" width="150px" height="100px" alt=""> -->
+          <img [src]=member.employee.profilePic.path width="150px">
 
         </div>
       </div>
@@ -55,9 +56,9 @@
               <i class="fas fa-rocket"></i> Talent Level:</h5>
           </li>
           <div class="progress">
-                <div class="progress-bar bg-warning" role="progressbar"  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" [style.width]="member.exp.Talent_Level * 16.66 + '%'">
-              </div>
+            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" [style.width]="member.exp.Talent_Level * 16.66 + '%'">
             </div>
+          </div>
         </ul>
       </div>
     </div>
@@ -113,238 +114,290 @@
     </div>
 
 
-    
+
     <h2 class="center">Talent Profile
-      </h2>
-      <hr class="style13">
-<br>
-
-    
-    <div class="margin2">
-    <div class="row">
-      <div class="col">
-        
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h5><i class="far fa-clock"></i> Time Spent Company:</h5>{{member.exp.time_spend_company}} years.</li>
-            <li class="list-group-item"><h5><i class="fas fa-sort-amount-up"></i> Promotioned Last 5 years?</h5>{{member.exp.promotion_last_5years}}</li>
-            <li class="list-group-item"><h5><i class="far fa-chart-bar"></i> Last Performance Eval. Score:</h5>{{member.exp.last_evaluation}} of 1</li>
-            <li class="list-group-item"><h5><i class="fas fa-dollar-sign"></i> Salary Rate:</h5>{{member.exp.salary}}</li>
-            <li class="list-group-item"><h5><i class="fas fa-graduation-cap"></i> Skills need to Improve :</h5>
-              <div class="media-heading text-danger">{{skillsgap}}</div></li>
-
-          </ul>
-      </div>
-      <div class="col">
-          <app-polar-chart [values]='EmployeeSkills' [values2]='PositionSkills'></app-polar-chart>
-        </div>
-      <div class="w-100"></div>
-      <div class="col">
-      </div>
-      <div class="col"></div>
-    </div>
-    </div>
-
-    <div class="margin">
-        <h2 class="center">Development Plan </h2>
+    </h2>
     <hr class="style13">
     <br>
 
 
-    <div class="row">
-      <div class="col-8"><div class="progress" style="height: 10px;">
-        <div class="progress-bar bg-danger" role="progressbar" [style.width]="tasksprogress + '%'" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-      </div></div>
-      <div class="col-4">   <h3>{{tasksprogress}}</h3><h4> % Progress</h4></div>
+    <div class="margin2">
+      <div class="row">
+        <div class="col">
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <h5>
+                <i class="far fa-clock"></i> Time Spent Company:</h5>{{member.exp.time_spend_company}} years.</li>
+            <li class="list-group-item">
+              <h5>
+                <i class="fas fa-sort-amount-up"></i> Promotioned Last 5 years?</h5>{{member.exp.promotion_last_5years}}</li>
+            <li class="list-group-item">
+              <h5>
+                <i class="far fa-chart-bar"></i> Last Performance Eval. Score:</h5>{{member.exp.last_evaluation}} of 1</li>
+            <li class="list-group-item">
+              <h5>
+                <i class="fas fa-dollar-sign"></i> Salary Rate:</h5>{{member.exp.salary}}</li>
+            <li class="list-group-item">
+              <h5>
+                <i class="fas fa-graduation-cap"></i> Skills need to Improve :</h5>
+              <div class="media-heading text-danger">{{skillsgap}}</div>
+            </li>
+
+          </ul>
+        </div>
+        <div class="col">
+          <app-polar-chart [values]='EmployeeSkills' [values2]='PositionSkills'></app-polar-chart>
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+        </div>
+        <div class="col"></div>
+      </div>
     </div>
 
-    
+    <div class="margin">
+      <h2 class="center">Development Plan </h2>
+      <hr class="style13">
+      <br>
 
-    <div *ngFor="let train of member.trains; let i = index" class="accordion" id="accordion{{i}}">
-      <div class="card-header" id="heading{{i}}">
-        <h5 class="mb-0">
 
-          <button class="btn btn-link" type="button" data-toggle="collapse" attr.data-target="#collapse{{i}}" aria-expanded="true">
-            <h5><i class="fas fa-plus"></i>  {{train.Name}} </h5>
-          </button>
-         
-        </h5>
+      <div class="row">
+        <div class="col-8">
+          <div class="progress" style="height: 10px;">
+            <div class="progress-bar bg-danger" role="progressbar" [style.width]="tasksprogress + '%'" aria-valuenow="80" aria-valuemin="0"
+              aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="col-4">
+          <h3>{{tasksprogress}}</h3>
+          <h4> % Progress</h4>
+        </div>
       </div>
 
-      <div id="collapse{{i}}" class="collapse " attr.data-parent="#accordion{{i}}">
-        <div class="card-body">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Action</th>
-                <th>Description</th>
-                <th>Duedate</th>
-                <th>Status</th>
-                <th>
-                  <button type="button" class="btn btn-outline-info" data-toggle="modal" attr.data-target="#exampleModal{{i}}">
-                    Add new action</button>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <span *ngFor="let task of member.tasks, let j = index">
-                <span *ngIf="task.ActionPlan===train._id">
-                  <tr>
+
+
+      <div *ngFor="let train of member.trains; let i = index" class="accordion" id="accordion{{i}}">
+        <div class="card-header" id="heading{{i}}">
+          <h5 class="mb-0">
+
+            <button class="btn btn-link" type="button" data-toggle="collapse" attr.data-target="#collapse{{i}}" aria-expanded="true">
+              <h5>
+                <i class="fas fa-plus"></i> {{train.Name}} </h5>
+            </button>
+
+          </h5>
+        </div>
+
+        <div id="collapse{{i}}" class="collapse " attr.data-parent="#accordion{{i}}">
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Action</th>
+                  <th>Description</th>
+                  <th>Duedate</th>
+                  <th>Status</th>
+                  <th>
+                    <button type="button" class="btn btn-outline-info" data-toggle="modal" attr.data-target="#exampleModal{{i}}">
+                      Add new action</button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let task of member.tasks, let j = index">
+                  <ng-container *ngIf="task.ActionPlan===train._id">
                     <td>{{task.Name}}</td>
                     <td>{{task.TaskDescription}}</td>
                     <td>{{task.Duedate | date}}</td>
                     <td>{{task.Status}}</td>
                     <td>
                       <button type="button" class="btn btn-primary btn-sm btn-success" data-toggle="modal" attr.data-target="#editModal{{j}}">
-                        <i class="far fa-edit"></i> Edit Action</button>
+                        <i class="far fa-edit"></i> Edit</button>
+                        <button (click)="removeTask(task._id)" type="submit" class="btn btn-primary btn-sm btn-danger">
+                            <i class="far fa-trash-alt"></i> Delete</button>
+                        
                     </td>
-                    <td>
-
-                      <button (click)="removeTask(task._id)" type="submit" class="btn btn-primary btn-sm btn-danger">
-                        <i class="far fa-trash-alt"></i> Delete</button>
-                    </td>
-                  </tr>
-
-                  
-
-                <div class="modal fade" id="editModal{{j}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Edit Development Action</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <form #form2="ngForm">
+                   
+                    <div class="modal fade" id="editModal{{j}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit Development Action</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <form #form2="ngForm">
                               <div class="form-row">
-                                  <div class="form-group col-md-6">
-                            <label> Name: </label>
-                            <input type="text" [(ngModel)]="task.Name" name="task.Name" value="{{task.Name}}"/>
-                            </div>
-                            <label> Duedate: </label>
-                            <input type="date" [(ngModel)]="task.Duedate" name="task.Duedate" value="{{task.Duedate}}"/>
-                            </div>
-                            <div class="form-group">
-                            <label> Description: </label>
-                            <textarea class="form-control" rows="5" [(ngModel)]="task.Description" name="task.Description" value="{{task.Description}}"></textarea>
-                            </div>
-                            <label> Done?: </label>
-                            <select class="form-control" [(ngModel)]="task.Status" name="task.Status" id="exampleFormControlSelect1" value="{{task.Status}}">
+                                <div class="form-group col-md-6">
+                                  <label> Name: </label>
+                                  <input type="text" [(ngModel)]="task.Name" name="task.Name" value="{{task.Name}}" />
+                                </div>
+                                <label> Duedate: </label>
+                                <input type="date" [(ngModel)]="task.Duedate" name="task.Duedate" value="{{task.Duedate}}" />
+                              </div>
+                              <div class="form-group">
+                                <label> Description: </label>
+                                <textarea class="form-control" rows="5" [(ngModel)]="task.Description" name="task.Description" value="{{task.Description}}"></textarea>
+                              </div>
+                              <label> Done?: </label>
+                              <select class="form-control" [(ngModel)]="task.Status" name="task.Status" id="exampleFormControlSelect1" value="{{task.Status}}">
                                 <option>Pending</option>
                                 <option>Done</option>
                               </select>
-                          </form>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-primary btn-sm btn-danger" data-dismiss="modal">Close</button>
-                          <button (click)="editTask(task._id, task.Name, task.Description, task.Duedate, task.Status)" type="submit" class="btn btn-primary btn-sm btn-success" data-dismiss="modal">Save changes</button>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-sm btn-danger" data-dismiss="modal">Close</button>
+                            <button (click)="editTask(task._id, task.Name, task.Description, task.Duedate, task.Status)" type="submit" class="btn btn-primary btn-sm btn-success"
+                              data-dismiss="modal">Save changes</button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </span>
-              </span>
-            </tbody>
-          </table>
+                  </ng-container>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal{{i}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">New Development Action</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal{{i}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Development Action</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
                 <form #form="ngForm">
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputEmail4">Action Name</label>
-                        <input type="text" class="form-control" [(ngModel)]="Name" name="Name" placeholder="A name for a new action">
-                      </div>
-                      <label> Duedate: </label>
-                      <input type="date" [(ngModel)]="Duedate" name="Duedate" />
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">Action Name</label>
+                      <input type="text" class="form-control" [(ngModel)]="Name" name="Name" placeholder="A name for a new action">
                     </div>
-                    <div class="form-group">
-                      <label for="inputAddress">Description</label>
-                      <textarea class="form-control" rows="5" [(ngModel)]="Description" name="Description" placeholder="What is this about..."></textarea>
-                    </div>                
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary btn-sm btn-danger" data-dismiss="modal">Cancel</button>
-              <button (click)="newTask(Name, Description, Duedate, train._id, form)" type="submit" class="btn btn-primary btn-sm btn-success" data-dismiss="modal">Add action</button>
+                    <label> Duedate: </label>
+                    <input type="date" [(ngModel)]="Duedate" name="Duedate" />
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress">Description</label>
+                    <textarea class="form-control" rows="5" [(ngModel)]="Description" name="Description" placeholder="What is this about..."></textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm btn-danger" data-dismiss="modal">Cancel</button>
+                <button (click)="newTask(Name, Description, Duedate, train._id, form)" type="submit" class="btn btn-primary btn-sm btn-success"
+                  data-dismiss="modal">Add action</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
 
 
     <div class="margin">
-        <h2 class="center"> Team Mates </h2>
-    <hr class="style13">
-    <br>
-
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
-                <div class="card-cup bg-gradient-purple"></div>
-                <div class="card-body">
-                    <div class="card-avatar mb-4">
-                        <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
-                    </div>
-                    <h4 class="card-title text-pink mb-1">Lynn Weaver</h4>
-                    <div class="text-muted">Director</div>
-                    <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <div class="d-flex justify-content-around align-items-center font-18">
-                      
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
-                <div class="card-cup bg-gradient-blue"></div>
-                <div class="card-body">
-                    <div class="card-avatar mb-4">
-                        <img class="img-circle" src="https://static1.squarespace.com/static/582056f33e00be92418a18fb/t/59df794812abd9a897878aa0/1507817816329/circle+profile.PNG?format=300w" alt="image" />
-                    </div>
-                    <h4 class="card-title text-primary mb-1">Tyrone Carroll</h4>
-                    <div class="text-muted">Web Designer</div>
-                    <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <div class="d-flex justify-content-around align-items-center font-18">
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
-                <div class="card-cup bg-gradient-peach"></div>
-                <div class="card-body">
-                    <div class="card-avatar mb-4">
-                        <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
-                    </div>
-                    <h4 class="card-title text-warning mb-1">Becky Brooks</h4>
-                    <div class="text-muted">Manager</div>
-                    <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <div class="d-flex justify-content-around align-items-center font-18">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      <h2 class="center"> Team Mates </h2>
+      <hr class="style13">
+      <br>
 
 
-    <script>
-      $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-      })
-    </script>
+      <div class="container">
+        <div class="row">
+          <div *ngFor="let mate of member.mates | paginate: { itemsPerPage: 4, currentPage: p }" class="col col-md-3">
+            <div class="card-deck">
+              <div class="card text-center card-air centered mb-4" style="max-width:320px;">
+                <div class="card-body">
+                  <div class="card-avatar mt-3 mb-3">
+                    <img class="img-circle" [src]=member.employee.profilePic.path
+                      alt="image"/>
+                  </div>
+                  <h4 class="card-title mb-1">{{mate.Name}}</h4>
+                  <div class="text-muted">Web Designer</div>
+                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="d-flex justify-content-around align-items-center font-18">
+                    <a class="btn btn-outline-secondary btn-icon-only btn-circle btn-air" href="javascript:;">
+                        <i class="far fa-envelope-open"></i>
+                    </a>
+                    <a class="btn btn-outline-secondary btn-icon-only btn-circle btn-air " href="javascript:;">
+                        <i class="fas fa-mobile-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            
+                </div>
+              </div>
+            </div>
+            <div class="center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+          
+        
+
+        <!-- <div class="row">
+          <div *ngFor="let mate of member.mates" class="col-lg-3">
+            <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
+              <div class="card-cup bg-gradient-purple"></div>
+              <div class="card-body">
+                <div class="card-avatar mb-4">
+                  <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
+                </div>
+                <h4 class="card-title text-pink mb-1">{{mate.name}}</h4>
+                <div class="text-muted">Director</div>
+                <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="d-flex justify-content-around align-items-center font-18">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
+              <div class="card-cup bg-gradient-blue"></div>
+              <div class="card-body">
+                <div class="card-avatar mb-4">
+                  <img class="img-circle" src="https://static1.squarespace.com/static/582056f33e00be92418a18fb/t/59df794812abd9a897878aa0/1507817816329/circle+profile.PNG?format=300w"
+                    alt="image" />
+                </div>
+                <h4 class="card-title text-primary mb-1">Tyrone Carroll</h4>
+                <div class="text-muted">Web Designer</div>
+                <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="d-flex justify-content-around align-items-center font-18">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
+              <div class="card-cup bg-gradient-peach"></div>
+              <div class="card-body">
+                <div class="card-avatar mb-4">
+                  <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
+                </div>
+                <h4 class="card-title text-warning mb-1">Becky Brooks</h4>
+                <div class="text-muted">Manager</div>
+                <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="d-flex justify-content-around align-items-center font-18">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+
+        <script>
+          $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+          })
+        </script>

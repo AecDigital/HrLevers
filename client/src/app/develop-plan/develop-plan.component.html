@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <img src="http://askuptoo.com/images/members/profile_img2.png" width="150px">
+                        <img [src]=member.employee.profilePic.path width="150px">
                 </div>
             </div>
         </div>
@@ -190,6 +190,8 @@
                 </div>
             </div>
         </div>
-        <div class="center">
-        <pagination-controls (pageChange)="p = $event"></pagination-controls>
-        </div>
+       
+                </div>
+                <div class="center">
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </div>

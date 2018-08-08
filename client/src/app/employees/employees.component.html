@@ -21,6 +21,7 @@
                     <table data-toggle="table" class="table table-bordered table-hover" id="datatable">
                         <thead class="thead-default thead-lg">
                             <tr>
+                                <th>Photo</th>
                                 <th>Name</th>
                                 <th>Surname</th>
                                 <th>Role</th>
@@ -34,6 +35,7 @@
                         <tbody>
 
                             <tr *ngFor="let employee of employees | paginate: { itemsPerPage: 7, currentPage: p }; let i = index">
+                                <td><img src="{{employee.profilePic.path}}"></td>
                                 <td>{{employee.Name}}</td>
                                 <td>
                                     {{employee.Surname}}
@@ -44,7 +46,7 @@
                                 <td>{{employee.Email}}</td>
                                 <td>{{employee.Phone}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" href='#name' [routerLink]="['/team-member', employee._id]"><i class="far fa-eye"></i></button>
+                                    <button type="button" class="btn btn-info" href='#name' [routerLink]="['/team-member', employee._id]"><i class="far fa-eye"></i></button>
                                     <button type="button" class="btn btn-info" href='' [routerLink]="['/member', employee._id]"><i class="far fa-eye"></i>Member</button>
                                 </td>
                             </tr>

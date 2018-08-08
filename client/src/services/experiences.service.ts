@@ -4,7 +4,7 @@ import { Observable } from "../../node_modules/rxjs";
 import { environment } from "../environments/environment";
 import "rxjs/add/operator/map";
 import { map } from "rxjs/operators";
-import _ from "lodash";
+import * as _ from 'lodash';
 
 const BASEURL = environment.BASEURL;
 
@@ -88,8 +88,10 @@ getCompetitive() {
 getCollaborative() {
   return this.http.get(`${BASEURL}/api/experiences`).map(res => {
     const experiences = res.json();
+    // console.log(experiences);
     const result = [];
     const coll = experiences.map(e => {
+      console.log(_.pick(e, ["Emp_Collaborative_1"]));
       return _.pick(e, [
         "Emp_Collaborative_1",
         "Emp_Collaborative_2",

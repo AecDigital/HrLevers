@@ -7,6 +7,8 @@ const ActionPlan = require("../../models/actionPlans");
 const Tasks = require("../../models/task");
 const _ = require("lodash");
 const axios = require("axios");
+const multer = require("multer");
+const upload = multer({ dest: "./public/uploads" });
 require("dotenv").config();
 
 API1 = process.env.API1;
@@ -20,19 +22,23 @@ router.get("/", (req, res, next) => {
   });
 });
 
+
 router.get("/:id", (req, res, next) => {
   Employee.findById(req.params.id)
     .then(employee => {
-      EmployeeExperience.findOne({ Employee: employee._id }).then(exp => {
-        ActionPlan.find({ Employee: employee._id }).then(trains => {
-          let tasks = Promise.all(
-            trains.map(doc => Tasks.find({ ActionPlan: doc._id }))
-          ).then(tasks => {
-            tasks = _.flattenDeep(tasks);
-            return res.status(200).json({ employee, exp, trains, tasks });
+      Employee.find({JobCenter: employee.JobCenter}).then(mates=>{
+        EmployeeExperience.findOne({ Employee: employee._id }).then(exp => {
+          ActionPlan.find({ Employee: employee._id }).then(trains => {
+            let tasks = Promise.all(
+              trains.map(doc => Tasks.find({ ActionPlan: doc._id }))
+            ).then(tasks => {
+              tasks = _.flattenDeep(tasks);
+              console.log({ employee, mates, exp, trains, tasks })
+              return res.status(200).json({ employee, mates, exp, trains, tasks });
+            });
           });
         });
-      });
+      })
     })
     .catch(err => res.status(500).json(err));
 });
