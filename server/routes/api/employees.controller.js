@@ -12,6 +12,7 @@ const upload = multer({ dest: "./public/uploads" });
 require("dotenv").config();
 
 API1 = process.env.API1;
+API2 = process.env.API2;
 
 router.get("/", (req, res, next) => {
   Employee.find({}).exec((err, employees) => {
@@ -67,7 +68,7 @@ router.post("/user-courses", (req, res, next) => {
   Promise.all(
     topics.map(tag =>
       axios.get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${tag}&key=AIzaSyBhtaKmsGu2d3zHkQeGK6vx9niDgnZkYNo`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${tag}&key=${API2}`
       )
     )
   )
