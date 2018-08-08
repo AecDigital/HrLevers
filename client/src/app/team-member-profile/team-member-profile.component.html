@@ -165,7 +165,7 @@
       <div class="row">
         <div class="col-8">
           <div class="progress" style="height: 10px;">
-            <div class="progress-bar bg-danger" role="progressbar" [style.width]="tasksprogress + '%'" aria-valuenow="80" aria-valuemin="0"
+            <div class="progress-bar bg-danger" role="progressbar" [style.width]="tasksprogress + '%'" aria-valuenow="100" aria-valuemin="0"
               aria-valuemax="100"></div>
           </div>
         </div>
@@ -319,7 +319,8 @@
                   </div>
                   <h4 class="card-title mb-1">{{mate.Name}}</h4>
                   <div class="text-muted">{{mate.Department}}</div>
-                  <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="mt-4 mb-5">Mail: {{mate.Email}}</p>
+
                   <div class="d-flex justify-content-around align-items-center font-18">
                     <a data-toggle="tooltip1" data-placement="top" title="{{mate.Email}}" class="btn btn-outline-secondary btn-icon-only btn-circle btn-air" href="javascript:;">
                         <i class="far fa-envelope-open"></i>

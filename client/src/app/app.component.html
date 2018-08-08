@@ -1,7 +1,7 @@
 
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #65C4D6">
-  <a class="navbar-brand" href="#">HrLevers</a>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #65C4D6">
+  <a class="navbar-brand" href="#"><img src="http://ftp.scientificlinux.org/linux/scientific/graphics/version-3/logo/sl-logo.png" width="50px"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -16,23 +16,87 @@
       </li>
     </ul>
     <span class="navbar-text">
-      <li class="nav-item" *ngIf="Auth.user">
+      <span class="nav-item" *ngIf="Auth.user">
         <a class="nav-link disabled" href="#" (click)="logout()">
           <i class="fas fa-power-off"></i> LogOut</a>
           
-      </li>
+        </span>
     </span>
   </div>
 </nav>
 
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="https://cdn3.iconfinder.com/data/icons/trico-circles-solid/24/Circle-Solid-List-512.png" width="75px" href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+                        <!-- <img src="http://ftp.scientificlinux.org/linux/scientific/graphics/version-3/logo/sl-logo.png" width="150px" href="#menu-toggle" class="btn btn-default" id="menu-toggle"> -->
+                        <p><router-outlet></router-outlet></p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
 
 
 
-<!START PAGE CONTENT-->
-<div class="content-wrapper">
-  <router-outlet></router-outlet>
-  <footer class="page-footer" app-footer></footer>
-</div> 
+
+
 
 

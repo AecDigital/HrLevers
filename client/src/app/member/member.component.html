@@ -222,61 +222,39 @@
                     <hr class="style13">
                     <br>
 
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
-                                <div class="card-cup bg-gradient-purple"></div>
-                                <div class="card-body">
-                                    <div class="card-avatar mb-4">
-                                        <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
+                    <div class="container">
+                            <div class="row">
+                              <div *ngFor="let mate of member.mates | paginate: { itemsPerPage: 4, currentPage: p }" class="col col-md-3">
+                                <div class="card-deck">
+                                  <div class="card text-center card-air centered mb-4" style="max-width:320px;">
+                                    <div class="card-body">
+                                      <div class="card-avatar mt-3 mb-3">
+                                        <img class="img-circle" [src]=member.employee.profilePic.path
+                                          alt="image"/>
+                                      </div>
+                                      <h4 class="card-title mb-1">{{mate.Name}}</h4>
+                                      <div class="text-muted">{{mate.Department}}</div>
+                                      <p class="mt-4 mb-5">Mail: {{mate.Email}}</p>
+                    
+                                      <div class="d-flex justify-content-around align-items-center font-18">
+                                        <a data-toggle="tooltip1" data-placement="top" title="{{mate.Email}}" class="btn btn-outline-secondary btn-icon-only btn-circle btn-air" href="javascript:;">
+                                            <i class="far fa-envelope-open"></i>
+                                        </a>
+                                        <a data-toggle="tooltip" data-placement="top" title="{{mate.Phone}}" class="btn btn-outline-secondary btn-icon-only btn-circle btn-air " href="javascript:;">
+                                            <i class="fas fa-mobile-alt"></i>
+                                        </a>
+                                       
+                                      </div>
                                     </div>
-                                    <h4 class="card-title text-pink mb-1">Lynn Weaver</h4>
-                                    <div class="text-muted">Director</div>
-                                    <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's
-                                        content.</p>
-                                    <div class="d-flex justify-content-around align-items-center font-18">
-
-                                    </div>
+                                  </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
-                                <div class="card-cup bg-gradient-blue"></div>
-                                <div class="card-body">
-                                    <div class="card-avatar mb-4">
-                                        <img class="img-circle" src="https://static1.squarespace.com/static/582056f33e00be92418a18fb/t/59df794812abd9a897878aa0/1507817816329/circle+profile.PNG?format=300w"
-                                            alt="image" />
+                              </div>
+                              <div class="col">
+                                
                                     </div>
-                                    <h4 class="card-title text-primary mb-1">Tyrone Carroll</h4>
-                                    <div class="text-muted">Web Designer</div>
-                                    <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's
-                                        content.</p>
-                                    <div class="d-flex justify-content-around align-items-center font-18">
-
-                                    </div>
+                                  </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card text-center has-cup card-air centered mb-4" style="max-width:320px;">
-                                <div class="card-cup bg-gradient-peach"></div>
-                                <div class="card-body">
-                                    <div class="card-avatar mb-4">
-                                        <img class="img-circle" src="http://askuptoo.com/images/members/profile_img2.png" alt="image" />
+                                <div class="center">
+                                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
                                     </div>
-                                    <h4 class="card-title text-warning mb-1">Becky Brooks</h4>
-                                    <div class="text-muted">Manager</div>
-                                    <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's
-                                        content.</p>
-                                    <div class="d-flex justify-content-around align-items-center font-18">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                
-        </div>
+                      

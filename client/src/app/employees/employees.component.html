@@ -6,8 +6,8 @@
         <div class="ibox">
             <div class="ibox-body">
                     <h3>Workforce Members</h3>
-                <h5 class="font-strong mb-4"></h5>
-                <div class="flexbox mb-4">
+                <h5 class="font-strong mb-6"></h5>
+                <div class="flexbox mb-5">
                     <div class="flexbox">
                     </div>
                     <div class="input-group-icon input-group-icon-left mr-3">
@@ -35,7 +35,7 @@
                         <tbody>
 
                             <tr *ngFor="let employee of employees | paginate: { itemsPerPage: 7, currentPage: p }; let i = index">
-                                <td><img src="{{employee.profilePic.path}}"></td>
+                                <td><img src="{{employee.profilePic.path}}" width="50px"></td>
                                 <td>{{employee.Name}}</td>
                                 <td>
                                     {{employee.Surname}}
@@ -46,8 +46,8 @@
                                 <td>{{employee.Email}}</td>
                                 <td>{{employee.Phone}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-info" href='#name' [routerLink]="['/team-member', employee._id]"><i class="far fa-eye"></i></button>
-                                    <button type="button" class="btn btn-info" href='' [routerLink]="['/member', employee._id]"><i class="far fa-eye"></i>Member</button>
+                                    <button type="button" class="btn btn-warning" href='#name' [routerLink]="['/team-member', employee._id]"><i class="far fa-eye"></i></button>
+                                    <!-- <button type="button" class="btn btn-info" href='' [routerLink]="['/member', employee._id]"><i class="far fa-eye"></i>Member</button> -->
                                 </td>
                             </tr>
                         </tbody>
