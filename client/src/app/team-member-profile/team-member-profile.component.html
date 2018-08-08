@@ -318,15 +318,16 @@
                       alt="image"/>
                   </div>
                   <h4 class="card-title mb-1">{{mate.Name}}</h4>
-                  <div class="text-muted">Web Designer</div>
+                  <div class="text-muted">{{mate.Department}}</div>
                   <p class="mt-4 mb-5">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <div class="d-flex justify-content-around align-items-center font-18">
-                    <a class="btn btn-outline-secondary btn-icon-only btn-circle btn-air" href="javascript:;">
+                    <a data-toggle="tooltip1" data-placement="top" title="{{mate.Email}}" class="btn btn-outline-secondary btn-icon-only btn-circle btn-air" href="javascript:;">
                         <i class="far fa-envelope-open"></i>
                     </a>
-                    <a class="btn btn-outline-secondary btn-icon-only btn-circle btn-air " href="javascript:;">
+                    <a data-toggle="tooltip" data-placement="top" title="{{mate.Phone}}" class="btn btn-outline-secondary btn-icon-only btn-circle btn-air " href="javascript:;">
                         <i class="fas fa-mobile-alt"></i>
                     </a>
+                   
                   </div>
                 </div>
               </div>
