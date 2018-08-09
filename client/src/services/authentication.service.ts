@@ -13,6 +13,8 @@ interface UserObject {
   username: String;
   mail: String;
   password: String;
+  isadmin: Boolean;
+  employee_Id: String;
 }
 
 

@@ -16,7 +16,7 @@ const UserSchema = new Schema({
     required: [true, "Password is required"]
   },
   isadmin: { type: Boolean, default: false},
-  ismanager: { type: Boolean, default: false}
+  employee_Id: { type: String, default: ''}
 });
 
 UserSchema.methods.generateHash = function(password) {
