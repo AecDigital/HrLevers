@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, Output, EventEmitter } from "@angular/core";
 import { Http, Response } from "@angular/http";
 import { Observable } from "../../node_modules/rxjs";
 import { environment } from "../environments/environment";
@@ -12,6 +12,9 @@ export class TasksService {
   options: object = { withCredentials: true };
 editedtask: any;
   constructor(private http: Http) {}
+
+  @Output() refreshEmployeeTasks: EventEmitter<void> = new EventEmitter()
+
 
   newTask(
     Name: String,
@@ -47,6 +50,7 @@ editedtask: any;
       .pipe(map((res: Response) => {
         let editedtask = res.json();
         console.log(editedtask);
+        this.refreshEmployeeTasks.emit();
         return this.editedtask;
       }));
   }

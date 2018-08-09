@@ -96,11 +96,20 @@
                         <ul *ngFor="let task of member.tasks" class="list-group list-group-divider list-group-full tasks-list">
                             <li class="list-group-item task-item">
                                 <div>
-                                    <label class="checkbox checkbox-grey checkbox-success">
-                                        <input type="checkbox">
+
+                                    <label *ngIf="task.Status=='Done'" class="checkbox checkbox-grey checkbox-success">
+                                        <input disabled type="checkbox" checked>
                                         <span class="input-span"></span>
                                         <span class="task-title"><i class="fas fa-thumbtack"></i> {{task.Name}}</span>
                                     </label>
+
+                                    <label *ngIf="task.Status!='Done'" class="checkbox checkbox-grey">
+                                        <input disabled type="checkbox">
+                                        <span class="input-span"></span>
+                                        <span class="task-title"><i class="fas fa-thumbtack"></i> {{task.Name}}</span>
+                                    </label>
+
+
                                 </div>
                                 <div class="task-data"><small class="text-muted">Duedate: {{task.Duedate | date}}</small></div>
                                 

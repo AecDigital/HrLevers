@@ -4,6 +4,13 @@ body {
 
 /* Toggle Styles */
 
+.background {
+    margin-left: 0px;
+    background-image: url("/images/home3.jpg");
+    background-size: cover;
+    height: 800px;
+  }
+
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -51,7 +58,7 @@ body {
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 200px;
     margin: 0;
     padding: 0;
     list-style: none;

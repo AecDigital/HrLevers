@@ -1,5 +1,6 @@
 
 
+<div *ngIf='Auth.user'>
 <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #65C4D6">
   <a class="navbar-brand" href="#"><img src="http://ftp.scientificlinux.org/linux/scientific/graphics/version-3/logo/sl-logo.png" width="50px"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
@@ -8,27 +9,27 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" *ngIf="!Auth.user">
+      <!-- <li class="nav-item" *ngIf="!Auth.user">
         <a class="nav-link active" [routerLink]="['/signup']" href="#">SignUp</a>
-      </li>
-      <li class="nav-item" *ngIf="!Auth.user">
+      </li> -->
+      <!-- <li class="nav-item" *ngIf="!Auth.user">
         <a class="nav-link" [routerLink]="['/login']">LogIn</a>
-      </li>
+      </li> -->
     </ul>
     <span class="navbar-text">
       <span class="nav-item" *ngIf="Auth.user">
-        <a class="nav-link disabled" href="#" (click)="logout()">
-          <i class="fas fa-power-off"></i> LogOut</a>
+        <span id="logout-button" class="nav-link disabled" href="#" (click)="logout()">
+          <i class="fas fa-power-off"></i> LogOut</span>
           
         </span>
     </span>
   </div>
 </nav>
+</div>
 
 
 
-<!DOCTYPE html>
-<html lang="en">
+
 
 <head>
 
@@ -40,38 +41,48 @@
 
 </head>
 
-<body>
 
-    <div id="wrapper">
+<div>
+
+    
+
+    <div class="toggled" id="wrapper" [ngClass]="{'logged':Auth.user}" >
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
+
+        <div  *ngIf="Auth.user" id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
                     </a>
                 </li>
-                <li>
-                    <a href="#">Dashboard</a>
+               
+                <li >
+                    <!-- <a href="(´develop-plan/{{user.employee_Id}}´)">My Development Plan</a> -->
                 </li>
-                <li>
-                    <a href="#">Shortcuts</a>
-                </li>
-                <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
+                <ng-container *ngIf="Auth.user.isadmin==false"> 
+                        <li >
+                                <a href="#">My Profile</a>
+                            </li>
+                            <li>
+                                <a href="#">My Development Plan</a>
+                            </li>
+                </ng-container>
+
+                <ng-container *ngIf="Auth.user.isadmin==true"> 
+                        <li >
+                                <a href="#">Dashboard</a>
+                            </li>
+                            
+                </ng-container>
+               
                 <li>
                     <a href="#">About</a>
                 </li>
                 <li>
                     <a href="#">Services</a>
                 </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
+                
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -81,7 +92,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <img src="https://cdn3.iconfinder.com/data/icons/trico-circles-solid/24/Circle-Solid-List-512.png" width="75px" href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+                        <img *ngIf="Auth.user" src="https://cdn3.iconfinder.com/data/icons/trico-circles-solid/24/Circle-Solid-List-512.png" width="75px" href="#menu-toggle" class="btn btn-default" id="menu-toggle">
                         <!-- <img src="http://ftp.scientificlinux.org/linux/scientific/graphics/version-3/logo/sl-logo.png" width="150px" href="#menu-toggle" class="btn btn-default" id="menu-toggle"> -->
                         <p><router-outlet></router-outlet></p>
                         
@@ -91,9 +102,7 @@
         </div>
 
     </div>
-
-</body>
-</html>
+</div>
 
 
 

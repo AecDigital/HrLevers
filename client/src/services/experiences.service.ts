@@ -91,7 +91,6 @@ getCollaborative() {
     // console.log(experiences);
     const result = [];
     const coll = experiences.map(e => {
-      console.log(_.pick(e, ["Emp_Collaborative_1"]));
       return _.pick(e, [
         "Emp_Collaborative_1",
         "Emp_Collaborative_2",

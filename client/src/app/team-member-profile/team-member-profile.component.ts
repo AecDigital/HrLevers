@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";;
 import { Observable } from "../../../node_modules/rxjs";
 import { ActivatedRoute } from "@angular/router";
 import { AllthreadsService } from "../../services/allthreads.service";
@@ -9,6 +9,8 @@ import { ExperiencesService } from "services/experiences.service";
 import { TasksService } from "services/tasks.service";
 import "rxjs/add/operator/map";
 import { SkillsService } from "services/skills.service";
+
+const _ = require('lodash');
 
 
 @Component({
@@ -37,6 +39,7 @@ export class TeamMemberProfileComponent implements OnInit {
     private Auth: AuthenticationService
   ) {}
 
+
   ngOnInit() {
     this.route.params.subscribe(params => {
       (this.memberId = params["id"]),
@@ -51,7 +54,7 @@ export class TeamMemberProfileComponent implements OnInit {
           this.PositionSkills = skills.positionLevel;
         });
         this.skill.getSkillsGap(this.memberId).subscribe(skillsgap => {
-          this.skillsgap = skillsgap;
+          this.skillsgap = _.uniq(skillsgap);
           console.log(skillsgap);
           });
       this.teamMember.getEmployeePosition(this.memberId).subscribe(position => {

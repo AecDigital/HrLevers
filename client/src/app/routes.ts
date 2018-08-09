@@ -11,9 +11,11 @@ import { TeamMemberProfileComponent } from './team-member-profile/team-member-pr
 import { NewTaskComponent } from './new-task/new-task.component';
 import { MemberComponent } from './member/member.component';
 import { DevelopPlanComponent } from './develop-plan/develop-plan.component';
+import { HomeComponent } from './home/home.component'
 
 export const routes: Routes = [
-  { path: '', component: DashboardComponent},
+  { path: '', component: HomeComponent},
+  { path: 'dashboard', component: DashboardComponent},
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'team-member/:id', component: TeamMemberProfileComponent},

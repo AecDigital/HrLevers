@@ -9,13 +9,12 @@ import { ExperiencesService } from "services/experiences.service";
 import { TasksService } from "services/tasks.service";
 import "rxjs/add/operator/map";
 import { SkillsService } from "services/skills.service";
-import {DomSanitizer} from '@angular/platform-browser';
-
+import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
-  selector: 'app-develop-plan',
-  templateUrl: './develop-plan.component.html',
-  styleUrls: ['./develop-plan.component.css']
+  selector: "app-develop-plan",
+  templateUrl: "./develop-plan.component.html",
+  styleUrls: ["./develop-plan.component.css"]
 })
 export class DevelopPlanComponent implements OnInit {
   memberId: String;
@@ -37,40 +36,46 @@ export class DevelopPlanComponent implements OnInit {
     public Experiences: ExperiencesService,
     private route: ActivatedRoute,
     private Auth: AuthenticationService
-  ) { }
-
-  ngOnInit() {this.route.params.subscribe(params => {
-    (this.memberId = params["id"]),
-      this.teamMember
-        .getEmployee(this.memberId)
-        .subscribe(res => (this.member = res));
-  });
-  this.route.params.subscribe(params => {
-    (this.memberId = params["id"]),
-      this.skill.getEmployeeSkills(this.memberId).subscribe(skills => {
-        this.EmployeeSkills = skills.employeeLevel;
-        this.PositionSkills = skills.positionLevel;
-      });
-    this.teamMember
-    .getEmployeePosition(this.memberId)
-    .subscribe(position => {
-      this.position = position;
-      console.log(this.position);
+  ) {
+    this.ntask.refreshEmployeeTasks.subscribe(()=>{
+      console.log("cambio?");
+      this.getEmployee();
     });
-    this.skill.getSkillsGap(this.memberId).subscribe(skillsgap => {
-      this.skillsgap = skillsgap;
-      console.log(skillsgap);
-      this.skill.gettopics(this.skillsgap).subscribe(topics => {
-        this.topics = topics;
-        console.log(topics);
+  }
+
+  ngOnInit() {
+    this.getEmployee();
+    this.route.params.subscribe(params => {
+      (this.memberId = params["id"]),
+        this.skill.getEmployeeSkills(this.memberId).subscribe(skills => {
+          this.EmployeeSkills = skills.employeeLevel;
+          this.PositionSkills = skills.positionLevel;
+        });
+      this.teamMember.getEmployeePosition(this.memberId).subscribe(position => {
+        this.position = position;
+        console.log(this.position);
       });
-      this.skill.getcourses(this.skillsgap).subscribe(courses => {
-        this.courses = courses;
-        console.log(courses);
+      this.skill.getSkillsGap(this.memberId).subscribe(skillsgap => {
+        this.skillsgap = skillsgap;
+        console.log(skillsgap);
+        this.skill.gettopics(this.skillsgap).subscribe(topics => {
+          this.topics = topics;
+          console.log(topics);
+        });
+        this.skill.getcourses(this.skillsgap).subscribe(courses => {
+          this.courses = courses;
+          console.log(courses);
+        });
       });
     });
-  });
-}
-}
+  }
 
-
+  getEmployee() {
+    this.route.params.subscribe(params => {
+      (this.memberId = params["id"]),
+        this.teamMember
+          .getEmployee(this.memberId)
+          .subscribe(res => (this.member = res));
+    });
+  }
+}

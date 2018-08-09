@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { AllemployeesService } from "services/allemployees.service";
 import { ExperiencesService } from "services/experiences.service";
+import { AuthenticationService } from '../../services/authentication.service';
+import { Observable } from '../../../node_modules/rxjs';
 import { count } from "rxjs/operators";
 
 @Component({
@@ -18,8 +20,8 @@ export class DashboardComponent implements OnInit {
   age;
   comp;
   coll = [];
-  defaultKeys:Array<string> = ['Q1', 'Q2', 'Q3', 'Q4']
-  keys2:Array<string> = ['18 - 25', '25 - 40', '40 - 60', '60+']
+  defaultKeys: Array<string> = ['Q1', 'Q2', 'Q3', 'Q4']
+  keys2: Array<string> = ['18 - 25', '25 - 40', '40 - 60', '60+']
   genderm;
   genderf;
   performance: number;
@@ -27,10 +29,13 @@ export class DashboardComponent implements OnInit {
   time: number;
   aged: any;
   avgage: any;
+  User: any;
+  employee_Id: String;
 
   constructor(
     private Listemployees: AllemployeesService,
     private Listexperiences: ExperiencesService,
+    private Auth: AuthenticationService,
   ) {}
 
   ngOnInit() {
@@ -54,9 +59,7 @@ export class DashboardComponent implements OnInit {
     this.Listemployees.getAvgAge().subscribe(avgage => {
       this.avgage = parseInt(avgage);
       console.log(this.avgage);
-   
     });
-
     this.Listexperiences.getPerformanceAvg().subscribe(performanceavg => {
       console.log(performanceavg);
       return this.performance = performanceavg.toFixed(2);
@@ -74,4 +77,11 @@ export class DashboardComponent implements OnInit {
       return this.aged = agedist;
     });
 }
+//   login(username: string, password: string) {
+//   this.Auth.login(username, password).subscribe( user => {
+//     console.log(user);
+//     this.User = user;
+//     return this.User;
+//   });
+// }
 }

@@ -3,6 +3,24 @@
 */
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 
+
+#logout-button{
+  cursor: pointer;
+} 
+
+#wrapper {
+  transition: padding-top .2s linear;
+}
+#wrapper.logged {
+  padding-top: 72px;
+}
+
+.navbar {
+  position: fixed !important;
+  width: 100%;
+}
+
+
 .color {
   background-color: #f2f3f9;
 }
