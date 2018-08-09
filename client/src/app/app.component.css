@@ -4,12 +4,6 @@ body {
 
 /* Toggle Styles */
 
-.background {
-    margin-left: 0px;
-    background-image: url("/images/home3.jpg");
-    background-size: cover;
-    height: 800px;
-  }
 
 #wrapper {
     padding-left: 0;

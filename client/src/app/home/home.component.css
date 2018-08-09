@@ -10,7 +10,10 @@
 }
 
 html {
-  background-color: #56baed;
+  margin-left: 0px;
+  background-image: url("https://raw.githubusercontent.com/sandra-antonio/Proyecto2/master/public/images/home3.jpg");
+  background-size: cover;
+  height: 800px;
 }
 
 body {
