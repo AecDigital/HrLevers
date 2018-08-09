@@ -55,25 +55,25 @@
                 </li>
                 <ng-container *ngIf="Auth.user.isadmin==false"> 
                         <li >
-                                <a href="/member/{{Auth.user.employee_Id}}">My Profile</a>
+                                <a routerLink="/member/{{Auth.user.employee_Id}}">My Profile</a>
                             </li>
                             <li>
-                                <a href="/develop-plan/{{Auth.user.employee_Id}}">My Development Plan</a>
+                                <a routerLink="/develop-plan/{{Auth.user.employee_Id}}">My Development Plan</a>
                             </li>
                 </ng-container>
 
                 <ng-container *ngIf="Auth.user.isadmin==true"> 
                         <li >
-                                <a href="#">Dashboard</a>
+                                <a routerLink="#">Dashboard</a>
                             </li>
                             
                 </ng-container>
                
                 <li>
-                    <a href="#">About</a>
+                    <a routerLink="#">About</a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
+                    <a routerLink="#">Services</a>
                 </li>
                 
             </ul>
